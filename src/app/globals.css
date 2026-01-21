@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAFBFC;
+    --bg-tertiary: #F3F4F6;
+    --bg-accent: #F0F7FF;
+    
+    /* Brand Colors */
+    --brand-primary: #2563EB;      /* Electric Blue */
+    --brand-secondary: #7C3AED;    /* Purple */
+    
+    /* Accent Colors */
+    --accent-success: #10B981;     /* Emerald */
+    --accent-warning: #F59E0B;     /* Amber */
+    --accent-coral: #F472B6;       /* Pink coral */
+    
+    /* Text */
+    --text-primary: #111827;       /* Near black */
+    --text-secondary: #4B5563;     /* Gray 600 */
+    --text-tertiary: #9CA3AF;      /* Gray 400 */
+    
+    /* Borders & Shadows */
+    --border-light: #E5E7EB;
+    --border-medium: #D1D5DB;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+    --shadow-glow: 0 0 40px rgba(37,99,235,0.15);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

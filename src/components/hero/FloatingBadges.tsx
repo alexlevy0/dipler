@@ -2,56 +2,79 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
-import { ShieldCheck, Database, Globe } from "lucide-react";
+import { ShieldCheck, Database, Globe, Zap, Cpu } from "lucide-react";
 
 export function FloatingBadges() {
-  const badgeVariants = {
-    animate: (i: number) => ({
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        delay: i * 0.5,
-        ease: "easeInOut",
-      },
-    }),
-  };
+  const floatAnimation = (delay: number) => ({
+    y: [0, -15, 0],
+    rotate: [0, 2, 0, -2, 0],
+    transition: {
+      duration: 5,
+      delay: delay,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  });
 
   return (
     <>
       <motion.div
-        custom={0}
-        variants={badgeVariants}
-        animate="animate"
-        className="absolute -top-6 -right-6 hidden md:block z-10"
+        animate={floatAnimation(0)}
+        className="absolute -top-12 -right-8 hidden lg:block z-0"
       >
-        <Badge variant="success" className="bg-white/90 backdrop-blur-sm shadow-md py-1 px-3">
-          <ShieldCheck className="w-3 h-3 mr-1" />
-          SOC2 Compliant
-        </Badge>
+        <div className="glass p-3 rounded-2xl shadow-xl border border-white/60 transform rotate-6 hover:rotate-0 transition-transform duration-500 hover:scale-110 cursor-pointer">
+           <div className="flex items-center gap-3">
+              <div className="bg-green-100 p-2 rounded-xl text-green-600">
+                  <ShieldCheck size={20} />
+              </div>
+              <div>
+                  <div className="text-xs text-text-secondary font-semibold">Security</div>
+                  <div className="text-sm font-bold text-text-primary">SOC2 Type II</div>
+              </div>
+           </div>
+        </div>
       </motion.div>
+
       <motion.div
-        custom={1}
-        variants={badgeVariants}
-        animate="animate"
-        className="absolute top-1/2 -left-12 hidden md:block z-10"
+        animate={floatAnimation(1.5)}
+        className="absolute top-1/3 -left-20 hidden lg:block z-30"
       >
-        <Badge variant="brand" className="bg-white/90 backdrop-blur-sm shadow-md py-1 px-3">
-          <Globe className="w-3 h-3 mr-1" />
-          100+ Languages
-        </Badge>
+         <div className="glass p-3 rounded-2xl shadow-xl border border-white/60 transform -rotate-3 hover:rotate-0 transition-transform duration-500 hover:scale-110 cursor-pointer">
+           <div className="flex items-center gap-3">
+              <div className="bg-blue-100 p-2 rounded-xl text-blue-600">
+                  <Globe size={20} />
+              </div>
+              <div>
+                  <div className="text-xs text-text-secondary font-semibold">Global</div>
+                  <div className="text-sm font-bold text-text-primary">100+ Langs</div>
+              </div>
+           </div>
+        </div>
       </motion.div>
+
       <motion.div
-        custom={2}
-        variants={badgeVariants}
-        animate="animate"
-        className="absolute -bottom-4 right-1/4 hidden md:block z-10"
+        animate={floatAnimation(2.5)}
+        className="absolute -bottom-10 -right-12 hidden lg:block z-30"
       >
-        <Badge variant="warning" className="bg-white/90 backdrop-blur-sm shadow-md py-1 px-3">
-          <Database className="w-3 h-3 mr-1" />
-          GDPR Ready
-        </Badge>
+         <div className="glass p-3 rounded-2xl shadow-xl border border-white/60 transform rotate-3 hover:rotate-0 transition-transform duration-500 hover:scale-110 cursor-pointer">
+           <div className="flex items-center gap-3">
+              <div className="bg-purple-100 p-2 rounded-xl text-purple-600">
+                  <Cpu size={20} />
+              </div>
+              <div>
+                  <div className="text-xs text-text-secondary font-semibold">Model</div>
+                  <div className="text-sm font-bold text-text-primary">GPT-4o Ready</div>
+              </div>
+           </div>
+        </div>
       </motion.div>
+      
+      {/* Additional Decorative Elements */}
+      <motion.div 
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity }}
+        className="absolute top-0 left-0 w-32 h-32 bg-brand-primary/20 blur-[60px] rounded-full -z-10"
+      />
     </>
   );
 }

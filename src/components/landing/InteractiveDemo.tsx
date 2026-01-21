@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Avatar } from "@/components/voice/Avatar";
 import { WaveformVisualizer } from "@/components/hero/WaveformVisualizer";
-import { ArrowRight, Mic, Check } from "lucide-react";
+import { Mic, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const useCases = [
@@ -57,102 +57,100 @@ export function InteractiveDemo() {
   };
 
   return (
-    <section className="py-24 bg-bg-secondary" id="demo">
+    <section className="py-32 bg-bg-primary relative overflow-hidden" id="demo">
+        {/* Background blobs */}
+        <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-brand-secondary/5 rounded-full blur-[100px] -z-10" />
+
       <div className="container mx-auto px-4 md:px-6">
-         <div className="flex flex-col md:flex-row gap-12 items-start">
+         <div className="flex flex-col md:flex-row gap-16 items-start">
             
             {/* Left Column: Controls & Context */}
-            <div className="md:w-1/3 space-y-8 sticky top-24">
+            <div className="md:w-1/3 space-y-8 sticky top-32">
                 <div>
-                   <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-4">
-                        Experience Dipler in action
+                   <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
+                        Experience <span className="text-brand-primary">Conversation</span>
                     </h2>
-                    <p className="text-text-secondary">
-                        Try different industry scenarios to hear how natural and intelligent our agents sound.
+                    <p className="text-text-secondary text-lg leading-relaxed">
+                        Dipler agents understand context, nuance, and interruptions. Try it yourself.
                     </p>
                 </div>
 
-                <div className="space-y-4">
-                    <p className="text-sm font-semibold text-text-tertiary uppercase tracking-wider">Select Use Case</p>
+                <div className="space-y-3">
                     {useCases.map((useCase) => (
                         <button
                             key={useCase.id}
                             onClick={() => handleCaseChange(useCase)}
                             className={cn(
-                                "w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-center justify-between group",
+                                "w-full text-left p-4 rounded-xl transition-all duration-300 flex items-center justify-between group",
                                 activeCase.id === useCase.id 
-                                    ? "bg-white border-brand-primary shadow-md" 
-                                    : "bg-transparent border-transparent hover:bg-white hover:shadow-sm"
+                                    ? "bg-white shadow-lg shadow-brand-primary/5 border border-brand-primary/20 scale-105" 
+                                    : "bg-transparent border border-transparent hover:bg-white/50"
                             )}
                         >
                             <span className={cn("font-medium", activeCase.id === useCase.id ? "text-brand-primary" : "text-text-secondary")}>
                                 {useCase.label}
                             </span>
                             {activeCase.id === useCase.id && (
-                                <Check className="w-5 h-5 text-brand-primary" />
+                                <motion.div layoutId="active-check">
+                                    <Check className="w-5 h-5 text-brand-primary" />
+                                </motion.div>
                             )}
                         </button>
                     ))}
                 </div>
             </div>
 
-            {/* Right Column: Interactive Widget */}
+            {/* Right Column: Interactive Widget - Minimalist */}
             <div className="md:w-2/3 w-full">
-                <Card className="min-h-[600px] flex flex-col relative overflow-hidden ring-4 ring-bg-secondary/50">
-                    {/* Header */}
-                    <div className="p-6 border-b border-border-light bg-bg-tertiary/30 flex items-center justify-between">
+                <Card className="min-h-[600px] flex flex-col relative overflow-hidden shadow-2xl shadow-brand-primary/20 border-white/50 bg-white/80 backdrop-blur-xl rounded-[2rem]">
+                    
+                    {/* Minimal Header */}
+                    <div className="p-8 pb-4 flex items-center justify-between">
                         <div className="flex items-center gap-4">
                             <Avatar type={activeCase.label} isSpeaking={!isTalking && conversation.length % 2 === 0 && conversation.length > 0} />
                             <div>
-                                <h3 className="font-bold text-lg text-text-primary">{activeCase.role}</h3>
-                                <div className="flex items-center gap-2 text-sm text-text-secondary">
+                                <h3 className="font-bold text-xl text-text-primary">{activeCase.role}</h3>
+                                <div className="flex items-center gap-2 text-sm font-medium text-emerald-500">
                                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                    Online • AI Agent
+                                    Active Now
                                 </div>
                             </div>
                         </div>
-                        <div className="hidden sm:block">
+                        <div className="hidden sm:block opacity-50">
                             <WaveformVisualizer isActive={isTalking || conversation.length === 0} />
                         </div>
                     </div>
 
                     {/* Chat Area */}
-                    <div className="flex-grow p-6 space-y-6 overflow-y-auto bg-bg-accent/30 max-h-[400px]">
+                    <div className="flex-grow p-8 space-y-6 overflow-y-auto max-h-[450px] scrollbar-hide">
                         {/* Initial Greeting */}
                         <motion.div 
                             key={`greeting-${activeCase.id}`}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             className="flex gap-4"
                         >
-                            <div className="w-8 h-8 rounded-full bg-brand-primary/10 flex-shrink-0 flex items-center justify-center">
-                                <span className="text-xs font-bold text-brand-primary">AI</span>
-                            </div>
-                            <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-text-primary border border-border-light max-w-[80%]">
+                            <div className="bg-bg-secondary p-5 rounded-2xl rounded-tl-none text-text-primary max-w-[85%] leading-relaxed shadow-sm">
                                 {activeCase.greeting}
                             </div>
                         </motion.div>
 
                         {/* History */}
-                        <AnimatePresence>
+                        <AnimatePresence mode="popLayout">
                             {conversation.map((msg, i) => (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                     className={cn("flex gap-4", msg.role === 'user' ? "flex-row-reverse" : "")}
                                 >
                                     <div className={cn(
-                                        "w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center",
-                                        msg.role === 'user' ? "bg-bg-tertiary" : "bg-brand-primary/10"
-                                    )}>
-                                        <span className={cn("text-xs font-bold", msg.role === 'user' ? "text-text-secondary" : "text-brand-primary")}>
-                                            {msg.role === 'user' ? 'ME' : 'AI'}
-                                        </span>
-                                    </div>
-                                    <div className={cn(
-                                        "p-4 rounded-2xl shadow-sm text-text-primary border border-border-light max-w-[80%]",
-                                        msg.role === 'user' ? "bg-brand-primary text-white border-transparent rounded-tr-none" : "bg-white rounded-tl-none"
+                                        "p-5 rounded-2xl shadow-sm text-text-primary max-w-[85%] leading-relaxed",
+                                        msg.role === 'user' 
+                                            ? "bg-brand-primary text-white rounded-tr-none shadow-brand-primary/20" 
+                                            : "bg-bg-secondary rounded-tl-none"
                                     )}>
                                         {msg.text}
                                     </div>
@@ -161,41 +159,39 @@ export function InteractiveDemo() {
                         </AnimatePresence>
 
                         {isTalking && (
-                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-4">
-                                <div className="w-8 h-8 rounded-full bg-brand-primary/10 flex-shrink-0 flex items-center justify-center">
-                                    <span className="text-xs font-bold text-brand-primary">AI</span>
-                                </div>
-                                <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-border-light">
-                                    <div className="flex gap-1">
-                                        <span className="w-2 h-2 bg-text-tertiary rounded-full animate-bounce" />
-                                        <span className="w-2 h-2 bg-text-tertiary rounded-full animate-bounce delay-75" />
-                                        <span className="w-2 h-2 bg-text-tertiary rounded-full animate-bounce delay-150" />
-                                    </div>
+                             <motion.div 
+                                initial={{ opacity: 0, scale: 0.8 }} 
+                                animate={{ opacity: 1, scale: 1 }} 
+                                className="flex gap-4"
+                             >
+                                <div className="bg-bg-secondary p-4 rounded-2xl rounded-tl-none shadow-sm flex gap-1 items-center h-12">
+                                    <span className="w-2 h-2 bg-text-tertiary rounded-full animate-bounce" />
+                                    <span className="w-2 h-2 bg-text-tertiary rounded-full animate-bounce delay-75" />
+                                    <span className="w-2 h-2 bg-text-tertiary rounded-full animate-bounce delay-150" />
                                 </div>
                              </motion.div>
                         )}
                     </div>
 
                     {/* Controls */}
-                    <div className="p-6 border-t border-border-light bg-white mt-auto">
-                        <p className="text-sm font-medium text-text-tertiary mb-3">Suggested responses:</p>
-                        <div className="flex flex-wrap gap-2">
+                    <div className="p-6 bg-white/50 backdrop-blur-md mt-auto border-t border-white/50">
+                        <div className="flex flex-wrap gap-2 mb-6">
                             {activeCase.prompts.map((prompt) => (
-                                <button
+                                <motion.button
                                     key={prompt}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                     onClick={() => handlePromptClick(prompt)}
-                                    className="px-4 py-2 rounded-lg bg-bg-secondary hover:bg-bg-tertiary text-sm text-text-secondary transition-colors border border-border-light hover:border-brand-primary/50 text-left"
+                                    className="px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md text-sm text-text-secondary border border-border-light hover:border-brand-primary/30 transition-all font-medium"
                                 >
-                                    "{prompt}"
-                                </button>
+                                    {prompt}
+                                </motion.button>
                             ))}
                         </div>
                         
-                        <div className="mt-6 flex items-center gap-4">
-                            <Button className="w-full h-12 gap-2 text-lg shadow-lg shadow-brand-primary/20">
-                                <Mic className="w-5 h-5" /> Tap to Speak
-                            </Button>
-                        </div>
+                        <Button className="w-full h-14 rounded-full text-lg shadow-xl shadow-brand-primary/25 hover:shadow-brand-primary/40 transition-all">
+                             <Mic className="w-5 h-5 mr-2" /> Start Talking
+                        </Button>
                     </div>
                 </Card>
             </div>

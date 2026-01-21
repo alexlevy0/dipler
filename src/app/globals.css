@@ -2,47 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    /* Backgrounds */
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #FAFBFC;
-    --bg-tertiary: #F3F4F6;
-    --bg-accent: #F0F7FF;
-    
-    /* Brand Colors */
-    --brand-primary: #2563EB;      /* Electric Blue */
-    --brand-secondary: #7C3AED;    /* Purple */
-    
-    /* Accent Colors */
-    --accent-success: #10B981;     /* Emerald */
-    --accent-warning: #F59E0B;     /* Amber */
-    --accent-coral: #F472B6;       /* Pink coral */
-    
-    /* Text */
-    --text-primary: #111827;       /* Near black */
-    --text-secondary: #4B5563;     /* Gray 600 */
-    --text-tertiary: #9CA3AF;      /* Gray 400 */
-    
-    /* Borders & Shadows */
-    --border-light: #E5E7EB;
-    --border-medium: #D1D5DB;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-    --shadow-glow: 0 0 40px rgba(37,99,235,0.15);
-  }
+:root {
+  /* Modern Vibrant Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-accent: #eef2ff;
+  
+  --brand-primary: #2563eb;
+  --brand-secondary: #4f46e5;
+  --brand-glow: rgba(59, 130, 246, 0.5);
 
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-coral: #f43f5e;
+  --accent-purple: #8b5cf6;
+  --accent-rose: #ec4899;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px var(--brand-glow);
+}
+
+@layer base {
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-bg-primary text-text-primary antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-text-primary;
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary;
   }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-glass;
+  }
+
+  .glass-dark {
+    @apply bg-black/5 backdrop-blur-lg border border-black/5;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Background Noise Pattern */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 }

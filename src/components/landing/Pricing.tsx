@@ -50,7 +50,7 @@ export function Pricing() {
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <span className={cn("text-sm font-medium", !annual ? "text-text-primary" : "text-text-tertiary")}>Monthly</span>
+            <span className={cn("text-sm font-medium", annual ? "text-text-tertiary" : "text-text-primary")}>Monthly</span>
             <button 
               onClick={() => setAnnual(!annual)}
               className="w-14 h-8 rounded-full bg-brand-primary/10 p-1 relative transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary/50"
@@ -76,10 +76,10 @@ export function Pricing() {
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               className="relative"
-            >
+              >
               {plan.popular && (
-                <div className="absolute -top-4 left-0 right-0 flex justify-center z-10">
-                   <Badge variant="brand" className="shadow-lg py-1 px-4 text-sm gap-1">
+                <div className="absolute -top-6 left-0 right-0 flex justify-center z-20">
+                   <Badge variant="brand" className="shadow-lg shadow-brand-primary/20 py-1.5 px-4 text-sm gap-1 bg-brand-primary text-white border-none">
                       <Star className="w-3 h-3 fill-current" /> Most Popular
                    </Badge>
                 </div>
@@ -87,40 +87,50 @@ export function Pricing() {
               
               <Card 
                 className={cn(
-                  "h-full flex flex-col p-8",
-                  plan.popular ? "border-brand-primary shadow-glow ring-1 ring-brand-primary/20" : "border-border-light"
+                  "h-full flex flex-col p-8 relative transition-all duration-300",
+                  plan.popular 
+                    ? "border-brand-primary/30 bg-white/60 shadow-glow ring-1 ring-brand-primary/20 scale-105 z-10" 
+                    : "bg-white/40 border-white/40 hover:bg-white/60"
                 )}
-                hoverEffect={true}
+                hoverEffect={!plan.popular}
               >
-                <div className="mb-8">
+                {/* Glow BG for popular plan */}
+                {plan.popular && (
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/5 to-transparent pointer-events-none" />
+                )}
+                
+                <div className="mb-8 relative z-10">
                   <h3 className="text-xl font-bold text-text-primary mb-2">{plan.name}</h3>
                   <p className="text-sm text-text-secondary mb-6">{plan.description}</p>
                   
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-display font-bold text-text-primary">
+                    <span className="text-5xl font-display font-bold text-text-primary tracking-tight">
                         {typeof plan.price.monthly === 'number' 
-                            ? `$${annual ? plan.price.annual : plan.price.monthly}`
+                            ? (annual ? `$${plan.price.annual}` : `$${plan.price.monthly}`)
                             : plan.price.monthly}
                     </span>
                     {typeof plan.price.monthly === 'number' && (
-                        <span className="text-text-tertiary">/month</span>
+                        <span className="text-text-tertiary">/mo</span>
                     )}
                   </div>
                 </div>
 
-                <div className="space-y-4 mb-8 flex-grow">
+                <div className="space-y-4 mb-8 flex-grow relative z-10">
                   {plan.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-brand-primary" />
+                      <div className={cn(
+                          "w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0",
+                          plan.popular ? "bg-brand-primary text-white" : "bg-white text-brand-primary shadow-sm"
+                      )}>
+                        <Check className="w-3 h-3" />
                       </div>
-                      <span className="text-sm text-text-secondary">{feature}</span>
+                      <span className="text-sm text-text-secondary font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <Button 
-                    className="w-full" 
+                    className={cn("w-full h-12 text-base", plan.popular ? "shadow-lg shadow-brand-primary/20" : "")} 
                     variant={plan.popular ? "primary" : "secondary"}
                 >
                     {plan.cta}

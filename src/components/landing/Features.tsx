@@ -1,151 +1,122 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { ArrowRight, Workflow, Zap, Mic, Globe, Phone, BarChart3, Lock, Blocks } from "lucide-react";
+import { Shield, BarChart3, Globe, Code2, Users, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const tabs = ["All", "Build", "Deploy", "Scale", "Analyze"];
 
 const features = [
   {
-    category: "Build",
-    title: "Visual Flow Builder",
-    description: "Design conversation flows with our drag-and-drop no-code editor. Visualize logic and state.",
-    icon: Workflow,
-    color: "text-blue-500",
-  },
-  {
-    category: "Deploy",
-    title: "Sub-100ms Latency",
-    description: "In-house telephony infrastructure optimized for lightning-fast voice responses.",
-    icon: Zap,
-    color: "text-amber-500",
-  },
-  {
-    category: "Build",
-    title: "Voice Cloning",
-    description: "Clone any voice in minutes. Use your brand voice across all agents consistently.",
-    icon: Mic,
-    color: "text-purple-500",
-  },
-  {
-    category: "Scale",
     title: "Global Infrastructure",
-    description: "Multi-region deployment. 100+ languages with native accents supported out of the box.",
+    description: "Deploy instantly to 30+ regions worldwide with <50ms latency everywhere.",
     icon: Globe,
-    color: "text-emerald-500",
+    className: "col-span-1 md:col-span-2 lg:col-span-2",
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    hasBeam: true
   },
   {
-    category: "Deploy",
-    title: "In-house Telephony",
-    description: "Carrier-grade reliability. Bring your own numbers or purchase directly from us.",
-    icon: Phone,
-    color: "text-indigo-500",
-  },
-  {
-    category: "Analyze",
-    title: "Deep Analytics",
-    description: "Real-time dashboards, sentiment analysis, and automated call scoring.",
+    title: "Real-time Analytics",
+    description: "Monitor call quality, sentiment, and conversion rates live.",
     icon: BarChart3,
-    color: "text-pink-500",
+    className: "col-span-1",
+    gradient: "from-purple-500/20 to-pink-500/20"
   },
   {
-    category: "Scale",
+    title: "Visual Builder",
+    description: "Drag-and-drop flow editor for non-technical teams.",
+    icon: Code2,
+    className: "col-span-1",
+    gradient: "from-amber-500/20 to-orange-500/20"
+  },
+  {
     title: "Enterprise Security",
-    description: "SOC2 Type II, HIPAA, and GDPR compliant. Your data is always encrypted and secure.",
-    icon: Lock,
-    color: "text-slate-500",
+    description: "SOC2 Type II compliant, HIPAA ready, and data encrypted at rest.",
+    icon: Shield,
+    className: "col-span-1 md:col-span-2 lg:col-span-1",
+    gradient: "from-emerald-500/20 to-green-500/20"
   },
   {
-    category: "Build",
-    title: "40+ Integrations",
-    description: "Connect natively to CRMs, calendars, and automation tools like Zapier and Make.",
-    icon: Blocks,
-    color: "text-orange-500",
-  },
+    title: "Collaborative Workspaces",
+    description: "Invite your team, manage permissions, and share call logs.",
+    icon: Users,
+    className: "col-span-1 md:col-span-3 lg:col-span-2",
+    gradient: "from-indigo-500/20 to-violet-500/20",
+    hasBeam: true
+  }
 ];
 
 export function Features() {
-  const [activeTab, setActiveTab] = useState("All");
-
-  const filteredFeatures = activeTab === "All" 
-    ? features 
-    : features.filter(f => f.category === activeTab);
-
   return (
-    <section className="py-24 bg-bg-secondary" id="features">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-6">
-            Everything you need to build world-class voice experiences
-          </h2>
-          
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mt-8">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={cn(
-                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative",
-                  activeTab === tab ? "text-white" : "text-text-secondary hover:bg-bg-tertiary"
-                )}
-              >
-                {activeTab === tab && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-brand-primary rounded-full shadow-lg"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10">{tab}</span>
-              </button>
-            ))}
-          </div>
+    <section className="py-32 bg-bg-secondary relative" id="features">
+      {/* Background decoration */}
+     <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
+     
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="mb-20 text-center max-w-3xl mx-auto">
+           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2 justify-center mb-6"
+           >
+              <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                  Why Dipler?
+              </span>
+           </motion.div>
+           
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6"
+          >
+            Everything you need to scale <br/>
+            <span className="text-gradient">Voice AI Operations</span>
+          </motion.h2>
         </div>
 
-        {/* Grid */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card className="h-full flex flex-col group cursor-pointer hover:border-brand-primary/30 transition-colors">
-                  <div className={`p-3 w-fit rounded-xl bg-bg-accent mb-4 ${feature.color} bg-opacity-10`}>
-                    <feature.icon className={`w-6 h-6 ${feature.color}`} />
-                  </div>
-                  <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-brand-primary transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-4 flex-grow">
-                    {feature.description}
-                  </p>
-                  <div className="flex items-center text-sm font-medium text-brand-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                    Learn more <ArrowRight className="w-4 h-4 ml-1" />
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-        
-        <div className="mt-12 text-center">
-            <Button variant="outline" className="group">
-                View all features
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={cn("group relative", feature.className)}
+            >
+              <Card className="h-full bg-white/50 hover:bg-white/80 transition-colors duration-500 backdrop-blur-sm border-white/60 p-8 flex flex-col justify-between overflow-hidden">
+                {/* Border Beam Effect */}
+                {feature.hasBeam && (
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
+                        <span className="absolute top-0 left-0 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-brand-primary to-transparent animate-shimmer" />
+                    </div>
+                )}
+                
+                {/* Gradient Blob Background */}
+                <div className={cn(
+                    "absolute -right-20 -top-20 w-64 h-64 rounded-full bg-gradient-to-br opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700",
+                    feature.gradient
+                )} />
+
+                <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-bg-primary shadow-sm border border-border-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <feature.icon className="w-6 h-6 text-text-primary" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-text-primary mb-3">{feature.title}</h3>
+                    <p className="text-text-secondary leading-relaxed">{feature.description}</p>
+                </div>
+
+                {feature.hasBeam && (
+                    <div className="mt-8 flex justify-end">
+                        <ArrowUpRight className="w-5 h-5 text-text-tertiary group-hover:text-brand-primary transition-colors" />
+                    </div>
+                )}
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

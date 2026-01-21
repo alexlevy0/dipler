@@ -4,118 +4,154 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { WaveformVisualizer } from "@/components/hero/WaveformVisualizer";
 import { FloatingBadges } from "@/components/hero/FloatingBadges";
-import { Mic, Play, ArrowRight } from "lucide-react";
+import { Mic, Play, ArrowRight, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 export function Hero() {
   const [isDemoActive, setIsDemoActive] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e;
+    setMousePosition({ x: clientX, y: clientY });
+  };
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      {/* Background Gradient Mesh */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-primary/5 via-bg-primary to-bg-primary opacity-50" />
+    <section 
+        className="relative pt-40 pb-32 overflow-hidden bg-bg-primary"
+        onMouseMove={handleMouseMove}
+    >
+      {/* Dynamic Background Mesh & Spotlight */}
+      <div className="absolute inset-0 -z-10 bg-mesh opacity-30 animate-pulse-slow" />
+      <div className="absolute inset-0 -z-10 bg-noise opacity-[0.05]" />
       
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12">
+      {/* Spotlight Effect */}
+      <motion.div
+        className="pointer-events-none absolute -inset-px -z-10 opacity-50 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(37, 99, 235, 0.15), transparent 80%)`,
+        }}
+      />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-8"
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold mb-6">
-              New: Voice Cloning 2.0 is here →
+            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/50 backdrop-blur-md border border-brand-primary/20 text-brand-primary text-sm font-semibold shadow-sm hover:shadow-md transition-shadow cursor-default">
+              <Sparkles className="w-4 h-4 text-accent-warning fill-accent-warning" />
+              <span>Voice Cloning 2.0 is now live</span>
             </span>
           </motion.div>
           
           <motion.h1 
-            className="text-5xl md:text-7xl font-display font-bold tracking-tight text-text-primary mb-6"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-6xl md:text-8xl font-display font-bold tracking-tight text-text-primary mb-8 leading-[1.1]"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
             The Voice AI Platform <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
+            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-accent-purple pb-2">
               That Actually Scales
+              <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-primary opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
+              </svg>
             </span>
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-2xl text-text-secondary mb-10 max-w-2xl leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl leading-relaxed text-balance"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            Build, deploy, and manage AI voice agents that sound human and act intelligently. From prototype to millions of calls.
+            Build, deploy, and manage AI voice agents that sound human and act intelligently. From first prototype to millions of calls, we've got you covered.
           </motion.p>
 
           <motion.div
-             className="flex flex-col sm:flex-row gap-4 items-center"
-             initial={{ opacity: 0, y: 20 }}
+             className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
+             initial={{ opacity: 0, y: 30 }}
              animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.5, delay: 0.3 }}
+             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
-            <Button size="lg" className="w-full sm:w-auto gap-2">
-              <Play size={18} fill="currentColor" /> Try Live Demo
+            <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 hover:-translate-y-1 transition-all duration-300 gap-3 rounded-full">
+              <Play size={20} fill="currentColor" /> Try Live Demo
             </Button>
-            <Button variant="secondary" size="lg" className="w-full sm:w-auto gap-2">
-              Start Building Free <ArrowRight size={18} />
+            <Button variant="secondary" size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-white border border-border-light hover:border-brand-primary/30 hover:bg-bg-secondary hover:-translate-y-1 transition-all duration-300 gap-3 rounded-full shadow-sm">
+              Start Building Free <ArrowRight size={20} />
             </Button>
           </motion.div>
         </div>
 
-        {/* Demo Widget */}
+        {/* Demo Widget Container with 3D Tilt Effect Potential */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="relative max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4, type: "spring", bounce: 0.2 }}
+          className="relative max-w-4xl mx-auto perspective-1000"
         >
-          <FloatingBadges />
-          <div className="relative bg-white rounded-3xl border border-border-light shadow-2xl overflow-hidden p-8 md:p-12">
-            <div className="flex flex-col items-center gap-8">
-              <div className="text-center">
-                <p className="text-sm font-mono text-text-tertiary mb-2">INTERACTIVE DEMO</p>
-                <h3 className="text-2xl font-bold text-text-primary">
-                  "Hi, I'm Dipler. Ask me anything..."
-                </h3>
-              </div>
+          <div className="relative transform-style-3d transition-transform hover:scale-[1.01] duration-500">
+             <FloatingBadges />
+             
+             {/* Main Card */}
+             <div className="relative glass rounded-[2.5rem] border border-white/40 shadow-2xl shadow-brand-primary/10 overflow-hidden p-8 md:p-14 z-20">
+                
+                {/* Decorative blobs inside card */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent-purple/5 rounded-full blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2" />
+                
+                <div className="flex flex-col items-center gap-10">
+                  <div className="text-center space-y-2">
+                    <p className="text-xs font-bold font-mono text-brand-primary tracking-widest uppercase bg-brand-primary/5 py-1 px-3 rounded-md inline-block">Interactive Demo</p>
+                    <h3 className="text-3xl font-bold text-text-primary">
+                      "Hi, I'm Dipler. Ask me anything..."
+                    </h3>
+                  </div>
 
-              <div className="w-full h-24 bg-bg-secondary rounded-2xl flex items-center justify-center border border-border-light relative overflow-hidden">
-                <WaveformVisualizer isActive={isDemoActive} />
-              </div>
+                  <div className="w-full h-32 bg-white/60 backdrop-blur-sm rounded-3xl flex items-center justify-center border border-white/50 shadow-inner relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
+                    <WaveformVisualizer isActive={isDemoActive} />
+                  </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsDemoActive(!isDemoActive)}
-                className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  isDemoActive 
-                    ? "bg-red-500 shadow-glow animate-pulse text-white" 
-                    : "bg-brand-primary text-white shadow-lg shadow-brand-primary/30"
-                }`}
-              >
-                <Mic size={28} />
-              </motion.button>
-              
-              <p className="text-sm text-text-tertiary">
-                {isDemoActive ? "Listening..." : "Click to talk"}
-              </p>
-            </div>
-            
-            <div className="mt-8 pt-8 border-t border-border-light grid grid-cols-3 gap-4 text-center">
-              <div>
-                <p className="text-2xl font-bold text-text-primary">&lt;100ms</p>
-                <p className="text-xs text-text-tertiary uppercase tracking-wider">Latency</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-text-primary">100+</p>
-                <p className="text-xs text-text-tertiary uppercase tracking-wider">Languages</p>
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-text-primary">1M+</p>
-                <p className="text-xs text-text-tertiary uppercase tracking-wider">Concurrent</p>
-              </div>
-            </div>
+                  <motion.button
+                    whileHover={{ scale: 1.1, boxShadow: "0 0 30px var(--brand-glow)" }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setIsDemoActive(!isDemoActive)}
+                    className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 text-white relative z-50 ${
+                      isDemoActive 
+                        ? "bg-accent-coral shadow-glow animate-pulse" 
+                        : "bg-gradient-to-br from-brand-primary to-brand-secondary shadow-lg shadow-brand-primary/30"
+                    }`}
+                  >
+                    <Mic size={32} />
+                    {/* Ring animation */}
+                    <span className="absolute inset-0 rounded-full border border-white/30 animate-ping opacity-75" />
+                  </motion.button>
+                  
+                  <p className="text-sm font-medium text-text-tertiary">
+                    {isDemoActive ? "Listening..." : "Tap the mic to talk"}
+                  </p>
+                </div>
+                
+                {/* Stats Grid */}
+                <div className="mt-12 pt-10 border-t border-border-light/50 grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white/30 -mx-8 md:-mx-14 -mb-8 md:-mb-14 p-8 backdrop-blur-sm">
+                  <div className="group cursor-default">
+                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">&lt;100ms</p>
+                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Latency</p>
+                  </div>
+                  <div className="group cursor-default">
+                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">100+</p>
+                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Languages</p>
+                  </div>
+                  <div className="group cursor-default">
+                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">1M+</p>
+                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Concurrent Calls</p>
+                  </div>
+                </div>
+             </div>
           </div>
         </motion.div>
       </div>

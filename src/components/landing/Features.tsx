@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
+import { SpotlightGrid } from "@/components/ui/SpotlightGrid";
 import { Shield, BarChart3, Globe, Code2, Users, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -76,7 +77,7 @@ export function Features() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <SpotlightGrid className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -117,7 +118,7 @@ export function Features() {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </SpotlightGrid>
       </div>
     </section>
   );

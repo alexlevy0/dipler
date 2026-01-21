@@ -20,6 +20,10 @@ import { VoiceGallery } from "@/components/landing/VoiceGallery";
 import { Security } from "@/components/landing/Security";
 import { Templates } from "@/components/landing/Templates";
 import { IntegrationBeam } from "@/components/landing/IntegrationBeam";
+import { VisualBuilder } from "@/components/landing/VisualBuilder";
+import { AnalyticsPreview } from "@/components/landing/AnalyticsPreview";
+import { Infrastructure } from "@/components/landing/Infrastructure";
+import { AgencyCTA } from "@/components/landing/AgencyCTA";
 
 export default function Home() {
   return (
@@ -31,20 +35,24 @@ export default function Home() {
       <Metrics />
       <DevExperience />
       <Features />
+      <AnalyticsPreview />
       <GlobalLatency />
       <IntegrationBeam />
       <HowItWorks />
+      <VisualBuilder />
       <InteractiveDemo />
       <Templates />
       <UseCases />
       <Integrations />
       <Comparison />
       <Testimonials />
+      <Infrastructure />
       <Pricing />
       <ROICalculator />
       <Security />
       <FAQ />
       <CTA />
+      <AgencyCTA />
       <Footer />
     </main>
   );

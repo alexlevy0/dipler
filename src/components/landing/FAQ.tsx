@@ -1,70 +1,101 @@
 "use client";
 
 import { useState } from "react";
-import { AccordionItem } from "@/components/ui/Accordion";
-import { Button } from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "What makes Dipler different from other platforms?",
-    answer: "Dipler combines the lowest latency in the market (<100ms) with a visual flow builder, making it accessible for both developers and non-technical teams. Plus, our voice cloning and in-house telephony infrastructure provide meaningful cost savings at scale."
+    question: "How does the pricing model work?",
+    answer: "We charge per minute of conversation. You only pay for what you use. The Starter plan includes 100 free minutes every month to get you going."
   },
   {
-    question: "How does pricing work?",
-    answer: "We offer a generous free tier for experimentation. Paid plans start at $99/month and include minutes, phone numbers, and advanced features. You only pay for what you use beyond your plan limits."
+    question: "Can I bring my own LLM?",
+    answer: "Yes! on the Pro plan and above, you can connect your own custom LLM (GPT-4, Claude 3, Llama 3) via API key for full control over the intelligence."
   },
   {
-    question: "Is Dipler HIPAA compliant?",
-    answer: "Yes, Dipler is fully HIPAA compliant and SOC2 Type II certified. We sign BAA agreements for Enterprise customers to ensure your patient data is handled with the highest security standards."
-  },
-  {
-    question: "Can I use my own phone numbers?",
-    answer: "Absolutely. You can port your existing numbers to Dipler or verify them to use as caller ID. We also provide new numbers in over 50 countries instantly."
+    question: "Is Dipler HIPPA compliant?",
+    answer: "Absolutely. Our Enterprise tier offers full HIPAA compliance, BAA signing, and dedicated secure infrastructure for healthcare providers."
   },
   {
     question: "What languages do you support?",
-    answer: "We support over 100 languages and dialects with native-sounding accents. You can even switch languages mid-conversation if the user changes their preference."
+    answer: "We support over 100 languages with native-level accents. You can even switch languages mid-conversation seamlessly."
   },
   {
-    question: "How do I get started?",
-    answer: "Click 'Start Free' to create an account. You'll be able to build your first agent in minutes using our templates. No credit card required for the free tier."
+    question: "How fast is the latency really?",
+    answer: "Our globally distributed edge network delivers median audio-to-audio latency of under 500ms, with many regions seeing <300ms. It feels instantaneous."
   }
 ];
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
-    <section className="py-24 bg-bg-primary">
-      <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-6">
+    <section className="py-24 bg-bg-secondary relative overflow-hidden" id="faq">
+       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-radial from-white to-transparent opacity-70 pointer-events-none" />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
             Frequently asked questions
           </h2>
-        </div>
-
-        <div className="mb-12">
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndex === index}
-              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-            />
-          ))}
-        </div>
-
-        <div className="text-center bg-bg-secondary p-8 rounded-2xl border border-border-light">
-          <p className="text-lg font-medium text-text-primary mb-4">
-            Still have questions?
+          <p className="text-xl text-text-secondary">
+            Everything you need to know about the platform.
           </p>
-          <Button variant="secondary" className="gap-2">
-            Contact our team <ArrowRight size={18} />
-          </Button>
+        </div>
+
+        <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+                <FAQItem key={index} faq={faq} />
+            ))}
         </div>
       </div>
     </section>
   );
+}
+
+function FAQItem({ faq }: { faq: typeof faqs[0] }) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <motion.div 
+            initial={false}
+            className={cn(
+                "border border-border-light rounded-2xl bg-white overflow-hidden transition-all duration-300",
+                isOpen ? "shadow-md border-brand-primary/30" : "hover:border-brand-primary/20"
+            )}
+        >
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex items-center justify-between p-6 text-left"
+            >
+                <span className={cn("text-lg font-bold transition-colors", isOpen ? "text-brand-primary" : "text-text-primary")}>
+                    {faq.question}
+                </span>
+                <div className={cn(
+                    "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
+                    isOpen ? "bg-brand-primary text-white rotate-180" : "bg-bg-secondary text-text-secondary"
+                )}>
+                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                </div>
+            </button>
+            <AnimatePresence initial={false}>
+                {isOpen && (
+                    <motion.div
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                            open: { opacity: 1, height: "auto" },
+                            collapsed: { opacity: 0, height: 0 }
+                        }}
+                        transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    >
+                        <div className="px-6 pb-6 text-text-secondary leading-relaxed border-t border-dashed border-border-light pt-4 mx-6 mt-2">
+                            {faq.answer}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    )
 }

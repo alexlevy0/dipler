@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 :root {
-  /* Modern Vibrant Palette */
+  /* Modern Vibrant Palette - High Impact */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-tertiary: #f1f5f9;
   --bg-accent: #eef2ff;
   
-  --brand-primary: #2563eb;
-  --brand-secondary: #4f46e5;
+  /* Richer Brand Colors */
+  --brand-primary: #3b82f6; /* Bright Blue */
+  --brand-secondary: #6366f1; /* Indigo */
+  --brand-tertiary: #8b5cf6; /* Violet */
   --brand-glow: rgba(59, 130, 246, 0.5);
 
+  /* Vibrant Accents */
   --accent-success: #10b981;
   --accent-warning: #f59e0b;
-  --accent-coral: #f43f5e;
-  --accent-purple: #8b5cf6;
-  --accent-rose: #ec4899;
+  --accent-coral: #ec4899; /* Pink/Rose for pop */
+  --accent-purple: #a855f7;
+  --accent-cyan: #06b6d4;
 
   --text-primary: #0f172a;
   --text-secondary: #475569;
@@ -29,7 +32,16 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 20px var(--brand-glow);
+  --shadow-glow: 0 0 40px -10px var(--brand-glow);
+}
+
+.bg-grid-slate-100 {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23f1f5f9'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.bg-dot-slate-200 {
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 @layer base {

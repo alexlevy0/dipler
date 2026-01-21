@@ -63,8 +63,18 @@ const config: Config = {
         "float-delayed": "float 3s ease-in-out 1.5s infinite",
         "shimmer": "shimmer 2.5s linear infinite",
         "blob": "blob 7s infinite",
+        "marquee": "marquee 25s linear infinite",
+        "orbit": "orbit 20s linear infinite",
       },
       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        orbit: {
+            "0%": { transform: "rotate(0deg)" },
+            "100%": { transform: "rotate(360deg)" },
+        },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },

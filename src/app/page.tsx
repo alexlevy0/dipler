@@ -7,6 +7,7 @@ import { Features } from "@/components/landing/Features";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { InteractiveDemo } from "@/components/landing/InteractiveDemo";
 import { UseCases } from "@/components/landing/UseCases";
+import { LogoCloud } from "@/components/landing/LogoCloud";
 import { Integrations } from "@/components/landing/Integrations";
 import { Pricing } from "@/components/landing/Pricing";
 import { Testimonials } from "@/components/landing/Testimonials";
@@ -18,15 +19,15 @@ export default function Home() {
     <main className="min-h-screen bg-bg-primary overflow-x-hidden">
       <Navbar />
       <Hero />
-      <SocialProof />
+      <LogoCloud />
       <Metrics />
       <Features />
       <HowItWorks />
       <InteractiveDemo />
       <UseCases />
       <Integrations />
-      <Pricing />
       <Testimonials />
+      <Pricing />
       <FAQ />
       <CTA />
       <Footer />

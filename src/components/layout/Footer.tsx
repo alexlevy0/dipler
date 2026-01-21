@@ -34,31 +34,55 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-bg-secondary pt-20 pb-10 border-t border-border-light">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
+    <footer className="bg-slate-950 text-white pt-32 pb-10 relative overflow-hidden">
+        {/* Giant Background Text */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full select-none pointer-events-none overflow-hidden">
+            <span className="text-[20vw] font-display font-bold text-white/[0.03] leading-none tracking-tighter whitespace-nowrap">
+                DIPLER
+            </span>
+        </div>
+
+        {/* Magnetic CTA Section */}
+         <div className="container mx-auto px-4 md:px-6 relative z-10 mb-24">
+            <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+                <h2 className="text-5xl md:text-7xl font-display font-bold mb-8 tracking-tight">
+                    Ready to scale your <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
+                        voice operations?
+                    </span>
+                </h2>
+                <div className="flex gap-4">
+                     <Button size="lg" className="h-16 px-10 text-lg rounded-full shadow-glow">
+                        Get Started Now
+                     </Button>
+                </div>
+            </div>
+         </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16 border-t border-white/10 pt-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-bold text-lg">
+            <Link href="/" className="flex items-center gap-2 mb-6">
+               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-primary/20">
                 D
               </div>
-              <span className="font-display font-bold text-xl text-text-primary">Dipler</span>
+              <span className="font-display font-bold text-2xl tracking-tight">Dipler</span>
             </Link>
-            <p className="text-text-secondary mb-6 max-w-sm leading-relaxed">
+            <p className="text-slate-400 mb-8 max-w-sm leading-relaxed text-lg">
               The Voice AI Platform for modern teams. Build, deploy, and scale intelligent voice agents in minutes.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 text-text-tertiary hover:text-brand-primary transition-colors bg-white rounded-lg shadow-sm hover:shadow-md border border-border-light">
+              <a href="#" className="p-3 text-slate-400 hover:text-white hover:bg-white/10 transition-colors rounded-full border border-white/5 hover:border-white/20">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="p-2 text-text-tertiary hover:text-brand-primary transition-colors bg-white rounded-lg shadow-sm hover:shadow-md border border-border-light">
+              <a href="#" className="p-3 text-slate-400 hover:text-white hover:bg-white/10 transition-colors rounded-full border border-white/5 hover:border-white/20">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="p-2 text-text-tertiary hover:text-brand-primary transition-colors bg-white rounded-lg shadow-sm hover:shadow-md border border-border-light">
+              <a href="#" className="p-3 text-slate-400 hover:text-white hover:bg-white/10 transition-colors rounded-full border border-white/5 hover:border-white/20">
                 <Github size={20} />
               </a>
-               <a href="#" className="p-2 text-text-tertiary hover:text-brand-primary transition-colors bg-white rounded-lg shadow-sm hover:shadow-md border border-border-light">
+               <a href="#" className="p-3 text-slate-400 hover:text-white hover:bg-white/10 transition-colors rounded-full border border-white/5 hover:border-white/20">
                 <Youtube size={20} />
               </a>
             </div>
@@ -66,11 +90,11 @@ export function Footer() {
 
           {/* Links Columns */}
           <div>
-            <h4 className="font-semibold text-text-primary mb-4">Product</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-6 text-lg">Product</h4>
+            <ul className="space-y-4">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
+                  <Link href={link.href} className="text-slate-400 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -78,11 +102,11 @@ export function Footer() {
             </ul>
           </div>
           <div>
-             <h4 className="font-semibold text-text-primary mb-4">Solutions</h4>
-            <ul className="space-y-3">
+             <h4 className="font-semibold text-white mb-6 text-lg">Solutions</h4>
+            <ul className="space-y-4">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
+                  <Link href={link.href} className="text-slate-400 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -90,11 +114,11 @@ export function Footer() {
             </ul>
           </div>
           <div>
-             <h4 className="font-semibold text-text-primary mb-4">Developers</h4>
-            <ul className="space-y-3">
+             <h4 className="font-semibold text-white mb-6 text-lg">Developers</h4>
+            <ul className="space-y-4">
               {footerLinks.developers.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
+                  <Link href={link.href} className="text-slate-400 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -102,46 +126,28 @@ export function Footer() {
             </ul>
           </div>
           <div>
-             <h4 className="font-semibold text-text-primary mb-4">Company</h4>
-            <ul className="space-y-3">
+             <h4 className="font-semibold text-white mb-6 text-lg">Company</h4>
+            <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-text-secondary hover:text-brand-primary transition-colors">
+                  <Link href={link.href} className="text-slate-400 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-
-        {/* Newsletter */}
-        <div className="border-t border-border-light pt-10 pb-10">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-center md:text-left">
-                    <h4 className="font-semibold text-text-primary mb-1">Subscribe to updates</h4>
-                    <p className="text-sm text-text-secondary">Get the latest news and specialized developer tips.</p>
-                </div>
-                <div className="flex gap-2 w-full md:w-auto">
-                    <input 
-                        type="email" 
-                        placeholder="email@example.com" 
-                        className="px-4 py-2 rounded-lg border border-border-medium focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none w-full md:w-64"
-                    />
-                    <Button>Subscribe</Button>
-                </div>
-            </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border-light pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-tertiary">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <div>
             © 2025 Dipler Inc. All rights reserved.
           </div>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-text-secondary">Privacy</Link>
-            <Link href="/terms" className="hover:text-text-secondary">Terms</Link>
-            <Link href="/security" className="hover:text-text-secondary">Security</Link>
+          <div className="flex gap-8">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/security" className="hover:text-white transition-colors">Security</Link>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-lg">🇫🇷</span> Made in France

@@ -12,7 +12,7 @@ const plans = [
   {
     name: "Starter",
     price: { monthly: 0, annual: 0 },
-    description: "Perfect for testing and prototypes.",
+    description: "For hackers and side-projects validating ideas.",
     features: ["100 mins/month", "1 agent", "Web widget only", "Visual Flow Builder", "Community support"],
     cta: "Start Free",
     popular: false
@@ -20,9 +20,9 @@ const plans = [
   {
     name: "Pro",
     price: { monthly: 99, annual: 79 },
-    description: "For growing businesses and teams.",
-    features: ["5,000 mins/month", "10 agents", "Phone + Web", "Voice Cloning", "Priority support", "API Access"],
-    cta: "Get Started",
+    description: "For production apps demanding reliability and scale.",
+    features: ["5,000 mins/month", "10 agents", "Phone + Web", "Voice Cloning", "Remove 'Powered by Dipler' branding", "Priority support", "API Access"],
+    cta: "Start Free Trial",
     popular: true
   },
   {

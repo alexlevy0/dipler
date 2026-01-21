@@ -15,7 +15,7 @@ const useCases = [
     label: "Healthcare", 
     role: "Medical Receptionist",
     greeting: "Hi, this is Sarah from MedCare Clinic. I'm calling to confirm your appointment for tomorrow at 2 PM. Can you still make it?",
-    prompts: ["Yes, I can make it.", "I need to reschedule.", "Is there a preparation instruction?"]
+    prompts: ["Yes, I can make it.", "Actually, I can't make 2PM, do you have anything later in the evening?", "Is there a preparation instruction?"]
   },
   { 
     id: "realestate", 
@@ -105,17 +105,17 @@ export function InteractiveDemo() {
                 <Card className="min-h-[600px] flex flex-col relative overflow-hidden shadow-2xl shadow-brand-primary/20 border-white/50 bg-white/80 backdrop-blur-xl rounded-[2rem]">
                     
                     {/* Minimal Header */}
-                    <div className="p-8 pb-4 flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                            <Avatar type={activeCase.label} isSpeaking={!isTalking && conversation.length % 2 === 0 && conversation.length > 0} />
-                            <div>
-                                <h3 className="font-bold text-xl text-text-primary">{activeCase.role}</h3>
-                                <div className="flex items-center gap-2 text-sm font-medium text-emerald-500">
-                                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                    Active Now
+                        <div className="p-8 pb-4 flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <Avatar type={activeCase.label} isSpeaking={!isTalking && conversation.length % 2 === 0 && conversation.length > 0} />
+                                <div>
+                                    <h3 className="font-bold text-xl text-text-primary">Dipler Neural</h3>
+                                    <div className="flex items-center gap-2 text-sm font-medium text-emerald-500">
+                                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                        Active Now
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <div className="hidden sm:block opacity-50">
                             <WaveformVisualizer isActive={isTalking || conversation.length === 0} />
                         </div>

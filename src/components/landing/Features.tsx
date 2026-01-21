@@ -7,29 +7,29 @@ import { cn } from "@/lib/utils";
 
 const features = [
   {
-    title: "Global Infrastructure",
-    description: "Deploy instantly to 30+ regions worldwide with <50ms latency everywhere.",
+    title: "The 'Zero-Lag' Network",
+    description: "Don't let lag kill the vibe. Our edge network guarantees human-like pauses regardless of user location.",
     icon: Globe,
     className: "col-span-1 md:col-span-2 lg:col-span-2",
     gradient: "from-blue-500/20 to-cyan-500/20",
     hasBeam: true
   },
   {
-    title: "Real-time Analytics",
+    title: "See what your agents hear",
     description: "Monitor call quality, sentiment, and conversion rates live.",
     icon: BarChart3,
     className: "col-span-1",
     gradient: "from-purple-500/20 to-pink-500/20"
   },
   {
-    title: "Visual Builder",
+    title: "Ship agents without shipping code",
     description: "Drag-and-drop flow editor for non-technical teams.",
     icon: Code2,
     className: "col-span-1",
     gradient: "from-amber-500/20 to-orange-500/20"
   },
   {
-    title: "Enterprise Security",
+    title: "Bank-grade Compliance (SOC2)",
     description: "SOC2 Type II compliant, HIPAA ready, and data encrypted at rest.",
     icon: Shield,
     className: "col-span-1 md:col-span-2 lg:col-span-1",

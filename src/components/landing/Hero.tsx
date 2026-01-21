@@ -43,7 +43,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/50 backdrop-blur-md border border-brand-primary/20 text-brand-primary text-sm font-semibold shadow-sm hover:shadow-md transition-shadow cursor-default">
               <Sparkles className="w-4 h-4 text-accent-warning fill-accent-warning" />
-              <span>Voice Cloning 2.0 is now live</span>
+              <span>🚀 Now shipping: Low-Latency Turbo Model</span>
             </span>
           </motion.div>
           
@@ -53,9 +53,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
-            The Voice AI Platform <br />
+            Give your software a human voice. <br />
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-accent-purple pb-2">
-              That Actually Scales
+              In under 100ms.
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-primary opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
               </svg>
@@ -68,7 +68,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            Build, deploy, and manage AI voice agents that sound human and act intelligently. From first prototype to millions of calls, we've got you covered.
+            The first voice infrastructure designed for interruptions, heavy accents, and complex logic. Deploy AI agents that actually listen.
           </motion.p>
 
           <motion.div
@@ -78,10 +78,10 @@ export function Hero() {
              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
             <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg shadow-lg shadow-brand-primary/25 hover:shadow-brand-primary/40 hover:-translate-y-1 transition-all duration-300 gap-3 rounded-full">
-              <Play size={20} fill="currentColor" /> Try Live Demo
+              <Play size={20} fill="currentColor" /> Listen to Samples
             </Button>
             <Button variant="secondary" size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-white border border-border-light hover:border-brand-primary/30 hover:bg-bg-secondary hover:-translate-y-1 transition-all duration-300 gap-3 rounded-full shadow-sm">
-              Start Building Free <ArrowRight size={20} />
+              Start Building (Free) <ArrowRight size={20} />
             </Button>
           </motion.div>
         </div>
@@ -139,16 +139,16 @@ export function Hero() {
                 {/* Stats Grid */}
                 <div className="mt-12 pt-10 border-t border-border-light/50 grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white/30 -mx-8 md:-mx-14 -mb-8 md:-mb-14 p-8 backdrop-blur-sm">
                   <div className="group cursor-default">
-                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">&lt;100ms</p>
-                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Latency</p>
+                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">50ms median</p>
+                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Global Latency</p>
                   </div>
                   <div className="group cursor-default">
-                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">100+</p>
-                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Languages</p>
+                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">French, Spanish +98 more</p>
+                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Polyglot</p>
                   </div>
                   <div className="group cursor-default">
-                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">1M+</p>
-                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Concurrent Calls</p>
+                    <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">10k+ concurrent calls</p>
+                    <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">Scalability</p>
                   </div>
                 </div>
              </div>

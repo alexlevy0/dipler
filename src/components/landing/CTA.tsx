@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export function CTA() {
   return (
@@ -21,10 +21,10 @@ export function CTA() {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight text-text-primary">
-            Ready to transform your <br /> customer conversations?
+            Stop losing customers to hold music.
           </h2>
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-2xl mx-auto">
-            Join thousands of companies building the future of voice AI with Dipler.
+            Deploy your first intelligent voice agent this afternoon. We give you $50 of credits to mess around.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
@@ -39,11 +39,11 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm font-medium text-text-secondary">
             <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-brand-primary" />
-                No credit card required
+                Sandbox environment ready
             </div>
             <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-brand-primary" />
-                Setup in 5 minutes
+                Copy-paste API keys
             </div>
             <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-brand-primary" />

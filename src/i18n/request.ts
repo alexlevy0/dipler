@@ -1,17 +1,11 @@
-import {getRequestConfig} from 'next-intl/server';
-import {routing} from './routing';
- 
-export default getRequestConfig(async ({requestLocale}) => {
-  // This typically corresponds to the `[locale]` segment
-  let locale = await requestLocale;
- 
-  // Ensure that a valid locale is used
-  if (!locale || !routing.locales.includes(locale as any)) {
-    locale = routing.defaultLocale;
-  }
- 
+import { getRequestConfig } from 'next-intl/server';
+
+// Pour export statique, on ne peut pas utiliser requestLocale
+// Les messages sont chargés directement dans le layout
+export default getRequestConfig(async () => {
+  // Retourne une config vide, les messages sont gérés dans le layout
   return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default
+    locale: 'en',
+    messages: {}
   };
 });

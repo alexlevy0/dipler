@@ -24,6 +24,11 @@ import { VisualBuilder } from "@/components/landing/VisualBuilder";
 import { AnalyticsPreview } from "@/components/landing/AnalyticsPreview";
 import { Infrastructure } from "@/components/landing/Infrastructure";
 import { AgencyCTA } from "@/components/landing/AgencyCTA";
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export default function Home() {
   return (

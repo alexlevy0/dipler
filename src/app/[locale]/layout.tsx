@@ -4,7 +4,8 @@ import '../globals.css';
 import { cn } from '@/lib/utils';
 import { SmoothScroller } from '@/components/layout/SmoothScroller';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 
 const plusJakarta = Plus_Jakarta_Sans({ 
   subsets: ['latin'],
@@ -26,15 +27,36 @@ export const metadata: Metadata = {
   description: 'Build, deploy, and manage AI voice agents that sound human and act intelligently.',
 };
 
+// ✅ Génère les pages pour chaque locale
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// ✅ Fonction pour charger les messages statiquement
+async function getMessages(locale: string) {
+  try {
+    return (await import(`../../../messages/${locale}.json`)).default;
+  } catch {
+    return (await import(`../../../messages/${routing.defaultLocale}.json`)).default;
+  }
+}
+
 export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
-  const messages = await getMessages();
+  const { locale } = await params;
+  
+  // Vérifie que la locale est valide
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  // ✅ Charge les messages statiquement (pas de headers())
+  const messages = await getMessages(locale);
 
   return (
     <html lang={locale} className="scroll-smooth">
@@ -44,7 +66,7 @@ export default async function RootLayout({
         jetbrainsMono.variable,
         "font-body antialiased min-h-screen flex flex-col"
       )}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <SmoothScroller>
             {children}
           </SmoothScroller>

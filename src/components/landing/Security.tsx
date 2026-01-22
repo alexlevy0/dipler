@@ -1,19 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Lock, Server, FileKey, CheckCircle2 } from "lucide-react";
+import { Lock, Server, FileKey, CheckCircle2, MapPin, Shield } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-
-const compliance = [
-  "SOC2 Type II Certified",
-  "HIPAA Compliant",
-  "GDPR & CCPA Ready",
-  "AES-256 Encryption",
-  "Single Sign-On (SSO)",
-  "Audit Logs & RBAC",
-];
+import { useTranslations } from "next-intl";
 
 export function Security() {
+  const t = useTranslations('Security');
+  const compliance = t.raw('items') as string[];
+
   return (
     <section className="py-32 bg-bg-secondary overflow-hidden relative">
       {/* Abstract Security Mesh */}
@@ -25,14 +20,14 @@ export function Security() {
           
           {/* Content */}
           <div className="lg:w-1/2">
-            <Badge variant="success" className="mb-6">Enterprise Trust</Badge>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-text-primary">
-              Bank-grade security,<br /> 
-              <span className="text-emerald-500">built-in.</span>
+            <Badge variant="success" className="mb-6">{t('badge')}</Badge>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-text-primary whitespace-pre-line">
+              {t.rich('title', {
+                color: (chunks) => <span className="text-emerald-500">{chunks}</span>
+              })}
             </h2>
             <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-               Dipler processes sensitive voice data with the highest security standards. 
-               We help you meet your compliance obligations from day one.
+               {t('subtitle')}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -45,14 +40,17 @@ export function Security() {
             </div>
 
             <div className="mt-10 flex gap-4">
-                 <div className="h-12 px-6 rounded-lg bg-white border border-border-light shadow-sm flex items-center justify-center">
-                    <span className="font-bold text-text-secondary">SOC2</span>
+                 <div className="h-12 px-6 rounded-lg bg-white border border-border-light shadow-sm flex items-center justify-center gap-2">
+                    <MapPin className="w-4 h-4 text-brand-primary" />
+                    <span className="font-bold text-text-secondary">{t('cards.france')}</span>
                  </div>
-                 <div className="h-12 px-6 rounded-lg bg-white border border-border-light shadow-sm flex items-center justify-center">
-                    <span className="font-bold text-text-secondary">HIPAA</span>
+                 <div className="h-12 px-6 rounded-lg bg-white border border-border-light shadow-sm flex items-center justify-center gap-2">
+                    <Shield className="w-4 h-4 text-emerald-500" />
+                    <span className="font-bold text-text-secondary">{t('cards.rgpd')}</span>
                  </div>
-                 <div className="h-12 px-6 rounded-lg bg-white border border-border-light shadow-sm flex items-center justify-center">
-                    <span className="font-bold text-text-secondary">ISO</span>
+                 <div className="h-12 px-6 rounded-lg bg-white border border-border-light shadow-sm flex items-center justify-center gap-2">
+                    <Lock className="w-4 h-4 text-purple-500" />
+                    <span className="font-bold text-text-secondary">{t('cards.encryption')}</span>
                  </div>
             </div>
           </div>
@@ -91,8 +89,8 @@ export function Security() {
                         <Server className="w-5 h-5 text-emerald-600" />
                     </div>
                     <div className="text-xs">
-                        <div className="text-emerald-600 font-bold mb-0.5">Encrypted</div>
-                        <div className="text-text-tertiary">Data at rest</div>
+                        <div className="text-emerald-600 font-bold mb-0.5">{t('shield.encryption.title')}</div>
+                        <div className="text-text-tertiary">{t('shield.encryption.desc')}</div>
                     </div>
                 </motion.div>
 
@@ -105,8 +103,8 @@ export function Security() {
                         <FileKey className="w-5 h-5 text-purple-600" />
                     </div>
                     <div className="text-xs">
-                        <div className="text-purple-600 font-bold mb-0.5">Access Control</div>
-                        <div className="text-text-tertiary">Role-Based</div>
+                        <div className="text-purple-600 font-bold mb-0.5">{t('shield.access.title')}</div>
+                        <div className="text-text-tertiary">{t('shield.access.desc')}</div>
                     </div>
                 </motion.div>
              </div>

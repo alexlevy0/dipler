@@ -8,39 +8,48 @@ import { Avatar } from "@/components/voice/Avatar";
 import { WaveformVisualizer } from "@/components/hero/WaveformVisualizer";
 import { Mic, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
-const useCases = [
-  { 
-    id: "healthcare", 
-    label: "Healthcare", 
-    role: "Medical Receptionist",
-    greeting: "Hi, this is Sarah from MedCare Clinic. I'm calling to confirm your appointment for tomorrow at 2 PM. Can you still make it?",
-    prompts: ["Yes, I can make it.", "Actually, I can't make 2PM, do you have anything later in the evening?", "Is there a preparation instruction?"]
-  },
-  { 
-    id: "realestate", 
-    label: "Real Estate", 
-    role: "Leasing Agent",
-    greeting: "Hello, Eric here from LuxLiving. I saw you were interested in the 2-bedroom unit downtown. Are you looking to move in soon?",
-    prompts: ["Yes, looking for next month.", "What are the amenities?", "Can I schedule a tour?"]
-  },
-  { 
-    id: "support", 
-    label: "Customer Support", 
-    role: "Support Hero",
-    greeting: "Thanks for calling Dipler Support. I see you're asking about API rate limits. Would you like me to upgrade your plan or explain the limits?",
-    prompts: ["Explain the limits, please.", "Upgrade my plan.", "Speak to a human."]
-  },
-];
+// Moved useCases inside component to use translations
+
+
 
 export function InteractiveDemo() {
-  const [activeCase, setActiveCase] = useState(useCases[0]);
+  const t = useTranslations('InteractiveDemo');
+
+  const useCases = [
+    { 
+      id: "healthcare", 
+      label: t('cases.healthcare.label'), 
+      role: t('cases.healthcare.role'),
+      greeting: t('cases.healthcare.greeting'),
+      prompts: [t('cases.healthcare.prompts.0'), t('cases.healthcare.prompts.1'), t('cases.healthcare.prompts.2')]
+    },
+    { 
+      id: "realestate", 
+      label: t('cases.realestate.label'), 
+      role: t('cases.realestate.role'),
+      greeting: t('cases.realestate.greeting'),
+      prompts: [t('cases.realestate.prompts.0'), t('cases.realestate.prompts.1'), t('cases.realestate.prompts.2')]
+    },
+    { 
+      id: "support", 
+      label: t('cases.support.label'), 
+      role: t('cases.support.role'),
+      greeting: t('cases.support.greeting'),
+      prompts: [t('cases.support.prompts.0'), t('cases.support.prompts.1'), t('cases.support.prompts.2')]
+    },
+  ];
+
+  const [activeCaseId, setActiveCaseId] = useState("healthcare");
+  const activeCase = useCases.find(c => c.id === activeCaseId) || useCases[0];
+
   const [isTalking, setIsTalking] = useState(false);
   const [conversation, setConversation] = useState<{role: 'ai' | 'user', text: string}[]>([]);
 
   // Reset conversation when switching cases
   const handleCaseChange = (c: typeof useCases[0]) => {
-      setActiveCase(c);
+      setActiveCaseId(c.id);
       setConversation([]);
       setIsTalking(false);
   };
@@ -68,10 +77,12 @@ export function InteractiveDemo() {
             <div className="md:w-1/3 space-y-8 sticky top-32">
                 <div>
                    <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
-                        Experience <span className="text-brand-primary">Conversation</span>
+                        {t.rich('title', {
+                            gradient: (chunks) => <span className="text-brand-primary">{chunks}</span>
+                        })}
                     </h2>
                     <p className="text-text-secondary text-lg leading-relaxed">
-                        Dipler agents understand context, nuance, and interruptions. Try it yourself.
+                        {t('subtitle')}
                     </p>
                 </div>
 
@@ -112,7 +123,7 @@ export function InteractiveDemo() {
                                     <h3 className="font-bold text-xl text-text-primary">Dipler Neural</h3>
                                     <div className="flex items-center gap-2 text-sm font-medium text-emerald-500">
                                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                        Active Now
+                                        {t('activeNow')}
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +201,7 @@ export function InteractiveDemo() {
                         </div>
                         
                         <Button className="w-full h-14 rounded-full text-lg shadow-xl shadow-brand-primary/25 hover:shadow-brand-primary/40 transition-all">
-                             <Mic className="w-5 h-5 mr-2" /> Start Talking
+                             <Mic className="w-5 h-5 mr-2" /> {t('startTalking')}
                         </Button>
                     </div>
                 </Card>

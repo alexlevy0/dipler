@@ -5,48 +5,51 @@ import { Card } from "@/components/ui/Card";
 import { SpotlightGrid } from "@/components/ui/SpotlightGrid";
 import { Shield, BarChart3, Globe, Code2, Users, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const features = [
-  {
-    title: "The 'Zero-Lag' Network",
-    description: "Don't let lag kill the vibe. Our edge network guarantees human-like pauses regardless of user location.",
-    icon: Globe,
-    className: "col-span-1 md:col-span-2 lg:col-span-2",
-    gradient: "from-blue-500/20 to-cyan-500/20",
-    hasBeam: true
-  },
-  {
-    title: "See what your agents hear",
-    description: "Monitor call quality, sentiment, and conversion rates live.",
-    icon: BarChart3,
-    className: "col-span-1",
-    gradient: "from-purple-500/20 to-pink-500/20"
-  },
-  {
-    title: "Ship agents without shipping code",
-    description: "Drag-and-drop flow editor for non-technical teams.",
-    icon: Code2,
-    className: "col-span-1",
-    gradient: "from-amber-500/20 to-orange-500/20"
-  },
-  {
-    title: "Bank-grade Compliance (SOC2)",
-    description: "SOC2 Type II compliant, HIPAA ready, and data encrypted at rest.",
-    icon: Shield,
-    className: "col-span-1 md:col-span-2 lg:col-span-1",
-    gradient: "from-emerald-500/20 to-green-500/20"
-  },
-  {
-    title: "Collaborative Workspaces",
-    description: "Invite your team, manage permissions, and share call logs.",
-    icon: Users,
-    className: "col-span-1 md:col-span-3 lg:col-span-2",
-    gradient: "from-indigo-500/20 to-violet-500/20",
-    hasBeam: true
-  }
-];
+import { useTranslations } from "next-intl";
 
 export function Features() {
+  const t = useTranslations('Features');
+
+  const features = [
+    {
+      title: t('items.latency.title'),
+      description: t('items.latency.desc'),
+      icon: Globe,
+      className: "col-span-1 md:col-span-2 lg:col-span-2",
+      gradient: "from-blue-500/20 to-cyan-500/20",
+      hasBeam: true
+    },
+    {
+      title: t('items.monitoring.title'),
+      description: t('items.monitoring.desc'),
+      icon: BarChart3,
+      className: "col-span-1",
+      gradient: "from-purple-500/20 to-pink-500/20"
+    },
+    {
+      title: t('items.nocode.title'),
+      description: t('items.nocode.desc'),
+      icon: Code2,
+      className: "col-span-1",
+      gradient: "from-amber-500/20 to-orange-500/20"
+    },
+    {
+      title: t('items.compliance.title'),
+      description: t('items.compliance.desc'),
+      icon: Shield,
+      className: "col-span-1 md:col-span-2 lg:col-span-1",
+      gradient: "from-emerald-500/20 to-green-500/20"
+    },
+    {
+      title: t('items.collab.title'),
+      description: t('items.collab.desc'),
+      icon: Users,
+      className: "col-span-1 md:col-span-3 lg:col-span-2",
+      gradient: "from-indigo-500/20 to-violet-500/20",
+      hasBeam: true
+    }
+  ];
+
   return (
     <section className="py-32 bg-bg-secondary relative" id="features">
       {/* Background decoration */}
@@ -61,7 +64,7 @@ export function Features() {
             className="flex items-center gap-2 justify-center mb-6"
            >
               <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider">
-                  Why Dipler?
+                  {t('badge')}
               </span>
            </motion.div>
            
@@ -70,10 +73,11 @@ export function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6 whitespace-pre-line"
           >
-            Everything you need to scale <br/>
-            <span className="text-gradient">Voice AI Operations</span>
+             {t.rich('title', {
+                 gradient: (chunks) => <span className="text-gradient">{chunks}</span>
+             })}
           </motion.h2>
         </div>
 

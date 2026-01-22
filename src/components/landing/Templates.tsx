@@ -6,57 +6,64 @@ import { Badge } from "@/components/ui/Badge";
 import { Phone, Calendar, Search, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SpotlightGrid } from "@/components/ui/SpotlightGrid";
+import { useTranslations } from "next-intl";
 
-const templates = [
-  {
-    title: "Inbound Support Agent",
-    description: "Handles Level 1 support queries, routes complex issues, and updates CRM tickets automatically.",
-    prompt: "You are a helpful support agent for specialized tech support...",
-    icon: Phone,
-    color: "from-blue-500/20 to-cyan-500/20",
-    text: "text-blue-600",
-    colSpan: "md:col-span-2",
-  },
-  {
-    title: "Appointment Setter",
-    description: "Qualifies leads and books meetings directly into Google Calendar.",
-    prompt: "Your goal is to find a suitable time for a demo...",
-    icon: Calendar,
-    color: "from-purple-500/20 to-pink-500/20",
-    text: "text-purple-600",
-    colSpan: "md:col-span-1",
-  },
-  {
-    title: "Outbound Survey",
-    description: "Conducts market research surveys with high completion rates.",
-    prompt: "Ask the user about their recent shopping experience...",
-    icon: Search,
-    color: "from-amber-500/20 to-orange-500/20",
-    text: "text-amber-600",
-    colSpan: "md:col-span-1",
-  },
-  {
-    title: "Real Estate Qualifier",
-    description: "Screens tenants and schedules property viewings 24/7.",
-    prompt: "Verify income requirements and move-in date...",
-    icon: Home,
-    color: "from-emerald-500/20 to-green-500/20",
-    text: "text-emerald-600",
-    colSpan: "md:col-span-2",
-  },
-];
+
 
 export function Templates() {
+  const t = useTranslations('Templates');
+
+  const templates = [
+    {
+      title: t('items.support.title'),
+      description: t('items.support.desc'),
+      prompt: "You are a helpful support agent for specialized tech support...", // Keeping english prompts for realism or translate? Usually prompts are in language of agent. I'll keep English or use simple string.
+      icon: Phone,
+      color: "from-blue-500/20 to-cyan-500/20",
+      text: "text-blue-600",
+      colSpan: "md:col-span-2",
+    },
+    {
+      title: t('items.appointment.title'),
+      description: t('items.appointment.desc'),
+      prompt: "Your goal is to find a suitable time for a demo...",
+      icon: Calendar,
+      color: "from-purple-500/20 to-pink-500/20",
+      text: "text-purple-600",
+      colSpan: "md:col-span-1",
+    },
+    {
+      title: t('items.survey.title'),
+      description: t('items.survey.desc'),
+      prompt: "Ask the user about their recent shopping experience...",
+      icon: Search,
+      color: "from-amber-500/20 to-orange-500/20",
+      text: "text-amber-600",
+      colSpan: "md:col-span-1",
+    },
+    {
+      title: t('items.realestate.title'),
+      description: t('items.realestate.desc'),
+      prompt: "Verify income requirements and move-in date...",
+      icon: Home,
+      color: "from-emerald-500/20 to-green-500/20",
+      text: "text-emerald-600",
+      colSpan: "md:col-span-2",
+    },
+  ];
+
   return (
     <section className="py-24 bg-bg-primary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <Badge variant="default" className="mb-6">Explore Library</Badge>
+          <Badge variant="default" className="mb-6">{t('badge')}</Badge>
           <h2 className="text-4xl font-display font-bold text-text-primary mb-6">
-            Don't start from <span className="text-gradient">scratch</span>
+            {t.rich('title', {
+                gradient: (chunks) => <span className="text-gradient">{chunks}</span>
+            })}
           </h2>
           <p className="text-xl text-text-secondary">
-            Deploy proven agent templates in seconds. Customizable to your needs.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -87,7 +94,7 @@ export function Templates() {
                     </p>
 
                     <div className="p-4 rounded-lg bg-white/60 border border-black/5 font-mono text-xs text-text-tertiary">
-                        <span className="opacity-50">System Prompt:</span><br/>
+                        <span className="opacity-50">{t('systemPrompt')}</span><br/>
                         {template.prompt}
                     </div>
                  </div>

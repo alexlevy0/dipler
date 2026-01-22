@@ -2,19 +2,15 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/navigation"; 
 import { Button } from "@/components/ui/Button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { name: "Features", href: "#features" },
-  { name: "Demo", href: "#demo" },
-  { name: "Use Cases", href: "#solutions" },
-  { name: "Pricing", href: "#pricing" },
-];
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export function Navbar() {
+  const t = useTranslations('Navbar');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("");
@@ -23,6 +19,13 @@ export function Navbar() {
   const navWidth = useTransform(scrollY, [0, 100], ["100%", "90%"]);
   const navTop = useTransform(scrollY, [0, 100], ["0px", "20px"]);
   const navRadius = useTransform(scrollY, [0, 100], ["0px", "9999px"]);
+
+  const navLinks = [
+    { name: t('features'), href: "#features" },
+    { name: t('demo'), href: "#demo" },
+    { name: t('useCases'), href: "#solutions" },
+    { name: t('pricing'), href: "#pricing" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,8 +82,9 @@ export function Navbar() {
 
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             <Button size="sm" variant="primary" className="hidden md:flex shadow-lg hover:shadow-glow transition-all">
-              Login
+              {t('login')}
             </Button>
             <button
               className="md:hidden p-2 text-text-primary"
@@ -114,8 +118,11 @@ export function Navbar() {
             ))}
             <hr className="border-border-light" />
              <Button size="lg" className="w-full">
-              Get Started <ArrowRight className="ml-2 w-4 h-4"/>
+              {t('getStarted')} <ArrowRight className="ml-2 w-4 h-4"/>
             </Button>
+            <div className="flex justify-center pt-4">
+                <LanguageSwitcher />
+            </div>
           </div>
       </motion.div>
     </>

@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { Calculator, DollarSign, TrendingUp } from "lucide-react";
-import { CountUp } from "@/components/animations/CountUp";
+import { TrendingUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ROICalculator() {
+  const t = useTranslations('ROICalculator');
   const [volume, setVolume] = useState(5000); // Calls per month
   const [cost, setCost] = useState(1.50); // Cost per min (human)
   const [duration, setDuration] = useState(5); // Msg duration in mins
@@ -30,12 +30,12 @@ export function ROICalculator() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="success" className="mb-6">Pure Profit</Badge>
+          <Badge variant="success" className="mb-6">{t('badge')}</Badge>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6">
-            Calculate your savings
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary">
-            See how much you save by switching from BPOs to Dipler Agents.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export function ROICalculator() {
                     <div className="lg:w-1/2 space-y-8">
                         <div>
                             <div className="flex justify-between mb-2">
-                                <label className="font-semibold text-text-primary">Monthly Call Volume</label>
+                                <label className="font-semibold text-text-primary">{t('labels.volume')}</label>
                                 <span className="text-brand-primary font-bold">{volume.toLocaleString()} calls</span>
                             </div>
                             <input 
@@ -61,7 +61,7 @@ export function ROICalculator() {
 
                         <div>
                             <div className="flex justify-between mb-2">
-                                <label className="font-semibold text-text-primary">Human Agent Cost</label>
+                                <label className="font-semibold text-text-primary">{t('labels.cost')}</label>
                                 <span className="text-brand-primary font-bold">${cost.toFixed(2)} / min</span>
                             </div>
                             <input 
@@ -71,12 +71,12 @@ export function ROICalculator() {
                                 onChange={(e) => setCost(Number(e.target.value))}
                                 className="w-full h-2 bg-bg-secondary rounded-lg appearance-none cursor-pointer accent-brand-primary"
                             />
-                            <p className="text-xs text-text-tertiary mt-2">Industry average: $1.50/min</p>
+                            <p className="text-xs text-text-tertiary mt-2">{t('labels.industry')}</p>
                         </div>
 
                         <div>
                             <div className="flex justify-between mb-2">
-                                <label className="font-semibold text-text-primary">Avg. Call Duration</label>
+                                <label className="font-semibold text-text-primary">{t('labels.duration')}</label>
                                 <span className="text-brand-primary font-bold">{duration} mins</span>
                             </div>
                             <input 
@@ -98,14 +98,14 @@ export function ROICalculator() {
                              
                              <div className="relative z-10">
                                  <div className="mb-8">
-                                     <p className="text-blue-100 font-medium mb-1">Estimated Monthly Savings</p>
+                                     <p className="text-blue-100 font-medium mb-1">{t('results.monthly')}</p>
                                      <div className="text-4xl md:text-5xl font-bold">
                                          {formatCurrency(monthlySavings)}
                                      </div>
                                  </div>
                                  
                                  <div className="pt-8 border-t border-white/20">
-                                     <p className="text-blue-100 font-medium mb-1">Yearly Savings</p>
+                                     <p className="text-blue-100 font-medium mb-1">{t('results.yearly')}</p>
                                      <div className="text-2xl md:text-3xl font-bold opacity-90">
                                          {formatCurrency(yearlySavings)}
                                      </div>
@@ -113,7 +113,7 @@ export function ROICalculator() {
                              </div>
                         </div>
                         <p className="text-center text-sm text-text-tertiary mt-6 italic">
-                            *Based on Dipler Pro pricing ($0.20/min) vs your current metrics.
+                            {t('note')}
                         </p>
                     </div>
 

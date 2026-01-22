@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && npx wrangler pages deploy out --project-name=dipler"
   },
   "dependencies": {
     "clsx": "^2.0.0",
@@ -14,6 +15,7 @@
     "lenis": "^1.3.17",
     "lucide-react": "^0.294.0",
     "next": "^15.5.2",
+    "next-intl": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.0.0"

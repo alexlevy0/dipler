@@ -13,7 +13,25 @@ const transcript = [
   { speaker: "Caller", text: "That's competitive. We were also looking at Vapi, but your latency claims are impressive." },
 ];
 
+import { useTranslations } from "next-intl";
+
 export function AnalyticsPreview() {
+  const t = useTranslations('AnalyticsPreview');
+  
+  const topics = [
+      t('tags.0'),
+      t('tags.1'),
+      t('tags.2'),
+      t('tags.3')
+  ];
+
+  const transcript = [
+      { speaker: "Agent", text: t('lines.0.text') },
+      { speaker: "Client", text: t('lines.1.text') }, // Note: Speaker labels also need translation or just keep simple. JSON has speaker keys.
+      { speaker: "Agent", text: t('lines.2.text') },
+      { speaker: "Client", text: t('lines.3.text') },
+  ];
+
   const [visibleLines, setVisibleLines] = useState(0);
   const [visibleTopics, setVisibleTopics] = useState(0);
 
@@ -34,12 +52,14 @@ export function AnalyticsPreview() {
     <section className="py-24 bg-bg-secondary overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <Badge variant="brand" className="mb-6">Real-Time Insights</Badge>
+          <Badge variant="brand" className="mb-6">{t('badge')}</Badge>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-text-primary">
-            See what your agents <span className="text-brand-primary">hear</span>
+            {t.rich('title', {
+                gradient: (chunks) => <span className="text-brand-primary">{chunks}</span>
+            })}
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            Live sentiment, topic detection, and full transcripts — all in one dashboard.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -54,9 +74,9 @@ export function AnalyticsPreview() {
           <div className="flex items-center justify-between px-6 py-4 border-b border-border-light bg-bg-tertiary">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-              <span className="font-semibold text-sm text-text-primary">Live Call: +1 (555) 123-4567</span>
+              <span className="font-semibold text-sm text-text-primary">{t('liveCall')}</span>
             </div>
-            <span className="text-xs text-text-tertiary font-mono">Duration: 02:34</span>
+            <span className="text-xs text-text-tertiary font-mono">02:34</span>
           </div>
 
           {/* Widgets Grid */}
@@ -65,7 +85,7 @@ export function AnalyticsPreview() {
             <div className="p-6 bg-white">
               <div className="flex items-center gap-2 mb-4 text-text-tertiary">
                 <TrendingUp size={16} />
-                <span className="text-xs uppercase tracking-wider font-semibold">Sentiment</span>
+                <span className="text-xs uppercase tracking-wider font-semibold">{t('sentiment')}</span>
               </div>
               <div className="h-20 flex items-end gap-1">
                 {Array.from({ length: 20 }).map((_, i) => {
@@ -82,14 +102,14 @@ export function AnalyticsPreview() {
                   );
                 })}
               </div>
-              <p className="text-xs text-text-tertiary mt-3">Overall: <span className="text-green-600 font-bold">Positive (78%)</span></p>
+              <p className="text-xs text-text-tertiary mt-3">{t('sentimentVal')}</p>
             </div>
 
             {/* Topics Widget */}
             <div className="p-6 bg-white">
               <div className="flex items-center gap-2 mb-4 text-text-tertiary">
                 <MessageCircle size={16} />
-                <span className="text-xs uppercase tracking-wider font-semibold">Topics Detected</span>
+                <span className="text-xs uppercase tracking-wider font-semibold">{t('topics')}</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {topics.slice(0, visibleTopics).map((topic) => (
@@ -109,7 +129,7 @@ export function AnalyticsPreview() {
             <div className="p-6 bg-white row-span-1 md:row-span-2 overflow-hidden">
               <div className="flex items-center gap-2 mb-4 text-text-tertiary">
                 <FileText size={16} />
-                <span className="text-xs uppercase tracking-wider font-semibold">Live Transcript</span>
+                <span className="text-xs uppercase tracking-wider font-semibold">{t('transcript')}</span>
               </div>
               <div className="space-y-3 text-sm max-h-48 overflow-y-auto hide-scrollbar">
                 {transcript.slice(0, visibleLines).map((line, i) => (

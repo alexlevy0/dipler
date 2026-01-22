@@ -1,0 +1,421 @@
+{
+  "Navbar": {
+    "features": "Features",
+    "demo": "Demo",
+    "useCases": "Use Cases",
+    "pricing": "Pricing",
+    "login": "Login",
+    "getStarted": "Get Started"
+  },
+  "Hero": {
+    "badge": "🇪🇺 European Voice AI – Production Ready",
+    "title": "The <gradient>White Label</gradient> Voice AI Infrastructure \nfor Agencies & Integrators.",
+    "subtitle": "Production-ready, hosted in Europe, GDPR compliant. Create your own voice offer without coding, n8n/Make compatible.",
+    "listenSamples": "Listen to Samples",
+    "bookCall": "Book a Call",
+    "demo": {
+      "label": "Interactive Demo",
+      "greeting": "\"Hi, I'm Dipler. Ask me anything...\"",
+      "listening": "Listening...",
+      "tap": "Tap the mic to talk"
+    },
+    "stats": {
+      "latency": "50ms median",
+      "latencyLabel": "Global Latency",
+      "polyglot": "French, Spanish +98 more",
+      "polyglotLabel": "Polyglot",
+      "scalability": "10k+ concurrent calls",
+      "scalabilityLabel": "Scalability"
+    }
+  },
+  "FloatingBadges": {
+    "partner": "Partner",
+    "partnerName": "Iris Audio (Clarity)",
+    "servers": "Servers",
+    "serversName": "France Hosting",
+    "compliance": "Compliance",
+    "complianceName": "GDPR Compliant"
+  },
+  "Metrics": {
+    "title": "Our True Strengths",
+    "subtitle": "No unrealistic marketing promises. Here is what Dipler actually delivers.",
+    "latency": "Audio-to-Audio Latency",
+    "latencyDesc": "Realistic and human",
+    "price": "Competitive Pricing",
+    "priceDesc": "Unbeatable price",
+    "rag": "Ultra-Fast RAG",
+    "ragDesc": "Analyzed in <1s",
+    "languages": "Languages & Accents",
+    "languagesDesc": "Focus Europe",
+    "support": "Reactive Support",
+    "supportDesc": "Dedicated engineers",
+    "setup": "Custom Dev Setup",
+    "setupDesc": "1 to 3 days"
+  },
+  "VisualBuilder": {
+    "badge": "Fluid AI",
+    "title": "<gradient>Contextual & Malleable</gradient> Intelligence",
+    "subtitle": "No rigid decision tree. Our voice AIs adapt dynamically to context, handle interruptions naturally, and navigate complex conversations.",
+    "capabilities": {
+      "adaptation": {
+        "title": "Dynamic Adaptation",
+        "desc": "AI adapts to context in real-time: background noise, time of day, user behavior."
+      },
+      "interruptions": {
+        "title": "Interruption Handling",
+        "desc": "Users can interrupt naturally. The AI reacts instantly without losing track."
+      },
+      "noTree": {
+        "title": "No Rigid Tree",
+        "desc": "Forget fixed decision trees. Our AI navigates fluidly through complex conversations."
+      },
+      "context": {
+        "title": "Contextual Responses",
+        "desc": "AI understands global context and adapts responses to tone, urgency, and customer history."
+      },
+      "api": {
+        "title": "API / Webhooks Control",
+        "desc": "Control your agents via REST API, Webhooks, or integrate directly with n8n and Make."
+      },
+      "memory": {
+        "title": "Conversational Memory",
+        "desc": "AI remembers past exchanges and personalizes every interaction."
+      }
+    },
+    "integration": "<bold>n8n & Make Compatible</bold> — Orchestrate your voice agents from your existing workflows via webhooks and REST API."
+  },
+  "VoiceGallery": {
+    "badge": "European Voices",
+    "title": "Styles that match <gradient>your brand</gradient>",
+    "subtitle": "Choose from over 50 ultra-realistic voices or clone your best agents instantly.",
+    "details": "Zero-latency language switching • Partnership with top secure European TTS providers"
+  },
+  "GlobalLatency": {
+    "badge": "European Quality",
+    "title": "European Quality & <highlight>Sound Isolation</highlight>",
+    "subtitle": "Infrastructure hosted in France, Iris Audio partnership for sound clarity, and native GDPR compliance.",
+    "features": {
+      "servers": {
+        "title": "Servers in Paris",
+        "desc": "Infrastructure hosted in France for minimal latency in Europe and native GDPR compliance."
+      },
+      "iris": {
+        "title": "Powered by Iris Audio",
+        "desc": "Advanced sound clarity technology for crystal clear calls even in noisy environments."
+      },
+      "detection": {
+        "title": "Answering Machine Detection",
+        "desc": "Automatic voicemail detection to optimize your outbound call campaigns."
+      },
+      "isolation": {
+        "title": "AI Sound Isolation",
+        "desc": "Intelligent background noise suppression on both caller and agent sides for optimal quality."
+      },
+      "latency": {
+        "title": "~500ms Audio-to-Audio",
+        "desc": "Realistic and comfortable latency for natural conversations, without unrealistic promises."
+      },
+      "data": {
+        "title": "Data in Europe",
+        "desc": "No data transfer outside EU. GDPR compliance guaranteed for your clients."
+      }
+    },
+    "trust": {
+      "paris": "Paris, France",
+      "rgpd": "Native GDPR",
+      "iris": "Iris Audio Partner"
+    }
+  },
+  "Pricing": {
+    "badge": "Integrator Club",
+    "title": "Join the Integrator Club",
+    "subtitle": "A one-time entry ticket, unbeatable rates, and everything you need to resell Dipler under your brand.",
+    "card": {
+      "title": "Agency & Integrator Access",
+      "subtitle": "Everything you need to launch your voice offer",
+      "price": "€5,000",
+      "priceLabel": "One-time entry ticket",
+      "highlights": {
+        "brand": { "title": "Your Brand", "desc": "100% Whitelabel Interface" },
+        "multi": { "title": "Multi-Clients", "desc": "Unlimited sub-accounts" },
+        "margin": { "title": "Your Margins", "desc": "Set your own prices" },
+        "support": { "title": "VIP Support", "desc": "Dedicated engineers" }
+      },
+      "usageTitle": "Unbeatable Usage Rate",
+      "usageSubtitle": "Resell with your own margins",
+      "usagePrice": "From €0.06",
+      "cta": "Talk to an Expert"
+    },
+    "features": [
+      "Full Whitelabel (your brand, your logo)",
+      "Unlimited client sub-accounts",
+      "Customizable margins per client",
+      "Priority support (<2h)",
+      "Full API Access",
+      "Dedicated Documentation & Training",
+      "Billing cycle management",
+      "Customizable minute limits"
+    ],
+    "bottomNote": "Generate new recurring revenue by reselling Dipler under your brand. We handle billing, you keep control."
+  },
+  "Infrastructure": {
+    "badge": "Data & Compliance First",
+    "title": "Compliance <gradient>without compromise</gradient>",
+    "subtitle": "Your European clients demand the highest level of data protection. Dipler is designed to meet these requirements.",
+    "pillars": {
+      "rgpd": {
+        "title": "Native GDPR",
+        "desc": "GDPR compliance built-in by design. No workarounds, no hacking.",
+        "features": ["Explicit consent", "Right to be forgotten", "Data portability", "Processing register"]
+      },
+      "europe": {
+        "title": "Data in Europe",
+        "desc": "All your data is stored and processed exclusively on French servers.",
+        "features": ["Servers Paris, France", "No transfer outside EU", "Local Backups", "Minimal Latency"]
+      },
+      "security": {
+        "title": "Bank-Grade Security",
+        "desc": "Security level equivalent to financial institutions for your sensitive data.",
+        "features": ["AES-256 Encryption", "TLS 1.3", "Audit logs", "Data Isolation"]
+      },
+      "privacy": {
+        "title": "Privacy by Design",
+        "desc": "Privacy is not an add-on, it's the foundation of our architecture.",
+        "features": ["Data minimization", "Anonymization", "Granular access", "Total transparency"]
+      }
+    }
+  },
+  "AgencyCTA": {
+    "badge": "Agency Model",
+    "title": "Generate new \nrecurring revenue",
+    "subtitle": "Resell Dipler under your brand. Set your margins, manage your clients, and let us handle the infrastructure.",
+    "benefits": {
+      "revenue": { "title": "Recurring Revenue", "desc": "Generate monthly revenue on every active client." },
+      "billing": { "title": "Integrated Billing", "desc": "We handle billing, you keep your margins." },
+      "multi": { "title": "Multi-Clients", "desc": "Unlimited sub-accounts with customizable minute limits." },
+      "cycles": { "title": "Flexible Cycles", "desc": "Define your own billing cycles per client." }
+    },
+    "example": "<bold>Example:</bold> With 10 clients at €500/mo and a Dipler cost of €200, you generate <bold>€3,000 recurring margin</bold> monthly.",
+    "cta": "Talk to an Expert",
+    "demo": "Book a Demo"
+  },
+  "DevExperience": {
+    "badge": "Integrations",
+    "title": "Connect your <gradient>existing stack</gradient>",
+    "subtitle": "Compatible with n8n, Make, and your custom scripts. Control your voice agents from your existing tools.",
+    "integrations": {
+      "n8n": { "title": "n8n & Make", "desc": "Orchestrate your agents from your existing workflows" },
+      "outbound": { "title": "Outbound Calls", "desc": "Automated and programmable call campaigns" },
+      "crm": { "title": "CRM Injection", "desc": "Enriched client context from your CRM" },
+      "memory": { "title": "AI Memory", "desc": "The agent remembers past conversations" },
+      "api": { "title": "REST API", "desc": "Total control via complete RESTful API" },
+      "pbx": { "title": "PBX Integrations", "desc": "Integration with your existing PBX and switchboards" }
+    },
+    "windowTitle": "trigger-call.js",
+    "bottomNote": "<bold>Advanced Features:</bold> Scheduled outbound calls • Phone switchboards • CRM Context Injection • Conversation Memory"
+  },
+  "Features": {
+     "badge": "Why Dipler?",
+     "title": "Everything you need to scale \n<gradient>Your Voice Operations</gradient>",
+     "items": {
+        "latency": { "title": "'Zero-Lag' Network", "desc": "Our edge network guarantees human-like pauses regardless of location." },
+        "monitoring": { "title": "Hear what your agents hear", "desc": "Monitor call quality, sentiment, and conversion rates live." },
+        "nocode": { "title": "Deploy without coding", "desc": "Visual flow editor for non-technical teams." },
+        "compliance": { "title": "Native GDPR Compliance", "desc": "Data hosted in France, AES-256 encryption, and privacy by design." },
+        "collab": { "title": "Collaborative Workspaces", "desc": "Invite your team, manage permissions, and share call logs." }
+     }
+  },
+  "UseCases": {
+    "title": "Built for every industry",
+    "subtitle": "Deploy specialized voice agents that understand the nuance of your sector.",
+    "items": {
+      "healthcare": { 
+        "industry": "Medical Scheduling", "title": "Medical Receptionist", 
+        "desc": "We automated 80% of appointment confirmations.", "stats": "40% reduction in no-shows",
+        "features": ["Appointment scheduling", "Prescription refills", "Insurance verification"]
+      },
+      "realestate": { 
+        "industry": "24/7 Qualification", "title": "Lead Qualification", 
+        "desc": "Our agents qualify leads at 3 AM and book meetings.", "stats": "24/7 lead coverage",
+        "features": ["Lead qualification", "Tour scheduling", "CRM sync"]
+      },
+      "ecommerce": { 
+        "industry": "L1 Customer Triage", "title": "Support & Order Status", 
+        "desc": "Handle 'Where is my order?' calls instantly.", "stats": "15% increase in CSAT",
+        "features": ["Order tracking", "Returns processing", "Product FAQs"]
+      },
+      "finance": { 
+        "industry": "Finance", "title": "Identity & Fraud", 
+        "desc": "Verify customer identity for sensitive transactions.", "stats": "GDPR Security",
+        "features": ["Identity verification", "Fraud detection", "Account unlocks"]
+      }
+    }
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about the platform.",
+    "items": [
+      { "q": "How does the pricing model work?", "a": "We charge per minute of conversation. You only pay for what you use." },
+      { "q": "Can I bring my own LLM?", "a": "Yes! On Pro plan and above, connect your custom LLM (GPT-4, Claude 3) via API key." },
+      { "q": "Is Dipler GDPR compliant?", "a": "Yes, Dipler is designed with GDPR in mind. Our servers are hosted in France." },
+      { "q": "What languages do you support?", "a": "We support over 150 languages with native accents." },
+      { "q": "What is the real latency?", "a": "Our edge network delivers median audio-to-audio latency of ~500ms." }
+    ]
+  },
+  "Security": {
+    "badge": "European Security",
+    "title": "Security and compliance,\n <color>without compromise.</color>",
+    "subtitle": "Dipler processes sensitive voice data with the highest European security standards.",
+    "items": ["Native GDPR", "France Hosting", "AES-256 Encryption", "Data in Europe", "SSO", "Audit Logs & RBAC"],
+    "cards": {
+      "france": "France",
+      "rgpd": "GDPR",
+      "encryption": "AES-256"
+    },
+    "shield": {
+      "encryption": { "title": "Encryption", "desc": "Data at rest" },
+      "access": { "title": "Access Control", "desc": "Role-Based" }
+    }
+  },
+  "Footer": {
+    "ctaTitle": "Ready to scale your \n <gradient>voice operations?</gradient>",
+    "ctaButton": "Get Started Now",
+    "desc": "The Voice AI Platform for modern teams.",
+    "cols": {
+      "product": "Product",
+      "solutions": "Solutions",
+      "developers": "Developers",
+      "company": "Company"
+    },
+    "bottom": {
+      "rights": "© 2025 Dipler Inc. All rights reserved.",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "security": "Security",
+      "madeIn": "Made in France"
+    }
+  },
+  "LogoCloud": {
+    "title": "Trusted by next-generation teams"
+  },
+  "AnalyticsPreview": {
+    "badge": "Real-Time Insights",
+    "title": "See what your agents <gradient>hear</gradient>",
+    "subtitle": "Live sentiment, topic detection, and full transcripts — all in one dashboard.",
+    "liveCall": "Live Call: +1 (555) 123-4567",
+    "sentiment": "Sentiment",
+    "sentimentVal": "Positive (78%)",
+    "topics": "Topics Detected",
+    "transcript": "Live Transcript",
+    "tags": ["Pricing Mentioned", "Competitor: Vapi", "Feature Request", "Decision Maker"],
+    "lines": [
+      { "speaker": "Agent", "text": "Hi! Thanks for calling Dipler support. How can I help you today?" },
+      { "speaker": "Caller", "text": "I'm interested in your Enterprise plan. Can you tell me about pricing?" },
+      { "speaker": "Agent", "text": "Absolutely! Our Enterprise plan starts at $0.12 per minute with volume discounts." },
+      { "speaker": "Caller", "text": "That's competitive. We were also looking at Vapi, but your latency claims are impressive." }
+    ]
+  },
+  "IntegrationBeam": {
+    "badge": "The Centerpiece",
+    "title": "Your entire stack, <gradient>connected</gradient>",
+    "nodes": {
+      "phone": "Phone Call", "webhook": "Webhook", "sms": "SMS",
+      "crm": "Update CRM", "slack": "Slack Alert", "email": "Send Email"
+    }
+  },
+  "HowItWorks": {
+    "title": "From idea to production in minutes",
+    "subtitle": "We've streamlined the process so you can focus on building great experiences.",
+    "steps": {
+      "build": { "title": "Build", "desc": "Design your agent with our visual builder. No coding required.", "details": "Drag and drop nodes to create complex conversation flows. Use our pre-built templates for healthcare, real estate, and more." },
+      "evaluate": { "title": "Evaluate", "desc": "Test with simulated calls and auto-QA.", "details": "Run thousands of simulated conversations to identify edge cases. Our AI evaluator provides instant feedback and improvement suggestions." },
+      "launch": { "title": "Launch", "desc": "Deploy with one click to phone, web, or app.", "details": "Purchase phone numbers instantly or bring your own. Embed the web widget with one line of code. Scale to infinity." }
+    }
+  },
+  "InteractiveDemo": {
+    "title": "Experience <gradient>Conversation</gradient>",
+    "subtitle": "Dipler agents understand context, nuance, and interruptions. Try it yourself.",
+    "activeNow": "Active Now",
+    "startTalking": "Start Talking",
+    "cases": {
+      "healthcare": { 
+        "label": "Healthcare", "role": "Medical Receptionist",
+        "greeting": "Hi, this is Sarah from MedCare Clinic. I'm calling to confirm your appointment for tomorrow at 2 PM. Can you still make it?",
+        "prompts": ["Yes, I can make it.", "Actually, I can't make 2PM, do you have anything later?", "Is there a preparation instruction?"]
+      },
+      "realestate": { 
+        "label": "Real Estate", "role": "Leasing Agent",
+        "greeting": "Hello, Eric here from LuxLiving. I saw you were interested in the 2-bedroom unit downtown. Are you looking to move in soon?",
+        "prompts": ["Yes, looking for next month.", "What are the amenities?", "Can I schedule a tour?"]
+      },
+      "support": { 
+        "label": "Customer Support", "role": "Support Hero",
+        "greeting": "Thanks for calling Dipler Support. I see you're asking about API rate limits. Would you like me to upgrade your plan or explain the limits?",
+        "prompts": ["Explain the limits, please.", "Upgrade my plan.", "Speak to a human."]
+      }
+    }
+  },
+  "Templates": {
+    "badge": "Explore Library",
+    "title": "Don't start from <gradient>scratch</gradient>",
+    "subtitle": "Deploy proven agent templates in seconds. Customizable to your needs.",
+    "systemPrompt": "System Prompt:",
+    "items": {
+      "support": { "title": "Inbound Support Agent", "desc": "Handles Level 1 support queries, routes complex issues, and updates CRM tickets automatically." },
+      "appointment": { "title": "Appointment Setter", "desc": "Qualifies leads and books meetings directly into Google Calendar." },
+      "survey": { "title": "Outbound Survey", "desc": "Conducts market research surveys with high completion rates." },
+      "realestate": { "title": "Real Estate Qualifier", "desc": "Screens tenants and schedules property viewings 24/7." }
+    }
+  },
+  "Integrations": {
+    "title": "The Neural Network of your stack",
+    "subtitle": "Dipler connects seamlessly with your existing tools. Real-time sync with CRMs, databases, and communication platforms."
+  },
+  "Comparison": {
+    "badge": "Unmatched",
+    "title": "Stop settling for <strike>legacy</strike>",
+    "cols": { "feature": "Feature", "ivr": "Legacy IVR", "generic": "Generic AI", "dipler": "Dipler" },
+    "rows": {
+      "latency": { "name": "Latency", "ivr": "2000ms+", "generic": "1500ms", "dipler": "500ms" },
+      "setup": { "name": "Setup Time", "ivr": "Months", "generic": "Weeks", "dipler": "Minutes" },
+      "interruptions": { "name": "Interruptions", "generic": "Limited" },
+      "sentiment": { "name": "Sentiment Analysis" },
+      "llm": { "name": "Custom LLM Support" },
+      "price": { "name": "Price Model", "ivr": "Contract", "generic": "Subscription", "dipler": "Pay-as-you-go" }
+    }
+  },
+  "Testimonials": {
+    "title": "Loved by engineering teams worldwide",
+    "items": [
+      { "quote": "Dipler's voice agents sound so natural, our customers often don't realize they're talking to an AI. It's been a game changer for our support team.", "role": "CTO, TechCorp" },
+      { "quote": "We moved from Vapi and never looked back. The visual builder makes it incredibly easy to iterate on conversation flows without engineering support.", "role": "VP Ops, HealthCo" },
+      { "quote": "The white-label feature is perfect for our agency. We've built a whole new revenue stream reselling voice agents to our clients.", "role": "Founder, ScaleAgency" },
+      { "quote": "Latency was our biggest issue with other providers. Dipler is consistently under 500ms, which makes the conversation feel real.", "role": "Lead Dev, Skynet Inc" },
+      { "quote": "The API is a joy to work with. Well documented, typed properly, and the support team is actually composed of engineers.", "role": "Engineering Manager, FinStart" },
+      { "quote": "Our booking rates increased by 40% when we switched to Dipler for outbound qualification calls.", "role": "Director of Sales, Realm" }
+    ]
+  },
+  "ROICalculator": {
+    "badge": "Pure Profit",
+    "title": "Calculate your savings",
+    "subtitle": "See how much you save by switching from BPOs to Dipler Agents.",
+    "labels": {
+      "volume": "Monthly Call Volume",
+      "cost": "Human Agent Cost",
+      "duration": "Avg. Call Duration",
+      "industry": "Industry average: $1.50/min"
+    },
+    "results": {
+      "monthly": "Estimated Monthly Savings",
+      "yearly": "Yearly Savings"
+    },
+    "note": "*Based on Dipler Pro pricing ($0.20/min) vs your current metrics."
+  },
+  "CTA": {
+    "title": "Stop losing customers to hold music.",
+    "subtitle": "Deploy your first intelligent voice agent this afternoon. We give you $50 of credits to mess around.",
+    "start": "🚀 Start Building Free",
+    "sales": "📞 Talk to Sales",
+    "features": ["Sandbox environment ready", "Copy-paste API keys", "14-day Pro trial included"]
+  }
+}

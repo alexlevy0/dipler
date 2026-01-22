@@ -3,8 +3,10 @@
 import { cn } from "@/lib/utils";
 import { Mic, Database, MessageSquare, Phone, Webhook, CloudLightning } from "lucide-react";
 import { WordReveal } from "@/components/text/WordReveal";
+import { useTranslations } from "next-intl";
 
 export function Integrations() {
+  const t = useTranslations('Integrations');
   return (
     <section className="py-32 relative overflow-hidden bg-bg-primary">
        {/* Background Grid */}
@@ -17,11 +19,11 @@ export function Integrations() {
             <div className="lg:w-1/2 text-center lg:text-left">
                 <WordReveal 
                     as="h2"
-                    text="The Neural Network of your stack"
+                    text={t('title')}
                     className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6"
                 />
                 <p className="text-xl text-text-secondary mb-8 leading-relaxed">
-                    Dipler connects seamlessly with your existing tools. Real-time sync with CRMs, databases, and communication platforms.
+                    {t('subtitle')}
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4">

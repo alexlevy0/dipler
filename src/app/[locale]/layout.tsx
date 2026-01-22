@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import { cn } from '@/lib/utils';
 import { SmoothScroller } from '@/components/layout/SmoothScroller';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 const plusJakarta = Plus_Jakarta_Sans({ 
   subsets: ['latin'],
@@ -24,22 +26,29 @@ export const metadata: Metadata = {
   description: 'Build, deploy, and manage AI voice agents that sound human and act intelligently.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }) {
+  const {locale} = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <body className={cn(
         plusJakarta.variable,
         inter.variable,
         jetbrainsMono.variable,
         "font-body antialiased min-h-screen flex flex-col"
       )}>
-        <SmoothScroller>
-          {children}
-        </SmoothScroller>
+        <NextIntlClientProvider messages={messages}>
+          <SmoothScroller>
+            {children}
+          </SmoothScroller>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

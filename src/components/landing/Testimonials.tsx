@@ -5,52 +5,20 @@ import { Card } from "@/components/ui/Card";
 import { Star } from "lucide-react";
 import { WordReveal } from "@/components/text/WordReveal";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
-const testimonials = [
-  {
-    quote: "Dipler's voice agents sound so natural, our customers often don't realize they're talking to an AI. It's been a game changer for our support team.",
-    author: "John Techton",
-    role: "CTO, TechCorp",
-    avatar: "JT"
-  },
-  {
-    quote: "We moved from Vapi and never looked back. The visual builder makes it incredibly easy to iterate on conversation flows without engineering support.",
-    author: "Maria Rodriguez",
-    role: "VP Ops, HealthCo",
-    avatar: "MR"
-  },
-  {
-    quote: "The white-label feature is perfect for our agency. We've built a whole new revenue stream reselling voice agents to our clients.",
-    author: "James Chen",
-    role: "Founder, ScaleAgency",
-    avatar: "JC"
-  },
-  {
-    quote: "Latency was our biggest issue with other providers. Dipler is consistently under 500ms, which makes the conversation feel real.",
-    author: "Sarah Connor",
-    role: "Lead Dev, Skynet Inc",
-    avatar: "SC"
-  },
-  {
-    quote: "The API is a joy to work with. Well documented, typed properly, and the support team is actually composed of engineers.",
-    author: "David Kim",
-    role: "Engineering Manager, FinStart",
-    avatar: "DK"
-  },
-  {
-    quote: "Our booking rates increased by 40% when we switched to Dipler for outbound qualification calls.",
-    author: "Emily Watson",
-    role: "Director of Sales, Realm",
-    avatar: "EW"
-  }
-];
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  avatar: string;
+}
 
-// Split testimonials for masonry
-const column1 = [testimonials[0], testimonials[3], testimonials[1]];
-const column2 = [testimonials[1], testimonials[4], testimonials[2]];
-const column3 = [testimonials[2], testimonials[5], testimonials[0]];
+// Testimonials moved inside
 
-function TestimonialCard({ t, className }: { t: typeof testimonials[0], className?: string }) {
+
+
+function TestimonialCard({ t, className }: { t: Testimonial, className?: string }) {
     return (
         <Card className={cn("p-8 flex flex-col items-center text-center h-full bg-white/40 backdrop-blur-md border-white/40 hover:bg-white/60 transition-colors", className)}>
             <div className="flex gap-1 text-amber-400 mb-6">
@@ -74,7 +42,16 @@ function TestimonialCard({ t, className }: { t: typeof testimonials[0], classNam
     )
 }
 
-function MarqueeColumn({ items, duration, reverse = false }: { items: typeof testimonials, duration: number, reverse?: boolean }) {
+// Helper to split array
+const splitArray = <T,>(array: T[], numParts: number) => {
+    const result: T[][] = Array.from({ length: numParts }, () => []);
+    array.forEach((item, i) => {
+        result[i % numParts].push(item);
+    });
+    return result;
+}
+
+function MarqueeColumn({ items, duration, reverse = false }: { items: Testimonial[], duration: number, reverse?: boolean }) {
     return (
         <div className="relative flex flex-col gap-6 overflow-hidden h-[800px] mask-gradient-y">
             <motion.div
@@ -96,6 +73,56 @@ function MarqueeColumn({ items, duration, reverse = false }: { items: typeof tes
 }
 
 export function Testimonials() {
+  const t = useTranslations('Testimonials');
+
+  const testimonials: Testimonial[] = [
+    {
+      quote: t('items.0.quote'),
+      author: "John Techton",
+      role: t('items.0.role'),
+      avatar: "JT"
+    },
+    {
+      quote: t('items.1.quote'),
+      author: "Maria Rodriguez",
+      role: t('items.1.role'),
+      avatar: "MR"
+    },
+    {
+      quote: t('items.2.quote'),
+      author: "James Chen",
+      role: t('items.2.role'),
+      avatar: "JC"
+    },
+    {
+      quote: t('items.3.quote'),
+      author: "Sarah Connor",
+      role: t('items.3.role'),
+      avatar: "SC"
+    },
+    {
+      quote: t('items.4.quote'),
+      author: "David Kim",
+      role: t('items.4.role'),
+      avatar: "DK"
+    },
+    {
+      quote: t('items.5.quote'),
+      author: "Emily Watson",
+      role: t('items.5.role'),
+      avatar: "EW"
+    }
+  ];
+
+  // Specific ordering from original code:
+  // const column1 = [testimonials[0], testimonials[3], testimonials[1]];
+  // const column2 = [testimonials[1], testimonials[4], testimonials[2]];
+  // const column3 = [testimonials[2], testimonials[5], testimonials[0]];
+  
+  const column1 = [testimonials[0], testimonials[3], testimonials[1]];
+  const column2 = [testimonials[1], testimonials[4], testimonials[2]];
+  const column3 = [testimonials[2], testimonials[5], testimonials[0]];
+
   return (
     <section className="py-32 bg-bg-secondary overflow-hidden relative" id="testimonials">
       {/* Background Gradients */}
@@ -108,7 +135,7 @@ export function Testimonials() {
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <WordReveal 
             as="h2" 
-            text="Loved by engineering teams worldwide" 
+            text={t('title')}
             className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6"
           />
         </div>

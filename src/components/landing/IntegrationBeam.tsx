@@ -4,24 +4,29 @@ import { motion } from "framer-motion";
 import { Phone, Webhook, MessageSquare, Database, Slack, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export function IntegrationBeam() {
+  const t = useTranslations('IntegrationBeam');
+
   return (
     <section className="py-32 bg-bg-secondary overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-20">
-             <Badge variant="brand" className="mb-6">The Centerpiece</Badge>
+             <Badge variant="brand" className="mb-6">{t('badge')}</Badge>
              <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary">
-                 Your entire stack, <span className="text-gradient">connected</span>
+                 {t.rich('title', {
+                     gradient: (chunks) => <span className="text-gradient">{chunks}</span>
+                 })}
              </h2>
         </div>
 
         <div className="relative max-w-5xl mx-auto h-[400px] flex items-center justify-between">
             {/* Left: Triggers */}
             <div className="flex flex-col gap-12 z-10">
-                <Node icon={Phone} label="Phone Call" color="text-green-500" />
-                <Node icon={Webhook} label="Webhook" color="text-blue-500" />
-                <Node icon={MessageSquare} label="SMS" color="text-purple-500" />
+                <Node icon={Phone} label={t('nodes.phone')} color="text-green-500" />
+                <Node icon={Webhook} label={t('nodes.webhook')} color="text-blue-500" />
+                <Node icon={MessageSquare} label={t('nodes.sms')} color="text-purple-500" />
             </div>
 
             {/* Middle: Dipler Core */}
@@ -37,9 +42,9 @@ export function IntegrationBeam() {
 
             {/* Right: Actions */}
             <div className="flex flex-col gap-12 z-10">
-                <Node icon={Database} label="Update CRM" color="text-amber-500" align="right" />
-                <Node icon={Slack} label="Slack Alert" color="text-rose-500" align="right" />
-                <Node icon={Mail} label="Send Email" color="text-cyan-500" align="right" />
+                <Node icon={Database} label={t('nodes.crm')} color="text-amber-500" align="right" />
+                <Node icon={Slack} label={t('nodes.slack')} color="text-rose-500" align="right" />
+                <Node icon={Mail} label={t('nodes.email')} color="text-cyan-500" align="right" />
             </div>
 
             {/* SVG Beams */}

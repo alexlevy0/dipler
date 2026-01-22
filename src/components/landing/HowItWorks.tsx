@@ -4,36 +4,38 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/ui/Card";
 import { Workflow, PhoneCall, Rocket } from "lucide-react";
-
-const steps = [
-  {
-    id: 1,
-    title: "Build",
-    description: "Design your agent with our visual builder. No coding required.",
-    icon: Workflow,
-    details: "Drag and drop nodes to create complex conversation flows. Use our pre-built templates for healthcare, real estate, and more.",
-    image: "/images/step-build.svg" // Placeholder
-  },
-  {
-    id: 2,
-    title: "Evaluate",
-    description: "Test with simulated calls and auto-QA.",
-    icon: PhoneCall,
-    details: "Run thousands of simulated conversations to identify edge cases. Our AI evaluator provides instant feedback and improvement suggestions.",
-    image: "/images/step-evaluate.svg" // Placeholder
-  },
-  {
-    id: 3,
-    title: "Launch",
-    description: "Deploy with one click to phone, web, or app.",
-    icon: Rocket,
-    details: "Purchase phone numbers instantly or bring your own. Embed the web widget with one line of code. Scale to infinity.",
-    image: "/images/step-launch.svg" // Placeholder
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function HowItWorks() {
+  const t = useTranslations('HowItWorks');
   const containerRef = useRef(null);
+  
+  const steps = [
+    {
+      id: "1",
+      title: t('steps.build.title'),
+      description: t('steps.build.desc'),
+      icon: Workflow,
+      details: t('steps.build.details'),
+      image: "/images/step-build.svg"
+    },
+    {
+      id: "2",
+      title: t('steps.evaluate.title'),
+      description: t('steps.evaluate.desc'),
+      icon: PhoneCall,
+      details: t('steps.evaluate.details'),
+      image: "/images/step-evaluate.svg"
+    },
+    {
+      id: "3",
+      title: t('steps.launch.title'),
+      description: t('steps.launch.desc'),
+      icon: Rocket,
+      details: t('steps.launch.details'),
+      image: "/images/step-launch.svg"
+    },
+  ];
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"],
@@ -46,10 +48,10 @@ export function HowItWorks() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
-            From idea to production in minutes
+            {t('title')}
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            We've streamlined the process so you can focus on building great experiences.
+            {t('subtitle')}
           </p>
         </div>
 

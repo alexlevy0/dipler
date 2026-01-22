@@ -1,27 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, X, Minus } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/Badge";
+import { useTranslations } from "next-intl";
 
-const features = [
-  { name: "Latency", dipler: "500ms", ivr: "2000ms+", generic: "1500ms" },
-  { name: "Setup Time", dipler: "Minutes", ivr: "Months", generic: "Weeks" },
-  { name: "Interruptions", dipler: true, ivr: false, generic: "Limited" },
-  { name: "Sentiment Analysis", dipler: true, ivr: false, generic: true },
-  { name: "Custom LLM Support", dipler: true, ivr: false, generic: false },
-  { name: "Price Model", dipler: "Pay-as-you-go", ivr: "Contract", generic: "Subscription" },
-];
 
 export function Comparison() {
+  const t = useTranslations('Comparison');
+
+  const features = [
+    { name: t('rows.latency.name'), dipler: t('rows.latency.dipler'), ivr: t('rows.latency.ivr'), generic: t('rows.latency.generic') },
+    { name: t('rows.setup.name'), dipler: t('rows.setup.dipler'), ivr: t('rows.setup.ivr'), generic: t('rows.setup.generic') },
+    { name: t('rows.interruptions.name'), dipler: true, ivr: false, generic: t('rows.interruptions.generic') },
+    { name: t('rows.sentiment.name'), dipler: true, ivr: false, generic: true },
+    { name: t('rows.llm.name'), dipler: true, ivr: false, generic: false },
+    { name: t('rows.price.name'), dipler: t('rows.price.dipler'), ivr: t('rows.price.ivr'), generic: t('rows.price.generic') },
+  ];
   return (
     <section className="py-24 bg-bg-primary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-           <Badge variant="brand" className="mb-4">Unmatched</Badge>
+           <Badge variant="brand" className="mb-4">{t('badge')}</Badge>
            <h2 className="text-4xl font-display font-bold text-text-primary">
-               Stop settling for <span className="text-text-tertiary decoration-line-through">legacy</span>
+               {t.rich('title', {
+                   strike: (chunks: React.ReactNode) => <span className="text-text-tertiary decoration-line-through">{chunks}</span>
+               })}
            </h2>
         </div>
 
@@ -29,12 +33,12 @@ export function Comparison() {
             <table className="w-full text-left border-collapse bg-white">
                 <thead>
                     <tr className="bg-bg-secondary border-b border-border-light">
-                        <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4">Feature</th>
-                        <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4 text-center">Legacy IVR</th>
-                        <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4 text-center">Generic AI</th>
+                        <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4">{t('cols.feature')}</th>
+                        <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4 text-center">{t('cols.ivr')}</th>
+                        <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4 text-center">{t('cols.generic')}</th>
                         <th className="p-6 text-lg font-bold text-brand-primary w-1/4 text-center bg-brand-primary/5 border-l border-r border-brand-primary/10 relative">
                              <div className="absolute top-0 left-0 w-full h-1 bg-brand-primary" />
-                             Dipler
+                             {t('cols.dipler')}
                         </th>
                     </tr>
                 </thead>

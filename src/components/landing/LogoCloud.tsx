@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const logos = [
   { name: "Acme Corp", url: "https://logo.clearbit.com/acme.com", fallback: "ACME" },
@@ -14,13 +15,15 @@ const logos = [
 ];
 
 export function LogoCloud() {
+  const t = useTranslations('LogoCloud');
+
   return (
     <section className="py-12 border-y border-border-light bg-bg-secondary/50 overflow-hidden relative">
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,transparent,black,transparent)] opacity-50" />
       
       <div className="container mx-auto px-4 mb-8 text-center relative z-10">
         <p className="text-sm font-semibold text-text-tertiary uppercase tracking-wider">
-          Trusted by next-generation teams
+          {t('title')}
         </p>
       </div>
 

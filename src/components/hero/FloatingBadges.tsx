@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/Badge";
-import { ShieldCheck, Database, Globe, Zap, Cpu } from "lucide-react";
+import { Headphones, MapPin, ShieldCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function FloatingBadges() {
+  const t = useTranslations('FloatingBadges');
+
   const floatAnimation = (delay: number) => ({
     y: [0, -15, 0],
     rotate: [0, 2, 0, -2, 0],
@@ -24,12 +26,12 @@ export function FloatingBadges() {
       >
         <div className="glass p-3 rounded-2xl shadow-xl border border-white/60 transform rotate-6 hover:rotate-0 transition-transform duration-500 hover:scale-110 cursor-pointer">
            <div className="flex items-center gap-3">
-              <div className="bg-green-100 p-2 rounded-xl text-green-600">
-                  <ShieldCheck size={20} />
+              <div className="bg-purple-100 p-2 rounded-xl text-purple-600">
+                  <Headphones size={20} />
               </div>
               <div>
-                  <div className="text-xs text-text-secondary font-semibold">Security</div>
-                  <div className="text-sm font-bold text-text-primary">SOC2 Type II</div>
+                  <div className="text-xs text-text-secondary font-semibold">{t('partner')}</div>
+                  <div className="text-sm font-bold text-text-primary">{t('partnerName')}</div>
               </div>
            </div>
         </div>
@@ -42,11 +44,11 @@ export function FloatingBadges() {
          <div className="glass p-3 rounded-2xl shadow-xl border border-white/60 transform -rotate-3 hover:rotate-0 transition-transform duration-500 hover:scale-110 cursor-pointer">
            <div className="flex items-center gap-3">
               <div className="bg-blue-100 p-2 rounded-xl text-blue-600">
-                  <Globe size={20} />
+                  <MapPin size={20} />
               </div>
               <div>
-                  <div className="text-xs text-text-secondary font-semibold">Global</div>
-                  <div className="text-sm font-bold text-text-primary">100+ Langs</div>
+                  <div className="text-xs text-text-secondary font-semibold">{t('servers')}</div>
+                  <div className="text-sm font-bold text-text-primary">{t('serversName')}</div>
               </div>
            </div>
         </div>
@@ -58,12 +60,12 @@ export function FloatingBadges() {
       >
          <div className="glass p-3 rounded-2xl shadow-xl border border-white/60 transform rotate-3 hover:rotate-0 transition-transform duration-500 hover:scale-110 cursor-pointer">
            <div className="flex items-center gap-3">
-              <div className="bg-purple-100 p-2 rounded-xl text-purple-600">
-                  <Cpu size={20} />
+              <div className="bg-green-100 p-2 rounded-xl text-green-600">
+                  <ShieldCheck size={20} />
               </div>
               <div>
-                  <div className="text-xs text-text-secondary font-semibold">Model</div>
-                  <div className="text-sm font-bold text-text-primary">GPT-4o Ready</div>
+                  <div className="text-xs text-text-secondary font-semibold">{t('compliance')}</div>
+                  <div className="text-sm font-bold text-text-primary">{t('complianceName')}</div>
               </div>
            </div>
         </div>

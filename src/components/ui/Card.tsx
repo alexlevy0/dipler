@@ -19,7 +19,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         whileHover={hoverEffect ? { y: -5 } : undefined}
         transition={{ duration: 0.2 }}
         className={cn(
-          "bg-white/80 backdrop-blur-xl border border-white/60 shadow-sm overflow-hidden rounded-2xl relative",
+          "bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/60 dark:border-slate-700/60 shadow-sm overflow-hidden rounded-2xl relative",
           "group/card hover:border-brand-primary/30 hover:shadow-glow transition-all duration-500",
           className
         )}

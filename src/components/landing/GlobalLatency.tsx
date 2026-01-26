@@ -76,10 +76,15 @@ export function GlobalLatency() {
               viewport={{ once: true }}
               className={`p-6 rounded-2xl border transition-all duration-300 ${
                 feature.highlight 
-                  ? "bg-gradient-to-br from-brand-primary/5 to-accent-purple/5 border-brand-primary/20 shadow-lg" 
-                  : "bg-white border-border-light hover:shadow-md"
+                  ? "bg-white dark:bg-slate-800/90 border-brand-primary/30 dark:border-slate-700 shadow-lg relative overflow-hidden" 
+                  : "bg-white dark:bg-slate-800/80 border-border-light dark:border-slate-700 hover:shadow-md"
               }`}
             >
+              {/* Gradient overlay for highlighted cards */}
+              {feature.highlight && (
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-brand-secondary/5 to-transparent pointer-events-none" />
+              )}
+              <div className="relative z-10">
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
                 feature.highlight ? "bg-brand-primary/10" : "bg-bg-secondary"
               }`}>
@@ -87,6 +92,7 @@ export function GlobalLatency() {
               </div>
               <h3 className="text-xl font-bold text-text-primary mb-2">{feature.title}</h3>
               <p className="text-text-secondary leading-relaxed">{feature.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>

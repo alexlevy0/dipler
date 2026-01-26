@@ -12,7 +12,7 @@ export function FAQ() {
 
   return (
     <section className="py-24 bg-bg-secondary relative overflow-hidden" id="faq">
-       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-radial from-white to-transparent opacity-70 pointer-events-none" />
+       <div className="absolute inset-0 w-full h-full bg-gradient-radial from-white to-transparent opacity-70 pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -41,8 +41,8 @@ function FAQItem({ faq }: { faq: { q: string, a: string } }) {
         <motion.div 
             initial={false}
             className={cn(
-                "border border-border-light rounded-2xl bg-white overflow-hidden transition-all duration-300",
-                isOpen ? "shadow-md border-brand-primary/30" : "hover:border-brand-primary/20"
+                "border border-border-light dark:border-slate-700 rounded-2xl bg-white dark:bg-slate-800/50 overflow-hidden transition-all duration-300",
+                isOpen ? "shadow-md border-brand-primary/30 dark:border-brand-primary/50" : "hover:border-brand-primary/20 dark:hover:border-slate-600"
             )}
         >
             <button
@@ -54,7 +54,7 @@ function FAQItem({ faq }: { faq: { q: string, a: string } }) {
                 </span>
                 <div className={cn(
                     "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
-                    isOpen ? "bg-brand-primary text-white rotate-180" : "bg-bg-secondary text-text-secondary"
+                    isOpen ? "bg-brand-primary text-white rotate-180" : "bg-bg-secondary dark:bg-slate-700/50 text-text-secondary"
                 )}>
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                 </div>
@@ -71,7 +71,7 @@ function FAQItem({ faq }: { faq: { q: string, a: string } }) {
                         }}
                         transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
-                        <div className="px-6 pb-6 text-text-secondary leading-relaxed border-t border-dashed border-border-light pt-4 mx-6 mt-2">
+                        <div className="px-6 pb-6 text-text-secondary leading-relaxed border-t border-dashed border-border-light dark:border-slate-700/50 pt-4 mx-6 mt-2">
                             {faq.a}
                         </div>
                     </motion.div>

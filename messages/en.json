@@ -5,7 +5,10 @@
     "useCases": "Use Cases",
     "pricing": "Pricing",
     "login": "Login",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "themeToggle": "Toggle theme",
+    "themeDark": "Dark mode",
+    "themeLight": "Light mode"
   },
   "Hero": {
     "badge": "🇪🇺 European Voice AI – Production Ready",

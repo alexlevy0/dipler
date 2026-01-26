@@ -74,7 +74,7 @@ export function Pricing() {
                 {/* Highlights Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                   {highlights.map((highlight) => (
-                    <div key={highlight.title} className="p-4 bg-white/50 rounded-xl text-center">
+                    <div key={highlight.title} className="p-4 bg-white/50 dark:bg-slate-800/60 rounded-xl text-center border border-transparent dark:border-slate-700/30">
                       <div className="w-10 h-10 rounded-lg bg-brand-primary/10 flex items-center justify-center mx-auto mb-3">
                         <highlight.icon className="w-5 h-5 text-brand-primary" />
                       </div>
@@ -85,7 +85,7 @@ export function Pricing() {
                 </div>
 
                 {/* Usage Pricing */}
-                <div className="p-6 bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl border border-emerald-200 mb-12">
+                <div className="p-6 bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/50 dark:to-green-950/50 rounded-2xl border border-emerald-200 dark:border-emerald-800/30 mb-12">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
                       <h4 className="text-xl font-bold text-emerald-800">{t('card.usageTitle')}</h4>

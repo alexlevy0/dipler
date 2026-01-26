@@ -113,7 +113,7 @@ export function InteractiveDemo() {
 
             {/* Right Column: Interactive Widget - Minimalist */}
             <div className="md:w-2/3 w-full">
-                <Card className="min-h-[600px] flex flex-col relative overflow-hidden shadow-2xl shadow-brand-primary/20 border-white/50 bg-white/80 backdrop-blur-xl rounded-[2rem]">
+                <Card className="min-h-[600px] flex flex-col relative overflow-hidden shadow-2xl shadow-brand-primary/20 border-white/50 dark:border-slate-700/50 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-[2rem]">
                     
                     {/* Minimal Header */}
                         <div className="p-8 pb-4 flex items-center justify-between">
@@ -185,7 +185,7 @@ export function InteractiveDemo() {
                     </div>
 
                     {/* Controls */}
-                    <div className="p-6 bg-white/50 backdrop-blur-md mt-auto border-t border-white/50">
+                    <div className="p-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md mt-auto border-t border-white/50 dark:border-slate-700/50">
                         <div className="flex flex-wrap gap-2 mb-6">
                             {activeCase.prompts.map((prompt) => (
                                 <motion.button
@@ -193,7 +193,7 @@ export function InteractiveDemo() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => handlePromptClick(prompt)}
-                                    className="px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md text-sm text-text-secondary border border-border-light hover:border-brand-primary/30 transition-all font-medium"
+                                    className="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm hover:shadow-md text-sm text-text-secondary dark:text-text-primary border border-border-light dark:border-slate-700 hover:border-brand-primary/30 dark:hover:border-brand-primary/50 transition-all font-medium"
                                 >
                                     {prompt}
                                 </motion.button>

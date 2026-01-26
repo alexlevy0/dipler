@@ -31,7 +31,7 @@ export function IntegrationBeam() {
 
             {/* Middle: Dipler Core */}
             <div className="relative z-10">
-                <div className="w-32 h-32 rounded-3xl bg-white shadow-2xl flex items-center justify-center border border-border-light relative z-20">
+                <div className="w-32 h-32 rounded-3xl bg-white dark:bg-slate-800 shadow-2xl flex items-center justify-center border border-border-light dark:border-slate-700 relative z-20">
                     <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary">
                         Dipler
                     </div>
@@ -81,7 +81,7 @@ function Node({ icon: Icon, label, color, align = "left" }: any) {
             initial={{ opacity: 0, x: align === 'left' ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={cn("p-4 bg-white rounded-xl shadow-md border border-border-light flex items-center gap-3 w-48", align === 'right' && "flex-row-reverse text-right")}
+            className={cn("p-4 bg-white dark:bg-slate-800/90 rounded-xl shadow-md border border-border-light dark:border-slate-700 flex items-center gap-3 w-48", align === 'right' && "flex-row-reverse text-right")}
         >
             <div className={cn("p-2 rounded-lg bg-bg-secondary", color)}>
                 <Icon size={20} />

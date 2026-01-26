@@ -68,10 +68,10 @@ export function AnalyticsPreview() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto bg-white rounded-2xl border border-border-light shadow-2xl overflow-hidden"
+          className="max-w-5xl mx-auto bg-white dark:bg-slate-900 rounded-2xl border border-border-light dark:border-slate-700 shadow-2xl overflow-hidden"
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-border-light bg-bg-tertiary">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border-light dark:border-slate-700 bg-bg-tertiary dark:bg-slate-800/50">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
               <span className="font-semibold text-sm text-text-primary">{t('liveCall')}</span>
@@ -80,9 +80,9 @@ export function AnalyticsPreview() {
           </div>
 
           {/* Widgets Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border-light">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border-light dark:bg-slate-700">
             {/* Sentiment Widget */}
-            <div className="p-6 bg-white">
+            <div className="p-6 bg-white dark:bg-slate-800">
               <div className="flex items-center gap-2 mb-4 text-text-tertiary">
                 <TrendingUp size={16} />
                 <span className="text-xs uppercase tracking-wider font-semibold">{t('sentiment')}</span>
@@ -106,7 +106,7 @@ export function AnalyticsPreview() {
             </div>
 
             {/* Topics Widget */}
-            <div className="p-6 bg-white">
+            <div className="p-6 bg-white dark:bg-slate-800">
               <div className="flex items-center gap-2 mb-4 text-text-tertiary">
                 <MessageCircle size={16} />
                 <span className="text-xs uppercase tracking-wider font-semibold">{t('topics')}</span>
@@ -117,7 +117,7 @@ export function AnalyticsPreview() {
                     key={topic}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="px-3 py-1 bg-bg-secondary border border-border-light rounded-full text-xs text-text-secondary"
+                    className="px-3 py-1 bg-bg-secondary dark:bg-slate-700/50 border border-border-light dark:border-slate-600 rounded-full text-xs text-text-secondary"
                   >
                     {topic}
                   </motion.span>
@@ -126,7 +126,7 @@ export function AnalyticsPreview() {
             </div>
 
             {/* Transcript Widget */}
-            <div className="p-6 bg-white row-span-1 md:row-span-2 overflow-hidden">
+            <div className="p-6 bg-white dark:bg-slate-800 row-span-1 md:row-span-2 overflow-hidden">
               <div className="flex items-center gap-2 mb-4 text-text-tertiary">
                 <FileText size={16} />
                 <span className="text-xs uppercase tracking-wider font-semibold">{t('transcript')}</span>

@@ -82,10 +82,10 @@ export function UseCases() {
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-8">
-                                    <div className={cn("p-3 rounded-2xl bg-white shadow-sm ring-1 ring-black/5", useCase.textColor)}>
+                                    <div className={cn("p-3 rounded-2xl bg-white dark:bg-slate-900 shadow-sm ring-1 ring-black/5 dark:ring-slate-700/50", useCase.textColor)}>
                                         <useCase.icon size={32} />
                                     </div>
-                                    <span className={cn("px-3 py-1 rounded-full text-xs font-semibold bg-white shadow-sm ring-1 ring-black/5", useCase.textColor)}>
+                                    <span className={cn("px-3 py-1 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 shadow-sm ring-1 ring-black/5 dark:ring-slate-700/50", useCase.textColor)}>
                                         {t(`items.${useCase.id}.industry`)}
                                     </span>
                                 </div>
@@ -110,7 +110,7 @@ export function UseCases() {
                                     <div className="pt-6 border-t border-border-light/50 flex items-center justify-between">
                                         <span className="font-semibold text-text-primary">{t(`items.${useCase.id}.stats`)}</span>
                                         <div className={cn(
-                                            "w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110 bg-white shadow-sm ring-1 ring-black/5",
+                                            "w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110 bg-white dark:bg-slate-900 shadow-sm ring-1 ring-black/5 dark:ring-slate-700/50",
                                             useCase.textColor
                                         )}>
                                             <ArrowRight size={16} />

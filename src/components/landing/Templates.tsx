@@ -79,11 +79,11 @@ export function Templates() {
             >
               <Card className={cn("h-full p-8 flex flex-col justify-between hover:border-transparent", "bg-white")}>
                  {/* Gradient BG */}
-                 <div className={cn("absolute inset-0 bg-gradient-to-br opacity-50", template.color)} />
+                 <div className={cn("absolute inset-0 bg-gradient-to-br opacity-50 dark:opacity-30", template.color)} />
                  
                  <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-6">
-                        <div className={cn("p-3 rounded-xl bg-white/80 shadow-sm", template.text)}>
+                        <div className={cn("p-3 rounded-xl bg-white/80 dark:bg-slate-900/80 shadow-sm", template.text)}>
                             <template.icon size={24} />
                         </div>
                         <h3 className="text-xl font-bold text-text-primary">{template.title}</h3>
@@ -93,7 +93,7 @@ export function Templates() {
                         {template.description}
                     </p>
 
-                    <div className="p-4 rounded-lg bg-white/60 border border-black/5 font-mono text-xs text-text-tertiary">
+                    <div className="p-4 rounded-lg bg-white/60 dark:bg-slate-900/60 border border-black/5 dark:border-slate-600/30 font-mono text-xs text-text-tertiary">
                         <span className="opacity-50">{t('systemPrompt')}</span><br/>
                         {template.prompt}
                     </div>

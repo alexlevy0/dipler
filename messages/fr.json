@@ -5,7 +5,10 @@
     "useCases": "Cas d'usage",
     "pricing": "Tarifs",
     "login": "Connexion",
-    "getStarted": "Démarrer"
+    "getStarted": "Démarrer",
+    "themeToggle": "Changer de thème",
+    "themeDark": "Mode sombre",
+    "themeLight": "Mode clair"
   },
   "Hero": {
     "badge": "🇪🇺 IA Vocale Européenne – Production Ready",

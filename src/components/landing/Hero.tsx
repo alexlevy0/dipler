@@ -27,7 +27,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mb-8"
           >
-            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/50 backdrop-blur-md border border-brand-primary/20 text-brand-primary text-sm font-semibold shadow-sm hover:shadow-md transition-shadow cursor-default">
+            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border border-brand-primary/20 dark:border-brand-primary/40 text-brand-primary dark:text-brand-primary text-sm font-semibold shadow-sm hover:shadow-md transition-shadow cursor-default">
               <Sparkles className="w-4 h-4 text-accent-warning fill-accent-warning" />
               <span>{t('badge')}</span>
             </span>
@@ -81,7 +81,7 @@ export function Hero() {
              <FloatingBadges />
              
              {/* Main Card */}
-             <div className="relative glass rounded-[2.5rem] border border-white/40 shadow-2xl shadow-brand-primary/10 overflow-hidden p-8 md:p-14 z-20 bg-white/60 backdrop-blur-xl">
+             <div className="relative glass rounded-[2.5rem] border border-white/40 dark:border-slate-700/40 shadow-2xl shadow-brand-primary/10 overflow-hidden p-8 md:p-14 z-20 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl">
                 
                 {/* Decorative blobs inside card */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2" />
@@ -97,7 +97,7 @@ export function Hero() {
                     </h3>
                   </div>
 
-                  <div className="w-full h-32 bg-white/60 backdrop-blur-sm rounded-3xl flex items-center justify-center border border-white/50 shadow-inner relative overflow-hidden group">
+                  <div className="w-full h-32 bg-white/60 dark:bg-transparent backdrop-blur-sm rounded-3xl flex items-center justify-center border border-white/50 dark:border-transparent shadow-inner dark:shadow-none relative overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
                      {/* Ensure WaveformVisualizer accepts isActive prop */}
                     <WaveformVisualizer isActive={isDemoActive} />
@@ -124,7 +124,7 @@ export function Hero() {
                 </div>
                 
                 {/* Stats Grid */}
-                <div className="mt-12 pt-10 border-t border-border-light/50 grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white/30 -mx-8 md:-mx-14 -mb-8 md:-mb-14 p-8 backdrop-blur-sm">
+                <div className="mt-12 pt-10 border-t border-border-light/50 dark:border-slate-700/50 grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white/30 dark:bg-slate-800/30 -mx-8 md:-mx-14 -mb-8 md:-mb-14 p-8 backdrop-blur-sm">
                   <div className="group cursor-default">
                     <p className="text-3xl font-bold text-text-primary group-hover:text-brand-primary transition-colors duration-300">{t('stats.latency')}</p>
                     <p className="text-xs font-bold text-text-tertiary uppercase tracking-wider mt-1">{t('stats.latencyLabel')}</p>

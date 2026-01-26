@@ -4,13 +4,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "@/navigation"; 
 import { Button } from "@/components/ui/Button";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import { useTheme } from "@/hooks/useTheme";
 
 export function Navbar() {
   const t = useTranslations('Navbar');
+  const { theme, toggleTheme, mounted } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("");
@@ -43,7 +45,7 @@ export function Navbar() {
             "fixed left-0 right-0 z-50 mx-auto transition-all duration-500 ease-out border",
             "max-w-5xl", // Constrain max width for the floating island effect
             isScrolled 
-                ? "bg-white/70 backdrop-blur-xl shadow-glass border-white/20" 
+                ? "bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-glass border-white/20 dark:border-slate-700/50" 
                 : "bg-transparent border-transparent"
         )}
       >
@@ -57,7 +59,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center bg-bg-tertiary/50 p-1 rounded-full border border-white/10 backdrop-blur-md">
+          <nav className="hidden md:flex items-center bg-bg-tertiary/50 p-1 rounded-full border border-white/10 dark:border-slate-700/30 backdrop-blur-md">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -69,7 +71,7 @@ export function Navbar() {
                 {activeTab === link.name && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-white rounded-full shadow-sm"
+                    className="absolute inset-0 bg-white dark:bg-slate-700 rounded-full shadow-sm"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -83,6 +85,21 @@ export function Navbar() {
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
+            {/* Theme Toggle Button */}
+            {mounted && (
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full hover:bg-bg-tertiary transition-colors"
+                aria-label={t('themeToggle')}
+                title={theme === 'dark' ? t('themeLight') : t('themeDark')}
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-text-secondary hover:text-brand-primary transition-colors" />
+                ) : (
+                  <Moon className="w-5 h-5 text-text-secondary hover:text-brand-primary transition-colors" />
+                )}
+              </button>
+            )}
             <Button size="sm" variant="primary" className="hidden md:flex shadow-lg hover:shadow-glow transition-all">
               {t('login')}
             </Button>
@@ -103,7 +120,7 @@ export function Navbar() {
             opacity: mobileMenuOpen ? 1 : 0,
             height: mobileMenuOpen ? "100vh" : 0
         }}
-        className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl md:hidden overflow-hidden"
+        className="fixed inset-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl md:hidden overflow-hidden"
       >
           <div className="pt-24 px-6 flex flex-col gap-6">
             {navLinks.map((link) => (
@@ -120,8 +137,23 @@ export function Navbar() {
              <Button size="lg" className="w-full">
               {t('getStarted')} <ArrowRight className="ml-2 w-4 h-4"/>
             </Button>
-            <div className="flex justify-center pt-4">
+            <div className="flex justify-center items-center gap-4 pt-4">
                 <LanguageSwitcher />
+                {/* Theme Toggle in Mobile Menu */}
+                {mounted && (
+                  <button
+                    onClick={toggleTheme}
+                    className="p-2 rounded-full hover:bg-bg-tertiary transition-colors"
+                    aria-label={t('themeToggle')}
+                    title={theme === 'dark' ? t('themeLight') : t('themeDark')}
+                  >
+                    {theme === 'dark' ? (
+                      <Sun className="w-5 h-5 text-text-secondary hover:text-brand-primary transition-colors" />
+                    ) : (
+                      <Moon className="w-5 h-5 text-text-secondary hover:text-brand-primary transition-colors" />
+                    )}
+                  </button>
+                )}
             </div>
           </div>
       </motion.div>

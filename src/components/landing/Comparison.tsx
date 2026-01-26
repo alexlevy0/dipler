@@ -29,10 +29,10 @@ export function Comparison() {
            </h2>
         </div>
 
-        <div className="overflow-x-auto max-w-4xl mx-auto rounded-2xl border border-border-light shadow-lg">
-            <table className="w-full text-left border-collapse bg-white">
+        <div className="overflow-x-auto max-w-4xl mx-auto rounded-2xl border border-border-light dark:border-slate-700 shadow-lg">
+            <table className="w-full text-left border-collapse bg-white dark:bg-slate-800/90">
                 <thead>
-                    <tr className="bg-bg-secondary border-b border-border-light">
+                    <tr className="bg-bg-secondary dark:bg-slate-900/50 border-b border-border-light dark:border-slate-700">
                         <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4">{t('cols.feature')}</th>
                         <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4 text-center">{t('cols.ivr')}</th>
                         <th className="p-6 text-sm font-semibold text-text-secondary uppercase tracking-wider w-1/4 text-center">{t('cols.generic')}</th>

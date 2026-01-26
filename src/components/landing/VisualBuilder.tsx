@@ -78,7 +78,7 @@ export function VisualBuilder() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 bg-white rounded-2xl border border-border-light shadow-sm hover:shadow-lg transition-all duration-300 group"
+              className="p-6 bg-white dark:bg-slate-800/80 rounded-2xl border border-border-light dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
               <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center mb-4", capability.bgColor)}>
                 <capability.icon className={cn("w-6 h-6", capability.color)} />

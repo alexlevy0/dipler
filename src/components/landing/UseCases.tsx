@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
-import { ArrowRight, Activity, Building, ShoppingBag, Landmark } from "lucide-react";
+import { ArrowRight, Users, MessageSquare, Settings, BarChart3 } from "lucide-react";
 import { WordReveal } from "@/components/text/WordReveal";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
@@ -12,32 +12,32 @@ export function UseCases() {
 
   const cases = [
     {
-      id: "healthcare",
-      icon: Activity,
+      id: "leads",
+      icon: Users,
       color: "bg-blue-500",
       gradient: "from-blue-500/10 to-blue-600/10",
       borderColor: "group-hover:border-blue-500/50",
       textColor: "text-blue-600"
     },
     {
-      id: "realestate",
-      icon: Building,
+      id: "support",
+      icon: MessageSquare,
       color: "bg-emerald-500",
       gradient: "from-emerald-500/10 to-emerald-600/10",
       borderColor: "group-hover:border-emerald-500/50",
       textColor: "text-emerald-600"
     },
     {
-      id: "ecommerce",
-      icon: ShoppingBag,
+      id: "operations",
+      icon: Settings,
       color: "bg-purple-500",
       gradient: "from-purple-500/10 to-purple-600/10",
       borderColor: "group-hover:border-purple-500/50",
       textColor: "text-purple-600"
     },
     {
-      id: "finance",
-      icon: Landmark,
+      id: "kpis",
+      icon: BarChart3,
       color: "bg-amber-500",
       gradient: "from-amber-500/10 to-amber-600/10",
       borderColor: "group-hover:border-amber-500/50",

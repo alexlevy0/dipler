@@ -1,170 +1,329 @@
 {
   "Navbar": {
-    "features": "Fonctionnalités",
-    "demo": "Démo",
+    "features": "Solutions",
+    "demo": "Comment ça marche",
     "useCases": "Cas d'usage",
     "pricing": "Tarifs",
     "login": "Connexion",
-    "getStarted": "Démarrer",
+    "getStarted": "Réserver un appel",
     "themeToggle": "Changer de thème",
     "themeDark": "Mode sombre",
     "themeLight": "Mode clair"
   },
   "Hero": {
-    "badge": "🇪🇺 IA Vocale Européenne – Production Ready",
-    "title": "L'infrastructure IA Vocale <gradient>Marque Blanche</gradient> \npour les Agences & Intégrateurs.",
-    "subtitle": "Production-ready, hébergé en Europe, conforme RGPD. Créez votre propre offre vocale sans coder, compatible n8n/Make.",
-    "listenSamples": "Écouter des exemples",
-    "bookCall": "Réserver un appel",
+    "badge": "🚀 Automatisation sur-mesure – Technologies propriétaires",
+    "title": "Automatisez votre entreprise\n<gradient>comme un jeu vidéo</gradient>",
+    "subtitle": "Pilotez vos process depuis un tableau de bord intuitif. On audite, vous priorisez, on automatise. Votre dashboard grandit avec vous.",
+    "bookDemo": "Voir une démo",
+    "bookCall": "Réserver un audit gratuit",
     "demo": {
-      "label": "Démo Interactive",
-      "greeting": "\"Bonjour, je suis Dipler. Posez-moi une question...\"",
-      "listening": "Écoute en cours...",
-      "tap": "Appuyez pour parler"
+      "label": "Tableau de Bord",
+      "greeting": "Pilotez votre entreprise en un clic",
+      "status": "Tous les systèmes opérationnels",
+      "tap": "Explorez les widgets"
     },
     "stats": {
-      "latency": "Médiane 50ms",
-      "latencyLabel": "Latence Globale",
-      "polyglot": "Français, Espagnol +98",
-      "polyglotLabel": "Polyglotte",
-      "scalability": "10k+ appels simultanés",
-      "scalabilityLabel": "Scalabilité"
+      "processes": "+50 process",
+      "processesLabel": "Automatisés",
+      "availability": "24/7",
+      "availabilityLabel": "Disponibilité",
+      "savings": "-70%",
+      "savingsLabel": "Temps gagné"
     }
   },
   "FloatingBadges": {
-    "partner": "Partenaire",
-    "partnerName": "Iris Audio (Clarté)",
-    "servers": "Serveurs",
-    "serversName": "Hébergement France",
-    "compliance": "Conformité",
-    "complianceName": "RGPD Compliant"
+    "partner": "Technologies",
+    "partnerName": "100% Propriétaires",
+    "servers": "Support",
+    "serversName": "Équipe dédiée",
+    "compliance": "Approche",
+    "complianceName": "Sur-mesure"
   },
   "Metrics": {
-    "title": "Nos vraies forces",
-    "subtitle": "Pas de promesses marketing irréalistes. Voici ce que Dipler livre réellement.",
-    "latency": "Latence Audio-to-Audio",
-    "latencyDesc": "Réaliste et humain",
-    "price": "Tarif Compétitif",
-    "priceDesc": "Prix imbattable",
-    "rag": "RAG Ultra-Rapide",
-    "ragDesc": "Analysés en <1s",
-    "languages": "Langues & Accents",
-    "languagesDesc": "Focus Europe",
-    "support": "Support Réactif",
-    "supportDesc": "Ingénieurs dédiés",
-    "setup": "Setup Dev Spécifique",
-    "setupDesc": "1 à 3 jours"
+    "title": "Des résultats concrets",
+    "subtitle": "Pas de promesses vides. Voici ce que l'automatisation apporte réellement à nos clients.",
+    "timeSaved": "Temps économisé",
+    "timeSavedDesc": "Sur les tâches répétitives",
+    "availability": "Disponibilité",
+    "availabilityDesc": "Jours fériés inclus",
+    "leads": "Leads perdus",
+    "leadsDesc": "Zéro opportunité manquée",
+    "quality": "Qualité constante",
+    "qualityDesc": "Même standard, toujours",
+    "response": "Réponse immédiate",
+    "responseDesc": "Pas d'attente client",
+    "cost": "Coûts réduits",
+    "costDesc": "vs ressources humaines"
+  },
+  "ValueProposition": {
+    "badge": "Notre approche",
+    "title": "Trois piliers pour <gradient>transformer votre entreprise</gradient>",
+    "subtitle": "Une solution complète qui couvre vos process internes, vos canaux de communication, et votre pilotage.",
+    "pillars": {
+      "internal": {
+        "title": "Process Internes",
+        "desc": "Automatisez vos tâches récurrentes et vos workflows métier."
+      },
+      "external": {
+        "title": "Canaux Externes",
+        "desc": "IA sur tous vos points de contact client : chat, téléphone, email..."
+      },
+      "dashboard": {
+        "title": "Tableau de Bord",
+        "desc": "Pilotez votre entreprise avec des KPIs en temps réel."
+      }
+    }
+  },
+  "InternalAutomation": {
+    "badge": "Process Internes",
+    "title": "Automatisez vos <gradient>workflows métier</gradient>",
+    "subtitle": "Tâches régulières, triggers événementiels ou manuels. Vos process tournent sans vous.",
+    "triggers": {
+      "scheduled": {
+        "title": "Tâches programmées",
+        "desc": "Rapports quotidiens, synchros hebdomadaires, relances automatiques...",
+        "examples": ["Rapport de ventes chaque lundi", "Sync CRM → Compta", "Relance devis J+3"]
+      },
+      "event": {
+        "title": "Triggers événementiels",
+        "desc": "Réagissez instantanément aux événements métier.",
+        "examples": ["Nouvel email → Ticket créé", "Lead entrant → Qualification", "Changement statut CRM → Action"]
+      },
+      "manual": {
+        "title": "Triggers manuels",
+        "desc": "Un bouton dans votre interface pour déclencher n'importe quelle action.",
+        "examples": ["Générer un rapport", "Lancer une campagne", "Créer un dossier client"]
+      }
+    },
+    "bottomNote": "<bold>Possibilités infinies</bold> — Chaque trigger peut déclencher des chaînes d'actions complexes, conditionnelles, et personnalisées."
+  },
+  "ExternalAutomation": {
+    "badge": "Canaux Externes",
+    "title": "L'IA sur <gradient>tous vos points de contact</gradient>",
+    "subtitle": "Vos clients vous contactent 24/7 sur tous les canaux. L'IA répond, qualifie, et vous passe le relai au bon moment.",
+    "channels": {
+      "support": {
+        "title": "Support IA",
+        "desc": "Chatbot intelligent qui résout les demandes niveau 1 et escalade intelligemment."
+      },
+      "phone": {
+        "title": "Téléphonie IA",
+        "desc": "Secrétariat virtuel, prise de RDV, qualification d'appels entrants."
+      },
+      "widget": {
+        "title": "Widget site web",
+        "desc": "Bulle d'aide contextuelle intégrée à votre site."
+      },
+      "messaging": {
+        "title": "Messageries",
+        "desc": "SMS, Messenger, WhatsApp — réponses automatiques et intelligentes."
+      },
+      "qualification": {
+        "title": "Préqualification leads",
+        "desc": "Qualifiez vos prospects avant même de leur parler."
+      },
+      "callback": {
+        "title": "Rappels automatiques",
+        "desc": "Relances, confirmations, follow-ups sans intervention humaine."
+      }
+    },
+    "bottomNote": "<bold>Human-in-the-loop</bold> — L'IA vous passe le relai dans les conditions que vous définissez. Vous restez maître du process."
+  },
+  "DashboardPreview": {
+    "badge": "Pilotage",
+    "title": "Votre entreprise en <gradient>un coup d'œil</gradient>",
+    "subtitle": "KPIs en temps réel, statuts des automatisations, alertes et insights. Tout dans un tableau de bord personnalisé.",
+    "widgets": {
+      "kpis": "KPIs Business",
+      "processes": "Process Actifs",
+      "alerts": "Alertes",
+      "insights": "Insights IA"
+    },
+    "features": {
+      "realtime": "Données en temps réel",
+      "custom": "100% personnalisable",
+      "alerts": "Alertes intelligentes",
+      "mobile": "Accessible mobile"
+    }
+  },
+  "Benefits": {
+    "badge": "Avantages",
+    "title": "Pourquoi <gradient>automatiser</gradient> ?",
+    "subtitle": "Les bénéfices concrets de l'automatisation pour votre entreprise.",
+    "items": {
+      "scale": {
+        "title": "Scalabilité illimitée",
+        "desc": "Grandissez sans multiplier vos équipes. L'automatisation s'adapte à votre volume."
+      },
+      "quality": {
+        "title": "Qualité constante",
+        "desc": "Même standard de service 24/7. Pas de jour sans, pas de fatigue, pas d'erreur humaine."
+      },
+      "cost": {
+        "title": "Coûts réduits",
+        "desc": "Moins cher que l'humain sur les tâches répétitives. ROI mesurable."
+      },
+      "availability": {
+        "title": "Disponibilité 24/7",
+        "desc": "Ça travaille pendant que vous dormez. Week-ends, jours fériés, vacances."
+      },
+      "leads": {
+        "title": "Zéro lead perdu",
+        "desc": "Réponse immédiate à toute demande. Aucune opportunité ne passe à travers les mailles."
+      },
+      "speed": {
+        "title": "Réponse instantanée",
+        "desc": "Vos clients n'attendent plus. Satisfaction et fidélisation en hausse."
+      },
+      "insights": {
+        "title": "Insights automatiques",
+        "desc": "L'IA remonte des insights sur vos process, vos clients, votre marché."
+      },
+      "evolution": {
+        "title": "Amélioration continue",
+        "desc": "Améliorez vos automatisations en un clic. Itération rapide et incrémentale."
+      }
+    }
+  },
+  "HumanInTheLoop": {
+    "badge": "Contrôle",
+    "title": "Vous restez <gradient>maître du process</gradient>",
+    "subtitle": "L'IA ne remplace pas l'humain, elle l'augmente. Vous définissez les règles, l'IA les applique.",
+    "rules": {
+      "escalation": {
+        "title": "Escalade intelligente",
+        "desc": "L'IA détecte les cas complexes et vous passe la main automatiquement."
+      },
+      "validation": {
+        "title": "Validation humaine",
+        "desc": "Pour les décisions critiques, l'IA demande votre validation avant d'agir."
+      },
+      "override": {
+        "title": "Reprise de contrôle",
+        "desc": "Prenez le relai à tout moment. L'IA se met en pause instantanément."
+      },
+      "transparency": {
+        "title": "Transparence totale",
+        "desc": "Logs complets de chaque action. Vous savez exactement ce que l'IA fait."
+      }
+    }
   },
   "VisualBuilder": {
-    "badge": "IA Fluide",
-    "title": "Intelligence <gradient>Contextuelle & Malléable</gradient>",
-    "subtitle": "Pas d'arbre de décision rigide. Nos IA vocales s'adaptent dynamiquement au contexte, gèrent les interruptions naturellement, et naviguent dans des conversations complexes.",
+    "badge": "Technologies",
+    "title": "Intelligence <gradient>Contextuelle & Adaptative</gradient>",
+    "subtitle": "Nos IA s'adaptent dynamiquement au contexte, apprennent de vos process, et évoluent avec votre entreprise.",
     "capabilities": {
       "adaptation": {
         "title": "Adaptation Dynamique",
-        "desc": "L'IA s'adapte au contexte en temps réel : bruit ambiant, heure de la journée, comportement de l'utilisateur."
+        "desc": "L'IA s'adapte au contexte en temps réel : urgence, historique client, heure de la journée."
       },
-      "interruptions": {
-        "title": "Gestion des Interruptions",
-        "desc": "Les utilisateurs peuvent couper la parole naturellement. L'IA réagit instantanément sans perdre le fil."
+      "learning": {
+        "title": "Apprentissage Continu",
+        "desc": "Plus elle travaille, plus elle comprend vos process et s'améliore."
       },
       "noTree": {
-        "title": "Pas d'Arbre Rigide",
-        "desc": "Oubliez les arbres de décision figés. Notre IA navigue fluidement dans les conversations complexes."
+        "title": "Pas de Scripts Rigides",
+        "desc": "Oubliez les arbres de décision figés. Notre IA navigue fluidement dans les cas complexes."
       },
       "context": {
-        "title": "Réponses Contextuelles",
-        "desc": "L'IA comprend le contexte global et adapte ses réponses au ton, à l'urgence et à l'historique client."
+        "title": "Mémoire Contextuelle",
+        "desc": "L'IA se souvient des interactions passées et personnalise chaque échange."
       },
       "api": {
-        "title": "Pilotage API / Webhooks",
-        "desc": "Contrôlez vos agents via API REST, Webhooks, ou intégrez directement avec n8n et Make."
+        "title": "Intégrations Illimitées",
+        "desc": "Connectez tous vos outils existants via API. On s'adapte à votre stack."
       },
-      "memory": {
-        "title": "Mémoire Conversationnelle",
-        "desc": "L'IA se souvient des échanges passés et personnalise chaque interaction."
+      "custom": {
+        "title": "100% Sur-mesure",
+        "desc": "Chaque solution est conçue spécifiquement pour vos besoins. Pas de produit générique."
       }
     },
-    "integration": "<bold>Compatible n8n & Make</bold> — Orchestrez vos agents vocaux depuis vos workflows existants via webhooks et API REST."
-  },
-  "VoiceGallery": {
-    "badge": "Voix Européennes",
-    "title": "Styles qui correspondent à <gradient>votre marque</gradient>",
-    "subtitle": "Choisissez parmi plus de 50 voix ultra-réalistes ou clonez instantanément vos meilleurs agents.",
-    "details": "Passage d'une langue à l'autre sans latence • Partenariat avec les meilleurs providers TTS sécurisés européens"
+    "integration": "<bold>Technologies propriétaires</bold> — Développées en interne pour des performances et une flexibilité maximales."
   },
   "GlobalLatency": {
-    "badge": "Qualité Européenne",
-    "title": "Qualité Européenne & <highlight>Isolation Phonique</highlight>",
-    "subtitle": "Infrastructure hébergée en France, partenariat Iris Audio pour la clarté sonore, et conformité RGPD native.",
+    "badge": "Infrastructure",
+    "title": "Une équipe <highlight>dédiée à votre succès</highlight>",
+    "subtitle": "Pas de ticket support anonyme. Une équipe d'experts qui connaît votre entreprise et vos process.",
     "features": {
-      "servers": {
-        "title": "Serveurs à Paris",
-        "desc": "Infrastructure hébergée en France pour une latence minimale en Europe et conformité RGPD native."
+      "team": {
+        "title": "Équipe Dédiée",
+        "desc": "Un interlocuteur unique qui connaît votre contexte et vos objectifs."
       },
-      "iris": {
-        "title": "Powered by Iris Audio",
-        "desc": "Technologie de clarté sonore avancée pour des appels cristallins même en environnements bruyants."
+      "support": {
+        "title": "Support Réactif",
+        "desc": "Réponse rapide à toutes vos questions. On est là quand vous avez besoin."
       },
-      "detection": {
-        "title": "Détection Répondeur",
-        "desc": "Identification automatique des répondeurs pour optimiser vos campagnes d'appels sortants."
+      "evolution": {
+        "title": "Évolution Continue",
+        "desc": "On fait évoluer vos automatisations au fil de votre croissance."
       },
-      "isolation": {
-        "title": "Isolation Phonique IA",
-        "desc": "Suppression intelligente du bruit de fond côté appelant et agent pour une qualité optimale."
+      "formation": {
+        "title": "Formation Incluse",
+        "desc": "On forme vos équipes à utiliser efficacement le tableau de bord."
       },
-      "latency": {
-        "title": "~500ms Audio-to-Audio",
-        "desc": "Latence réaliste et confortable pour des conversations naturelles, sans promesses irréalistes."
+      "proactive": {
+        "title": "Suivi Proactif",
+        "desc": "On surveille vos automatisations et on vous alerte en cas de besoin."
       },
-      "data": {
-        "title": "Données en Europe",
-        "desc": "Aucun transfert de données hors UE. Conformité RGPD garantie pour vos clients."
+      "custom": {
+        "title": "Développement Sur-mesure",
+        "desc": "Besoin d'une fonctionnalité spécifique ? On la développe pour vous."
       }
     },
     "trust": {
-      "paris": "Paris, France",
-      "rgpd": "RGPD Natif",
-      "iris": "Iris Audio Partner"
+      "france": "Basés en France",
+      "experts": "Experts dédiés",
+      "custom": "100% Sur-mesure"
     }
   },
   "Pricing": {
-    "badge": "Club Intégrateur",
-    "title": "Rejoignez le Club Intégrateur",
-    "subtitle": "Un ticket d'entrée unique, des tarifs imbattables, et tout ce qu'il faut pour revendre Dipler sous votre marque.",
+    "badge": "Tarifs",
+    "title": "Commencez avec un audit",
+    "subtitle": "Pas de produit clé en main. Chaque solution est conçue sur-mesure après une analyse approfondie de vos besoins.",
     "card": {
-      "title": "Accès Agence & Intégrateur",
-      "subtitle": "Tout ce dont vous avez besoin pour lancer votre offre vocale",
-      "price": "5 000€",
-      "priceLabel": "Ticket d'entrée unique",
+      "title": "Audit Complet",
+      "subtitle": "Le point de départ de votre transformation",
+      "price": "500€",
+      "priceLabel": "Audit initial",
       "highlights": {
-        "brand": { "title": "Votre Marque", "desc": "Interface 100% whitelabel" },
-        "multi": { "title": "Multi-clients", "desc": "Sous-comptes illimités" },
-        "margin": { "title": "Vos Marges", "desc": "Fixez vos propres prix" },
-        "support": { "title": "Support VIP", "desc": "Ingénieurs dédiés" }
+        "analysis": { "title": "Analyse Process", "desc": "Cartographie complète" },
+        "priority": { "title": "Priorisation", "desc": "Recommandations claires" },
+        "roadmap": { "title": "Roadmap", "desc": "Plan d'action détaillé" },
+        "quote": { "title": "Devis", "desc": "Chiffrage précis" }
       },
-      "usageTitle": "Tarif à l'usage imbattable",
-      "usageSubtitle": "Revendez avec vos propres marges",
-      "usagePrice": "Dès 0.06€",
-      "cta": "Parler à un expert"
+      "includesTitle": "L'audit comprend",
+      "includes": [
+        "Entretien approfondi (1-2h) pour comprendre votre activité",
+        "Analyse de vos process actuels et points de friction",
+        "Identification des opportunités d'automatisation",
+        "Priorisation selon impact et faisabilité",
+        "Roadmap personnalisée avec étapes claires",
+        "Devis détaillé pour la mise en œuvre",
+        "Recommandations sur les quick wins"
+      ],
+      "cta": "Réserver mon audit"
     },
-    "features": [
-      "Whitelabel complet (votre marque, votre logo)",
-      "Sous-comptes clients illimités",
-      "Marges personnalisables par client",
-      "Support prioritaire (<2h)",
-      "Accès API complet",
-      "Documentation & Formation dédiées",
-      "Gestion des cycles de facturation",
-      "Limites de minutes personnalisables"
-    ],
-    "bottomNote": "Générez de nouveaux revenus récurrents en revendant Dipler sous votre marque. Nous gérons la facturation, vous gardez le contrôle."
+    "afterAudit": {
+      "title": "Après l'audit",
+      "subtitle": "La suite dépend de vos priorités et de votre budget.",
+      "points": [
+        "Devis sur-mesure selon les automatisations choisies",
+        "Développement progressif — vous décidez du rythme",
+        "Évolution continue — ajoutez des automatisations au fil du temps",
+        "Pas d'engagement long terme — payez ce que vous utilisez"
+      ]
+    },
+    "freeCall": {
+      "title": "Pas sûr de vous ?",
+      "subtitle": "Réservez un appel gratuit de 15 min pour en discuter, sans engagement.",
+      "cta": "Prendre RDV gratuitement"
+    },
+    "bottomNote": "Chaque entreprise est unique. C'est pourquoi on ne propose pas de solution générique mais un accompagnement personnalisé de A à Z."
   },
   "Infrastructure": {
-    "badge": "Data & Compliance First",
-    "title": "La conformité <gradient>sans compromis</gradient>",
-    "subtitle": "Vos clients européens exigent le meilleur niveau de protection des données. Dipler est conçu pour répondre à ces exigences.",
+    "badge": "Sécurité & Conformité",
+    "title": "La sécurité <gradient>sans compromis</gradient>",
+    "subtitle": "Vos données sont précieuses. On les traite avec le plus haut niveau de protection.",
     "pillars": {
       "rgpd": {
         "title": "RGPD Natif",
@@ -173,12 +332,12 @@
       },
       "europe": {
         "title": "Données en Europe",
-        "desc": "Toutes vos données sont stockées et traitées exclusivement sur des serveurs français.",
-        "features": ["Serveurs Paris, France", "Aucun transfert hors UE", "Backup locaux", "Latence minimale"]
+        "desc": "Toutes vos données sont stockées et traitées sur des serveurs européens.",
+        "features": ["Serveurs en France", "Aucun transfert hors UE", "Backup locaux", "Latence minimale"]
       },
       "security": {
         "title": "Sécurité Bancaire",
-        "desc": "Niveau de sécurité équivalent aux institutions financières pour vos données sensibles.",
+        "desc": "Niveau de sécurité équivalent aux institutions financières.",
         "features": ["Chiffrement AES-256", "TLS 1.3", "Audit logs", "Isolation des données"]
       },
       "privacy": {
@@ -189,109 +348,110 @@
     }
   },
   "AgencyCTA": {
-    "badge": "Modèle Agence",
-    "title": "Générez de nouveaux \nrevenus récurrents",
-    "subtitle": "Revendez Dipler sous votre marque. Fixez vos marges, gérez vos clients, et laissez-nous nous occuper de l'infrastructure.",
+    "badge": "Transformation",
+    "title": "Prêt à automatiser\nvotre entreprise ?",
+    "subtitle": "Commencez par un audit pour identifier les meilleures opportunités d'automatisation dans votre organisation.",
     "benefits": {
-      "revenue": { "title": "Revenus Récurrents", "desc": "Générez des revenus mensuels sur chaque client actif." },
-      "billing": { "title": "Facturation Intégrée", "desc": "Nous gérons la facturation, vous gardez vos marges." },
-      "multi": { "title": "Multi-Clients", "desc": "Sous-comptes illimités avec limites de minutes personnalisables." },
-      "cycles": { "title": "Cycles Flexibles", "desc": "Définissez vos propres cycles de facturation par client." }
+      "custom": { "title": "100% Sur-mesure", "desc": "Chaque solution adaptée à votre contexte." },
+      "progressive": { "title": "Évolution Progressive", "desc": "Automatisez à votre rythme." },
+      "control": { "title": "Contrôle Total", "desc": "Vous restez maître de vos process." },
+      "support": { "title": "Équipe Dédiée", "desc": "Un accompagnement personnalisé." }
     },
-    "example": "<bold>Exemple :</bold> Avec 10 clients à 500€/mois et un coût Dipler de 200€, vous générez <bold>3 000€ de marge récurrente</bold> mensuelle.",
-    "cta": "Parler à un expert",
-    "demo": "Réserver une démo"
+    "example": "<bold>Exemple :</bold> Un client a automatisé 80% de son suivi leads et économise 15h/semaine.",
+    "cta": "Réserver mon audit",
+    "demo": "Voir une démo"
   },
   "DevExperience": {
     "badge": "Intégrations",
     "title": "Connectez votre <gradient>stack existante</gradient>",
-    "subtitle": "Compatible n8n, Make, et vos scripts personnalisés. Pilotez vos agents vocaux depuis vos outils existants.",
+    "subtitle": "On s'adapte à vos outils, pas l'inverse. CRM, ERP, outils métier — tout se connecte.",
     "integrations": {
-      "n8n": { "title": "n8n & Make", "desc": "Orchestrez vos agents depuis vos workflows existants" },
-      "outbound": { "title": "Appels Sortants", "desc": "Campagnes d'appels automatisées et programmables" },
-      "crm": { "title": "Injection CRM", "desc": "Contexte client enrichi depuis votre CRM" },
-      "memory": { "title": "Mémoire IA", "desc": "L'agent se souvient des conversations passées" },
-      "api": { "title": "API REST", "desc": "Contrôle total via API RESTful complète" },
-      "pbx": { "title": "Standards Téléphoniques", "desc": "Intégration avec vos PBX et standards existants" }
+      "crm": { "title": "CRM", "desc": "Salesforce, HubSpot, Pipedrive, et tous les autres" },
+      "erp": { "title": "ERP & Compta", "desc": "Synchronisation bidirectionnelle de vos données" },
+      "communication": { "title": "Communication", "desc": "Email, téléphonie, chat, messageries" },
+      "custom": { "title": "Outils Métier", "desc": "Vos logiciels spécifiques connectés" },
+      "api": { "title": "APIs & Webhooks", "desc": "Intégration technique sur-mesure" },
+      "automation": { "title": "Plateformes", "desc": "n8n, Make, Zapier si besoin" }
     },
-    "windowTitle": "trigger-call.js",
-    "bottomNote": "<bold>Fonctionnalités avancées :</bold> Appels sortants programmés • Standards téléphoniques • Injection de contexte CRM • Mémoire des conversations"
+    "windowTitle": "integrations.json",
+    "bottomNote": "<bold>Flexibilité totale :</bold> Si votre outil n'est pas dans la liste, on trouve une solution. Notre équipe développe des connecteurs sur-mesure."
   },
   "Features": {
-     "badge": "Pourquoi Dipler ?",
-     "title": "Tout ce dont vous avez besoin pour scaler \n<gradient>Vos Opérations Vocales</gradient>",
+     "badge": "Pourquoi Dipler agency ?",
+     "title": "Tout ce dont vous avez besoin pour <gradient>automatiser votre entreprise</gradient>",
      "items": {
-        "latency": { "title": "Réseau 'Zéro-Lag'", "desc": "Notre réseau edge garantit des pauses humaines peu importe la localisation." },
-        "monitoring": { "title": "Ecoutez ce que vos agents entendent", "desc": "Monitorez la qualité d'appel, le sentiment, et les conversions en direct." },
-        "nocode": { "title": "Déployez sans coder", "desc": "Éditeur de flux visuel pour les équipes non-techniques." },
-        "compliance": { "title": "Conformité RGPD Native", "desc": "Données hébergées en France, chiffrement AES-256, et privacy by design." },
-        "collab": { "title": "Espaces Collaboratifs", "desc": "Invitez votre équipe, gérez les permissions, et partagez les logs d'appels." }
+        "custom": { "title": "100% Sur-mesure", "desc": "Pas de produit générique. Chaque solution est conçue pour vos besoins spécifiques." },
+        "dashboard": { "title": "Tableau de Bord Unifié", "desc": "Pilotez tous vos process depuis une interface intuitive façon jeu vidéo." },
+        "channels": { "title": "Tous les Canaux", "desc": "Support IA, téléphonie, chat, SMS, WhatsApp — on couvre tous vos points de contact." },
+        "humanloop": { "title": "Human-in-the-Loop", "desc": "L'IA vous passe le relai dans les conditions que vous définissez. Vous gardez le contrôle." },
+        "evolution": { "title": "Évolution Progressive", "desc": "Ajoutez des automatisations au fil du temps. Votre dashboard grandit avec vous." }
      }
   },
   "UseCases": {
-    "title": "Conçu pour chaque industrie",
-    "subtitle": "Déployez des agents vocaux spécialisés qui comprennent les nuances de votre secteur.",
+    "title": "Conçu pour chaque secteur",
+    "subtitle": "Des automatisations adaptées aux enjeux spécifiques de votre industrie.",
     "items": {
-      "healthcare": { 
-        "industry": "Prise de RDV Médical", "title": "Secrétaire Médical", 
-        "desc": "Nous avons automatisé 80% des confirmations de RDV.", "stats": "40% de réduction des no-shows",
-        "features": ["Prise de rendez-vous", "Renouvellement ordonnance", "Vérification assurance"]
+      "leads": { 
+        "industry": "Commercial", "title": "Gestion des Leads", 
+        "desc": "Préqualification automatique, scoring, relances intelligentes.", "stats": "0 lead perdu",
+        "features": ["Qualification automatique", "Scoring prédictif", "Relances personnalisées"]
       },
-      "realestate": { 
-        "industry": "Qualification 24/7", "title": "Qualification de Leads", 
-        "desc": "Nos agents qualifient les leads à 3h du matin et prennent RDV.", "stats": "Couverture leads 24/7",
-        "features": ["Qualification leads", "Planification visites", "Sync CRM"]
+      "support": { 
+        "industry": "Service Client", "title": "Support Automatisé", 
+        "desc": "L'IA résout le niveau 1, escalade intelligemment le reste.", "stats": "-60% tickets humains",
+        "features": ["Chatbot intelligent", "Escalade conditionnelle", "Base de connaissances IA"]
       },
-      "ecommerce": { 
-        "industry": "Service Client N1", "title": "Support & Suivi Commande", 
-        "desc": "Gérez les 'Où est ma commande ?' instantanément.", "stats": "15% d'augmentation CSAT",
-        "features": ["Suivi commande", "Gestion retours", "FAQ Produits"]
+      "operations": { 
+        "industry": "Opérations", "title": "Tâches Récurrentes", 
+        "desc": "Rapports, synchros, relances — tout tourne en automatique.", "stats": "15h/sem économisées",
+        "features": ["Rapports automatiques", "Sync multi-outils", "Alertes intelligentes"]
       },
-      "finance": { 
-        "industry": "Finance", "title": "Identité & Fraude", 
-        "desc": "Vérifiez l'identité client pour les transactions sensibles.", "stats": "Sécurité RGPD",
-        "features": ["Vérification d'identité", "Détection fraude", "Déblocage compte"]
+      "kpis": { 
+        "industry": "Direction", "title": "Pilotage KPIs", 
+        "desc": "Dashboard de pilotage mis à jour en temps réel.", "stats": "Décisions data-driven",
+        "features": ["KPIs temps réel", "Veille automatique", "Alertes seuils"]
       }
     }
   },
   "FAQ": {
     "title": "Questions Fréquentes",
-    "subtitle": "Tout ce que vous devez savoir sur la plateforme.",
+    "subtitle": "Tout ce que vous devez savoir avant de commencer.",
     "items": [
-      { "q": "Comment fonctionne le modèle de prix ?", "a": "Nous facturons à la minute de conversation. Vous ne payez que ce que vous utilisez." },
-      { "q": "Puis-je utiliser mon propre LLM ?", "a": "Oui ! Sur le plan Pro et supérieur, connectez votre LLM (GPT-4, Claude 3) via clé API." },
-      { "q": "Dipler est-il conforme au RGPD ?", "a": "Oui, Dipler est conçu avec le RGPD en tête. Nos serveurs sont hébergés en France." },
-      { "q": "Quelles langues supportez-vous ?", "a": "Nous supportons plus de 150 langues avec accents natifs." },
-      { "q": "Quelle est la latence réelle ?", "a": "Notre réseau edge délivre une latence audio-to-audio médiane de ~500ms." }
+      { "q": "Combien coûte une automatisation ?", "a": "Ça dépend de la complexité. L'audit à 500€ vous donnera un devis précis adapté à vos besoins spécifiques." },
+      { "q": "Combien de temps pour mettre en place ?", "a": "Les premiers quick wins peuvent être opérationnels en quelques jours. Les projets plus complexes prennent quelques semaines." },
+      { "q": "Faut-il changer nos outils actuels ?", "a": "Non, on s'adapte à votre stack existante. On connecte vos outils, on ne les remplace pas." },
+      { "q": "Et si l'IA se trompe ?", "a": "Vous définissez les règles d'escalade. L'IA vous passe le relai dans les cas que vous avez définis. Vous restez maître." },
+      { "q": "C'est vraiment 100% sur-mesure ?", "a": "Oui. On n'a pas de produit clé en main. Chaque solution est développée spécifiquement pour votre contexte." },
+      { "q": "Quel engagement de durée ?", "a": "Aucun engagement long terme. On travaille par projet. Vous payez ce que vous utilisez." }
     ]
   },
   "Security": {
-    "badge": "Sécurité Européenne",
-    "title": "Sécurité et conformité,\n <color>sans compromis.</color>",
-    "subtitle": "Dipler traite les données vocales sensibles avec les plus hauts standards de sécurité européens.",
-    "items": ["RGPD Natif", "Hébergement France", "Chiffrement AES-256", "Données en Europe", "SSO", "Audit Logs & RBAC"],
+    "badge": "Technologies Propriétaires",
+    "title": "Développées en interne,\n <color>pour vous.</color>",
+    "subtitle": "Nos technologies sont 100% propriétaires. Pas de dépendance à des tiers. Performance et flexibilité maximales.",
+    "items": ["IA Propriétaire", "Infrastructure Maison", "Connecteurs Sur-mesure", "Dashboard Custom", "APIs Dédiées", "Team Experte"],
     "cards": {
       "france": "France",
-      "rgpd": "RGPD",
-      "encryption": "AES-256"
+      "custom": "Sur-mesure",
+      "proprietary": "Propriétaire"
     },
     "shield": {
-      "encryption": { "title": "Chiffrement", "desc": "Données au repos" },
-      "access": { "title": "Contrôle d'accès", "desc": "Basé sur les rôles" }
+      "performance": { "title": "Performance", "desc": "Optimisé pour vous" },
+      "flexibility": { "title": "Flexibilité", "desc": "Sans limites" }
     }
   },
   "Footer": {
-    "ctaTitle": "Prêt à scaler vos \n <gradient>opérations vocales ?</gradient>",
-    "ctaButton": "Démarrer Maintenant",
-    "desc": "La plateforme IA Vocale pour les équipes modernes.",
+    "ctaTitle": "Prêt à transformer\n <gradient>votre entreprise ?</gradient>",
+    "ctaButton": "Réserver un audit",
+    "desc": "Automatisation sur-mesure pour les entreprises ambitieuses.",
     "cols": {
-      "product": "Produit",
-      "solutions": "Solutions",
-      "developers": "Développeurs",
+      "product": "Solutions",
+      "solutions": "Secteurs",
+      "developers": "Ressources",
       "company": "Entreprise"
     },
     "bottom": {
-      "rights": "© 2025 Dipler Inc. Tous droits réservés.",
+      "rights": "© 2025 Dipler agency. Tous droits réservés.",
       "privacy": "Confidentialité",
       "terms": "Conditions",
       "security": "Sécurité",
@@ -299,126 +459,127 @@
     }
   },
   "LogoCloud": {
-    "title": "Reconnu par les équipes de nouvelle génération"
+    "title": "Ils nous font confiance"
   },
   "AnalyticsPreview": {
-    "badge": "Insights Temps Réel",
-    "title": "Voyez ce que vos agents <gradient>entendent</gradient>",
-    "subtitle": "Sentiment en direct, détection de sujets et transcriptions complètes — le tout dans un seul tableau de bord.",
-    "liveCall": "Appel en cours : +33 6 12 34 56 78",
-    "sentiment": "Sentiment",
-    "sentimentVal": "Positif (78%)",
-    "topics": "Sujets Détectés",
-    "transcript": "Transcription Live",
-    "tags": ["Mention Tarif", "Concurrent: Vapi", "Demande Fonctionnalité", "Décideur"],
+    "badge": "Dashboard Live",
+    "title": "Voyez vos process <gradient>en action</gradient>",
+    "subtitle": "Statuts en temps réel, KPIs actualisés, alertes intelligentes — le tout dans un tableau de bord unifié.",
+    "liveStatus": "Dashboard en temps réel",
+    "kpis": "KPIs",
+    "kpisVal": "12 indicateurs actifs",
+    "processes": "Process Actifs",
+    "alerts": "Alertes",
+    "tags": ["Lead qualifié", "Ticket résolu", "Rapport généré", "Sync réussie"],
     "lines": [
-      { "speaker": "Agent", "text": "Bonjour ! Merci d'appeler le support Dipler. Comment puis-je vous aider ?" },
-      { "speaker": "Client", "text": "Je suis intéressé par votre plan Entreprise. Pouvez-vous me parler des tarifs ?" },
-      { "speaker": "Agent", "text": "Absolument ! Notre plan Entreprise commence à 0,12€ par minute avec des remises sur le volume." },
-      { "speaker": "Client", "text": "C'est compétitif. On regardait aussi Vapi, mais vos promesses de latence sont impressionnantes." }
+      { "type": "success", "text": "✓ Nouveau lead qualifié — Score: 85/100 — Assigné à: Commercial" },
+      { "type": "info", "text": "○ Rapport hebdo généré — Envoyé à: direction@entreprise.com" },
+      { "type": "success", "text": "✓ Ticket #1234 résolu par IA — Temps: 2min — Satisfaction: 5/5" },
+      { "type": "warning", "text": "⚡ Alerte: 3 leads non traités depuis 24h — Action recommandée" }
     ]
   },
   "IntegrationBeam": {
-    "badge": "La Pièce Maîtresse",
-    "title": "Toute votre stack, <gradient>connectée</gradient>",
+    "badge": "Orchestration",
+    "title": "Tous vos outils, <gradient>connectés</gradient>",
     "nodes": {
-      "phone": "Appel Téléphonique", "webhook": "Webhook", "sms": "SMS",
-      "crm": "Mise à jour CRM", "slack": "Alerte Slack", "email": "Envoi Email"
+      "crm": "CRM", "email": "Email", "phone": "Téléphone",
+      "chat": "Chat", "calendar": "Agenda", "dashboard": "Dashboard"
     }
   },
   "HowItWorks": {
-    "title": "De l'idée à la production en quelques minutes",
-    "subtitle": "Nous avons simplifié le processus pour que vous puissiez vous concentrer sur l'expérience client.",
+    "title": "De l'idée à l'automatisation en 4 étapes",
+    "subtitle": "Un process clair et transparent pour transformer votre entreprise.",
     "steps": {
-      "build": { "title": "Construire", "desc": "Designez votre agent avec notre éditeur visuel. Pas de code requis.", "details": "Glissez-déposez des nœuds pour créer des flux complexes. Utilisez nos modèles pour la santé, l'immobilier, et plus." },
-      "evaluate": { "title": "Évaluer", "desc": "Testez avec des appels simulés et l'auto-QA.", "details": "Lancez des milliers de conversations simulées pour identifier les cas limites. Notre évaluateur IA fournit des feedbacks instantanés." },
-      "launch": { "title": "Lancer", "desc": "Déployez en un clic sur téléphone, web ou app.", "details": "Démarrer avec un numéro instantanément ou portez le vôtre. Intégrez le widget web avec une ligne de code." }
+      "audit": { "title": "Audit", "desc": "On analyse vos process actuels et identifie les opportunités.", "details": "Entretien approfondi, cartographie de vos workflows, identification des points de friction et des quick wins." },
+      "prioritize": { "title": "Priorisation", "desc": "Vous choisissez ce qu'on automatise en premier.", "details": "On vous présente les options avec impact estimé et coût. Vous décidez selon vos priorités et votre budget." },
+      "deploy": { "title": "Déploiement", "desc": "On développe et met en place vos automatisations.", "details": "Développement sur-mesure, tests rigoureux, déploiement progressif. Formation de vos équipes incluse." },
+      "evolve": { "title": "Évolution", "desc": "Votre dashboard grandit avec vous au fil du temps.", "details": "Ajoutez de nouvelles automatisations quand vous le souhaitez. Amélioration continue basée sur vos retours." }
     }
   },
   "InteractiveDemo": {
-    "title": "Expérimentez la <gradient>Conversation</gradient>",
-    "subtitle": "Les agents Dipler comprennent le contexte, les nuances et les interruptions. Essayez vous-même.",
-    "activeNow": "Actif Maintenant",
-    "startTalking": "Commencer à Parler",
+    "title": "Expérimentez le <gradient>Dashboard</gradient>",
+    "subtitle": "Découvrez comment piloter votre entreprise depuis un tableau de bord unifié.",
+    "activeNow": "Demo Interactive",
+    "startExploring": "Explorer le Dashboard",
     "cases": {
-      "healthcare": { 
-        "label": "Santé", "role": "Secrétaire Médical",
-        "greeting": "Bonjour, ici Sarah de la Clinique MedCare. J'appelle pour confirmer votre RDV demain à 14h. Êtes-vous toujours disponible ?",
-        "prompts": ["Oui, je serai là.", "Je ne peux pas à 14h, avez-vous un créneau plus tard ?", "Y a-t-il des consignes ?"]
-      },
-      "realestate": { 
-        "label": "Immobilier", "role": "Agent Location",
-        "greeting": "Bonjour, c'est Eric de LuxLiving. J'ai vu que vous étiez intéressé par le T3 en centre-ville. Cherchez-vous à emménager bientôt ?",
-        "prompts": ["Oui, pour le mois prochain.", "Quels sont les équipements ?", "Puis-je visiter ?"]
+      "leads": { 
+        "label": "Leads", "role": "Gestion Commerciale",
+        "scenario": "Un nouveau lead arrive via votre site. L'IA le qualifie, l'assigne au bon commercial, et planifie une relance.",
+        "steps": ["Lead reçu — 10:34", "Qualifié automatiquement — Score: 82", "Assigné à Marie — Commercial Senior", "Relance planifiée — J+2"]
       },
       "support": { 
-        "label": "Service Client", "role": "Support Hero",
-        "greeting": "Merci d'appeler le Support Dipler. Je vois que vous demandez des infos sur les limites API. Voulez-vous augmenter votre plan ou des explications ?",
-        "prompts": ["Expliquez les limites SVP.", "Augmentez mon plan.", "Parler à un humain."]
+        "label": "Support", "role": "Service Client",
+        "scenario": "Un client pose une question. L'IA répond si c'est dans son scope, escalade sinon.",
+        "steps": ["Question reçue — 14:22", "Analyse IA — Catégorie: Facturation", "Réponse automatique envoyée", "Ticket fermé — Satisfaction: 5/5"]
+      },
+      "operations": { 
+        "label": "Opérations", "role": "Back-office",
+        "scenario": "Rapport hebdo généré et envoyé automatiquement à la direction.",
+        "steps": ["Lundi 8:00 — Trigger programmé", "Collecte données — 3 sources", "Rapport généré — PDF + Excel", "Envoyé à direction@entreprise.com"]
       }
     }
   },
   "Templates": {
-    "badge": "Explorer la Librairie",
-    "title": "Ne partez pas de <gradient>zéro</gradient>",
-    "subtitle": "Déployez des modèles d'agents prouvés en quelques secondes. Personnalisables selon vos besoins.",
-    "systemPrompt": "Prompt Système :",
+    "badge": "Exemples",
+    "title": "Inspirez-vous de <gradient>cas concrets</gradient>",
+    "subtitle": "Quelques exemples d'automatisations que nous avons mises en place pour nos clients.",
+    "systemPrompt": "Contexte :",
     "items": {
-      "support": { "title": "Agent Support Entrant", "desc": "Gère les demandes de niveau 1, route les problèmes complexes et met à jour les tickets CRM." },
-      "appointment": { "title": "Prise de Rendez-vous", "desc": "Qualifie les leads et réserve des réunions directement dans Google Calendar." },
-      "survey": { "title": "Sondage Sortant", "desc": "Mène des études de marché avec des taux de complétion élevés." },
-      "realestate": { "title": "Qualification Immo", "desc": "Filtre les locataires et planifie des visites 24/7." }
+      "qualification": { "title": "Qualification Leads", "desc": "Préqualification automatique des leads entrants avec scoring et assignation." },
+      "support": { "title": "Support N1 Automatisé", "desc": "L'IA répond aux questions courantes et escalade les cas complexes." },
+      "reports": { "title": "Rapports Automatiques", "desc": "Génération et envoi de rapports quotidiens/hebdos aux bonnes personnes." },
+      "sync": { "title": "Sync Multi-outils", "desc": "Synchronisation automatique entre CRM, compta, et outils métier." }
     }
   },
   "Integrations": {
     "title": "Le système nerveux de votre stack",
-    "subtitle": "Dipler se connecte parfaitement à vos outils existants. Synchro temps réel avec CRMs, bases de données et communication."
+    "subtitle": "Dipler agency se connecte à tous vos outils existants. Sync temps réel, bidirectionnelle, sans friction."
   },
   "Comparison": {
-    "badge": "Inégalé",
-    "title": "Arrêtez de vous contenter du <strike>legacy</strike>",
-    "cols": { "feature": "Fonctionnalité", "ivr": "IVR Héréditaire", "generic": "IA Générique", "dipler": "Dipler" },
+    "badge": "La différence",
+    "title": "Arrêtez de tout faire <strike>manuellement</strike>",
+    "cols": { "feature": "Aspect", "manual": "Process Manuel", "generic": "Solution Générique", "dipler": "Dipler agency" },
     "rows": {
-      "latency": { "name": "Latence", "ivr": "2000ms+", "generic": "1500ms", "dipler": "500ms" },
-      "setup": { "name": "Temps de Setup", "ivr": "Mois", "generic": "Semaines", "dipler": "Minutes" },
-      "interruptions": { "name": "Interruptions", "generic": "Limité" },
-      "sentiment": { "name": "Analyse Sentiment" },
-      "llm": { "name": "Support LLM Custom" },
-      "price": { "name": "Modèle Prix", "ivr": "Contrat", "generic": "Abonnement", "dipler": "Pay-as-you-go" }
+      "time": { "name": "Temps", "manual": "Des heures", "generic": "Moyen", "dipler": "Minutes" },
+      "quality": { "name": "Qualité", "manual": "Variable", "generic": "Standard", "dipler": "Constante" },
+      "availability": { "name": "Disponibilité", "manual": "Heures bureau", "generic": "Limité", "dipler": "24/7" },
+      "custom": { "name": "Personnalisation", "manual": "Oui", "generic": "Limitée", "dipler": "100%" },
+      "scale": { "name": "Scalabilité", "manual": "Difficile", "generic": "Limitée", "dipler": "Illimitée" },
+      "cost": { "name": "Modèle Prix", "manual": "Salaires", "generic": "Abonnement", "dipler": "Sur-mesure" }
     }
   },
   "Testimonials": {
-    "title": "Aimé par les équipes techniques mondiales",
+    "title": "Ce qu'en disent nos clients",
     "items": [
-      { "quote": "Les agents Dipler sonnent si naturels que nos clients ne réalisent pas qu'ils parlent à une IA. Ça a changé la donne pour notre support.", "role": "CTO, TechCorp" },
-      { "quote": "Nous avons quitté Vapi sans regret. Le constructeur visuel rend l'itération incroyablement facile sans besoin d'ingénieurs.", "role": "VP Ops, HealthCo" },
-      { "quote": "La fonction marque blanche est parfaite pour notre agence. Nous avons créé une nouvelle source de revenus en revendant des agents.", "role": "Fondateur, ScaleAgency" },
-      { "quote": "La latence était notre gros problème ailleurs. Dipler est constamment sous 500ms, ce qui rend la conversation réelle.", "role": "Lead Dev, Skynet Inc" },
-      { "quote": "L'API est un plaisir. Bien documentée, typée, et le support est composé de vrais ingénieurs.", "role": "Engineering Manager, FinStart" },
-      { "quote": "Nos taux de réservation ont augmenté de 40% en passant chez Dipler pour la qualification sortante.", "role": "Directeur Ventes, Realm" }
+      { "quote": "On a automatisé toute notre gestion de leads. Plus aucune opportunité ne passe à travers les mailles. Game changer.", "role": "Directeur Commercial, PME Tech" },
+      { "quote": "Le dashboard est incroyable. Je pilote mon entreprise comme un jeu vidéo. Tout est là, en temps réel.", "role": "CEO, Agence Marketing" },
+      { "quote": "L'approche sur-mesure fait toute la différence. Pas de compromis, exactement ce dont on avait besoin.", "role": "COO, E-commerce" },
+      { "quote": "L'IA gère 80% de notre support N1. L'équipe peut se concentrer sur les cas complexes.", "role": "Responsable Support, SaaS" },
+      { "quote": "On économise 15h par semaine sur les tâches répétitives. ROI atteint en 3 mois.", "role": "Fondateur, Startup" },
+      { "quote": "L'équipe est réactive et vraiment à l'écoute. Ils comprennent nos enjeux.", "role": "Directrice Ops, Retail" }
     ]
   },
   "ROICalculator": {
-    "badge": "Profit Pur",
-    "title": "Calculez vos économies",
-    "subtitle": "Voyez combien vous économisez en passant des BPOs aux Agents Dipler.",
+    "badge": "Estimations",
+    "title": "Estimez votre gain de temps",
+    "subtitle": "Calculez combien de temps vous pourriez économiser en automatisant vos tâches répétitives.",
     "labels": {
-      "volume": "Volume d'appels mensuel",
-      "cost": "Coût Agent Humain",
-      "duration": "Durée Moyenne",
-      "industry": "Moyenne industrie : 1.50€/min"
+      "hours": "Heures/semaine sur tâches répétitives",
+      "rate": "Coût horaire moyen",
+      "automation": "% automatisable (estimation)",
+      "industry": "Moyenne constatée : 60-80%"
     },
     "results": {
-      "monthly": "Économies Mensuelles Estimées",
-      "yearly": "Économies Annuelles"
+      "weekly": "Heures récupérées / semaine",
+      "yearly": "Économies annuelles estimées"
     },
-    "note": "*Basé sur le prix Dipler Pro (0.20€/min) vs vos métriques actuelles."
+    "note": "*Estimation indicative. L'audit vous donnera des chiffres précis adaptés à votre contexte."
   },
   "CTA": {
-    "title": "Arrêtez de perdre des clients avec la musique d'attente.",
-    "subtitle": "Déployez votre premier agent intelligent cet après-midi. Nous vous offrons 50€ de crédits pour tester.",
-    "start": "🚀 Commencer Gratuitement",
-    "sales": "📞 Parler aux Ventes",
-    "features": ["Environnement Sandbox prêt", "Clés API Copy-paste", "Essai Pro 14 jours inclus"]
+    "title": "Arrêtez de perdre du temps sur des tâches répétitives.",
+    "subtitle": "Réservez votre audit pour découvrir les opportunités d'automatisation dans votre entreprise.",
+    "start": "🚀 Réserver mon audit",
+    "sales": "📞 Appel gratuit 15 min",
+    "features": ["Audit complet 500€", "Devis sur-mesure", "Pas d'engagement"]
   }
 }

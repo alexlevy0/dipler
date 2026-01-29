@@ -9,12 +9,12 @@ export function Metrics() {
   const t = useTranslations('Metrics');
 
   const metrics = [
-    { icon: Clock, value: 500, suffix: "ms", label: t('latency'), description: t('latencyDesc') },
-    { icon: Euro, value: 0.06, suffix: "€/min", label: t('price'), description: t('priceDesc'), decimals: 2 },
-    { icon: BookOpen, value: 100, suffix: " romans", label: t('rag'), description: t('ragDesc') },
-    { icon: Globe, value: 150, suffix: "+", label: t('languages'), description: t('languagesDesc') },
-    { icon: Headphones, value: 2, suffix: "h", label: t('support'), description: t('supportDesc'), prefix: "<" },
-    { icon: Calendar, value: 3, suffix: " jours", label: t('setup'), description: t('setupDesc'), prefix: "1-" },
+    { icon: Clock, value: 70, suffix: "%", label: t('timeSaved'), description: t('timeSavedDesc'), prefix: "-" },
+    { icon: Calendar, value: 24, suffix: "/7", label: t('availability'), description: t('availabilityDesc') },
+    { icon: BookOpen, value: 0, suffix: "", label: t('leads'), description: t('leadsDesc') },
+    { icon: Headphones, value: 100, suffix: "%", label: t('quality'), description: t('qualityDesc') },
+    { icon: Globe, value: 0, suffix: "s", label: t('response'), description: t('responseDesc') },
+    { icon: Euro, value: 30, suffix: "%", label: t('cost'), description: t('costDesc'), prefix: "-" },
   ];
 
   return (
@@ -44,7 +44,7 @@ export function Metrics() {
                 </div>
                 <div className="text-3xl font-bold font-display text-text-primary">
                   {'prefix' in metric && <span>{metric.prefix}</span>}
-                  <CountUp end={metric.value} suffix={metric.suffix} decimals={metric.decimals} />
+                  <CountUp end={metric.value} suffix={metric.suffix} />
                 </div>
               </div>
               <h3 className="text-lg font-semibold text-text-primary mb-1">{metric.label}</h3>

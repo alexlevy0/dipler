@@ -3,17 +3,17 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { TrendingUp, CreditCard, Users, Clock, ArrowRight, Calendar } from "lucide-react";
+import { Wrench, TrendingUp, Lock, Headphones, ArrowRight, Calendar } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function AgencyCTA() {
   const t = useTranslations('AgencyCTA');
 
   const benefits = [
-    { icon: TrendingUp, title: t('benefits.revenue.title'), description: t('benefits.revenue.desc') },
-    { icon: CreditCard, title: t('benefits.billing.title'), description: t('benefits.billing.desc') },
-    { icon: Users, title: t('benefits.multi.title'), description: t('benefits.multi.desc') },
-    { icon: Clock, title: t('benefits.cycles.title'), description: t('benefits.cycles.desc') },
+    { icon: Wrench, title: t('benefits.custom.title'), description: t('benefits.custom.desc') },
+    { icon: TrendingUp, title: t('benefits.progressive.title'), description: t('benefits.progressive.desc') },
+    { icon: Lock, title: t('benefits.control.title'), description: t('benefits.control.desc') },
+    { icon: Headphones, title: t('benefits.support.title'), description: t('benefits.support.desc') },
   ];
 
   return (

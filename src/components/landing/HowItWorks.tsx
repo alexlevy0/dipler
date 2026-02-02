@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/ui/Card";
-import { Workflow, PhoneCall, Rocket } from "lucide-react";
+import { Search, ListTodo, Rocket, RefreshCw } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function HowItWorks() {
@@ -13,27 +13,35 @@ export function HowItWorks() {
   const steps = [
     {
       id: "1",
-      title: t('steps.build.title'),
-      description: t('steps.build.desc'),
-      icon: Workflow,
-      details: t('steps.build.details'),
-      image: "/images/step-build.svg"
+      title: t('steps.audit.title'),
+      description: t('steps.audit.desc'),
+      icon: Search,
+      details: t('steps.audit.details'),
+      image: "/images/step-audit.svg"
     },
     {
       id: "2",
-      title: t('steps.evaluate.title'),
-      description: t('steps.evaluate.desc'),
-      icon: PhoneCall,
-      details: t('steps.evaluate.details'),
-      image: "/images/step-evaluate.svg"
+      title: t('steps.prioritize.title'),
+      description: t('steps.prioritize.desc'),
+      icon: ListTodo,
+      details: t('steps.prioritize.details'),
+      image: "/images/step-prioritize.svg"
     },
     {
       id: "3",
-      title: t('steps.launch.title'),
-      description: t('steps.launch.desc'),
+      title: t('steps.deploy.title'),
+      description: t('steps.deploy.desc'),
       icon: Rocket,
-      details: t('steps.launch.details'),
-      image: "/images/step-launch.svg"
+      details: t('steps.deploy.details'),
+      image: "/images/step-deploy.svg"
+    },
+    {
+      id: "4",
+      title: t('steps.evolve.title'),
+      description: t('steps.evolve.desc'),
+      icon: RefreshCw,
+      details: t('steps.evolve.details'),
+      image: "/images/step-evolve.svg"
     },
   ];
   const { scrollYProgress } = useScroll({

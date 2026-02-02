@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Webhook, Phone, Database, Brain, Plug, MessageSquare } from "lucide-react";
+import { Database, Calculator, MessageCircle, Wrench, Code, Zap } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { useTranslations } from "next-intl";
@@ -28,12 +28,12 @@ export function DevExperience() {
   const t = useTranslations('DevExperience');
 
   const integrations = [
-    { icon: Webhook, title: t('integrations.n8n.title'), description: t('integrations.n8n.desc') },
-    { icon: Phone, title: t('integrations.outbound.title'), description: t('integrations.outbound.desc') },
     { icon: Database, title: t('integrations.crm.title'), description: t('integrations.crm.desc') },
-    { icon: Brain, title: t('integrations.memory.title'), description: t('integrations.memory.desc') },
-    { icon: Plug, title: t('integrations.api.title'), description: t('integrations.api.desc') },
-    { icon: MessageSquare, title: t('integrations.pbx.title'), description: t('integrations.pbx.desc') },
+    { icon: Calculator, title: t('integrations.erp.title'), description: t('integrations.erp.desc') },
+    { icon: MessageCircle, title: t('integrations.communication.title'), description: t('integrations.communication.desc') },
+    { icon: Wrench, title: t('integrations.custom.title'), description: t('integrations.custom.desc') },
+    { icon: Code, title: t('integrations.api.title'), description: t('integrations.api.desc') },
+    { icon: Zap, title: t('integrations.automation.title'), description: t('integrations.automation.desc') },
   ];
 
   return (

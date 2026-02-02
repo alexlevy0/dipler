@@ -1,5 +1,6 @@
 "use client";
 
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/ui/Card";
@@ -54,13 +55,17 @@ export function HowItWorks() {
   return (
     <section className="py-24 bg-bg-primary overflow-hidden" ref={containerRef}>
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
-            {t('title')}
-          </h2>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            {t('subtitle')}
-          </p>
+        <div className="text-center mb-20 max-w-2xl mx-auto">
+          <ScrollReveal width="100%">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
+                {t('title')}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal width="100%" delay={0.1}>
+            <p className="text-xl text-text-secondary mx-auto">
+                {t('subtitle')}
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
@@ -107,12 +112,11 @@ export function HowItWorks() {
 
                 {/* Visual Content */}
                 <div className="flex-1 w-full">
-                  <Card className="aspect-video bg-bg-tertiary/50 border-dashed border-2 flex items-center justify-center group overflow-hidden relative">
+                  <Card className="aspect-video bg-bg-tertiary/50 border-dashed border-2 flex items-center justify-center group overflow-hidden relative hover:scale-[1.02] transition-transform duration-500">
                     <div className="absolute inset-0 bg-gradient-to-br from-bg-accent to-bg-secondary opacity-50" />
                     <step.icon className="w-16 h-16 text-text-tertiary group-hover:text-brand-primary group-hover:scale-110 transition-all duration-500 z-10" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
-                         {/* Placeholder for actual UI preview */}
-                         <div className="w-3/4 h-3/4 bg-white shadow-xl rounded-lg transform rotate-2"></div>
+                         <div className="w-3/4 h-3/4 rounded-lg transform rotate-2"></div>
                     </div>
                   </Card>
                 </div>

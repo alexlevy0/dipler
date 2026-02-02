@@ -51,11 +51,16 @@ export function Navbar() {
       >
         <div className="flex h-16 items-center justify-between px-6 md:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl tracking-tight text-text-primary">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white shadow-lg shadow-brand-primary/20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 font-display font-bold text-xl tracking-tight text-text-primary group">
+            <motion.div 
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white shadow-lg shadow-brand-primary/20"
+            >
               D
-            </div>
-            Dipler
+            </motion.div>
+            <span className="group-hover:text-brand-primary transition-colors duration-300">Dipler</span>
           </Link>
 
           {/* Desktop Nav */}

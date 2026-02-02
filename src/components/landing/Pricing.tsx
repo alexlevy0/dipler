@@ -1,5 +1,6 @@
 "use client";
 
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Check, Search, ListTodo, Map, FileText, ArrowRight, Phone } from "lucide-react";
@@ -24,24 +25,26 @@ export function Pricing() {
     <section className="py-24 bg-bg-primary" id="pricing">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <Badge variant="brand" className="mb-6">{t('badge')}</Badge>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
-            {t('title')}
-          </h2>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            {t('subtitle')}
-          </p>
+          <ScrollReveal width="100%">
+            <Badge variant="brand" className="mb-6">{t('badge')}</Badge>
+          </ScrollReveal>
+          <ScrollReveal width="100%" delay={0.1}>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
+                {t('title')}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal width="100%" delay={0.2}>
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+                {t('subtitle')}
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Main Audit Card */}
           <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full relative overflow-hidden border-brand-primary/30 shadow-glow ring-1 ring-brand-primary/20 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl">
+            <ScrollReveal delay={0.2} width="100%" className="h-full">
+              <Card className="h-full relative overflow-hidden border-brand-primary/30 shadow-glow ring-1 ring-brand-primary/20 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl hover:shadow-2xl transition-shadow duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-transparent to-accent-purple/5 pointer-events-none" />
                 
                 <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
@@ -93,19 +96,14 @@ export function Pricing() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </ScrollReveal>
           </div>
 
           {/* Sidebar / After Audit */}
           <div className="space-y-6">
             {/* After Audit Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <Card className="p-8 bg-bg-secondary/50 border-dashed border-2 border-border-light h-full">
+            <ScrollReveal delay={0.4} width="100%" direction="left">
+              <Card className="p-8 bg-bg-secondary/50 border-dashed border-2 border-border-light h-full hover:bg-bg-secondary/80 transition-colors">
                 <h3 className="text-xl font-bold text-text-primary mb-2">{t('afterAudit.title')}</h3>
                 <p className="text-sm text-text-secondary mb-6">{t('afterAudit.subtitle')}</p>
                 <ul className="space-y-4">
@@ -119,16 +117,11 @@ export function Pricing() {
                   ))}
                 </ul>
               </Card>
-            </motion.div>
+            </ScrollReveal>
 
             {/* Free Call CTA */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <div className="p-6 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl border border-emerald-500/20 text-center">
+            <ScrollReveal delay={0.5} width="100%" direction="left">
+              <div className="p-6 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl border border-emerald-500/20 text-center hover:scale-[1.02] transition-transform duration-300">
                 <h3 className="font-bold text-emerald-700 dark:text-emerald-400 mb-2">{t('freeCall.title')}</h3>
                 <p className="text-xs text-text-secondary mb-4">{t('freeCall.subtitle')}</p>
                 <a href="https://calendly.com/free-call" target="_blank" rel="noopener noreferrer">
@@ -138,14 +131,16 @@ export function Pricing() {
                   </Button>
                 </a>
               </div>
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
 
         {/* Bottom Note */}
-        <p className="text-center text-text-tertiary mt-12 text-sm max-w-xl mx-auto italic">
-          {t('bottomNote')}
-        </p>
+        <ScrollReveal delay={0.6} width="100%">
+            <p className="text-center text-text-tertiary mt-12 text-sm max-w-xl mx-auto italic">
+            {t('bottomNote')}
+            </p>
+        </ScrollReveal>
       </div>
     </section>
   );

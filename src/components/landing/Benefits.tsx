@@ -1,5 +1,7 @@
 "use client";
 
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { StaggerContainer, staggerItem } from "@/components/animations/StaggerContainer";
 import { motion } from "framer-motion";
 import { 
   TrendingUp, 
@@ -34,49 +36,35 @@ export function Benefits() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="mb-16 text-center max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-2 justify-center mb-6"
-          >
-            <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider">
-              {t('badge')}
-            </span>
-          </motion.div>
+          <ScrollReveal>
+            <div className="flex items-center gap-2 justify-center mb-6">
+                <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                {t('badge')}
+                </span>
+            </div>
+          </ScrollReveal>
           
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6"
-          >
-            {t.rich('title', {
-              gradient: (chunks) => <span className="text-gradient">{chunks}</span>
-            })}
-          </motion.h2>
+          <ScrollReveal delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6">
+                {t.rich('title', {
+                gradient: (chunks) => <span className="text-gradient">{chunks}</span>
+                })}
+            </h2>
+          </ScrollReveal>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-text-secondary"
-          >
-            {t('subtitle')}
-          </motion.p>
+          <ScrollReveal delay={0.2}>
+            <p className="text-xl text-text-secondary">
+                {t('subtitle')}
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.key}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 + index * 0.08 }}
+              variants={staggerItem}
               className="group relative"
             >
               <div className="h-full bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/40 dark:border-slate-700/40 hover:bg-white/80 dark:hover:bg-slate-900/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
@@ -103,28 +91,24 @@ export function Benefits() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Summary Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-        >
-          {[
-            { value: "-70%", label: "Temps répétitif" },
-            { value: "24/7", label: "Disponibilité" },
-            { value: "0", label: "Lead perdu" },
-            { value: "3x", label: "Productivité" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-gradient mb-1">{stat.value}</p>
-              <p className="text-sm text-text-tertiary">{stat.label}</p>
+        <ScrollReveal delay={0.6} width="100%">
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+                { value: "-70%", label: "Temps répétitif" },
+                { value: "24/7", label: "Disponibilité" },
+                { value: "0", label: "Lead perdu" },
+                { value: "3x", label: "Productivité" },
+            ].map((stat, index) => (
+                <div key={index} className="text-center group cursor-default hover:scale-105 transition-transform duration-300">
+                <p className="text-3xl md:text-4xl font-bold text-gradient mb-1">{stat.value}</p>
+                <p className="text-sm text-text-tertiary group-hover:text-text-primary transition-colors">{stat.label}</p>
+                </div>
+            ))}
             </div>
-          ))}
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   );

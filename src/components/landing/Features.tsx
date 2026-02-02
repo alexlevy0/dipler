@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card } from "@/components/ui/Card";
 import { SpotlightGrid } from "@/components/ui/SpotlightGrid";
 import { Shield, BarChart3, Globe, Code2, Users, ArrowUpRight } from "lucide-react";
@@ -53,45 +53,31 @@ export function Features() {
   return (
     <section className="py-32 bg-bg-secondary relative" id="features">
       {/* Background decoration */}
-     <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
-     
+      <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none" />
+      
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="mb-20 text-center max-w-3xl mx-auto">
-           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-2 justify-center mb-6"
-           >
-              <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider">
-                  {t('badge')}
-              </span>
-           </motion.div>
+           <ScrollReveal width="100%">
+             <div className="flex items-center gap-2 justify-center mb-6">
+                <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                    {t('badge')}
+                </span>
+             </div>
+           </ScrollReveal>
            
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6 whitespace-pre-line"
-          >
-             {t.rich('title', {
-                 gradient: (chunks) => <span className="text-gradient">{chunks}</span>
-             })}
-          </motion.h2>
+           <ScrollReveal width="100%" delay={0.1}>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6 whitespace-pre-line">
+               {t.rich('title', {
+                   gradient: (chunks) => <span className="text-gradient">{chunks}</span>
+               })}
+            </h2>
+           </ScrollReveal>
         </div>
 
         <SpotlightGrid className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={cn("group relative", feature.className)}
-            >
-              <Card className="h-full bg-white/50 hover:bg-white/80 transition-colors duration-500 backdrop-blur-sm border-white/60 p-8 flex flex-col justify-between overflow-hidden">
+            <ScrollReveal key={feature.title} delay={index * 0.1} width="100%" className={feature.className}>
+              <Card className="h-full bg-white/50 hover:bg-white/80 transition-all duration-500 backdrop-blur-sm border-white/60 p-8 flex flex-col justify-between overflow-hidden group hover:-translate-y-2 hover:shadow-xl">
                 {/* Border Beam Effect */}
                 {feature.hasBeam && (
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
@@ -116,11 +102,11 @@ export function Features() {
 
                 {feature.hasBeam && (
                     <div className="mt-8 flex justify-end">
-                        <ArrowUpRight className="w-5 h-5 text-text-tertiary group-hover:text-brand-primary transition-colors" />
+                        <ArrowUpRight className="w-5 h-5 text-text-tertiary group-hover:text-brand-primary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
                 )}
               </Card>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </SpotlightGrid>
       </div>

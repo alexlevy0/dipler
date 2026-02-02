@@ -1,5 +1,6 @@
 "use client";
 
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
@@ -16,17 +17,23 @@ export function FAQ() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
-            {t('title')}
-          </h2>
-          <p className="text-xl text-text-secondary">
-            {t('subtitle')}
-          </p>
+          <ScrollReveal width="100%">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mb-6">
+                {t('title')}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal width="100%" delay={0.1}>
+            <p className="text-xl text-text-secondary">
+                {t('subtitle')}
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
-                <FAQItem key={index} faq={faq} />
+                <ScrollReveal key={index} delay={index * 0.05} width="100%">
+                    <FAQItem faq={faq} />
+                </ScrollReveal>
             ))}
         </div>
       </div>
